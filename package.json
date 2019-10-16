@@ -1,5 +1,5 @@
 {
-  "repository": "GoogleCloudPlatform/google-cloud-node",
+  "repository": "googleapis/nodejs-cloudbuild",
   "name": "@google-cloud/cloudbuild",
   "version": "0.1.0",
   "author": "Google LLC",
@@ -44,7 +44,7 @@
     "lint": "eslint .",
     "test": "c8 mocha test/*.js",
     "predocs-test": "npm run docs",
-    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/web-risk'",
+    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild'",
     "samples-test": "c8 mocha samples/test/*.js",
     "system-test": "c8 mocha --timeout=5000 system-test/*.js"
   },

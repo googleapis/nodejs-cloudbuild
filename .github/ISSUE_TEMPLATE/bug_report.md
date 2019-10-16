@@ -21,7 +21,7 @@ If you are still having issues, please be sure to include as much information as
   - OS:
   - Node.js version:
   - npm version:
-  - `cloudbuild` version:
+  - `@google-cloud/cloudbuild` version:
 
 #### Steps to reproduce
 

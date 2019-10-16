@@ -33,7 +33,7 @@ const gapic = Object.freeze({
 });
 
 /**
- * The `cloudbuild` package has the following named exports:
+ * The `@google-cloud/cloudbuild` package has the following named exports:
  *
  * - `CloudBuildClient` - Reference to
  *   {@link v1.CloudBuildClient}
@@ -42,14 +42,14 @@ const gapic = Object.freeze({
  *     - `CloudBuildClient` - Reference to
  *       {@link v1.CloudBuildClient}
  *
- * @module {object} cloudbuild
+ * @module {object} @google-cloud/cloudbuild
  * @alias nodejs-cloudbuild
  *
  * @example <caption>Install the client library with <a href="https://www.npmjs.com/">npm</a>:</caption>
- * npm install --save cloudbuild
+ * npm install --save @google-cloud/cloudbuild
  *
  * @example <caption>Import the client library:</caption>
- * const cloudbuild = require('cloudbuild');
+ * const cloudbuild = require('@google-cloud/cloudbuild');
  *
  * @example <caption>Create a client that uses <a href="https://goo.gl/64dyYX">Application Default Credentials (ADC)</a>:</caption>
  * const client = new cloudbuild.CloudBuildClient();

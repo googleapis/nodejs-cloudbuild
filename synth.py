@@ -28,7 +28,7 @@ for version in versions:
    'cloudbuild',
    config_path='/google/devtools/cloudbuild/artman_cloudbuild.yaml',
    version=version)
- s.copy(library, excludes=[])
+ s.copy(library, excludes=['README.md', 'package.json', 'src/index.js'])
 
 # Copy common templates
 common_templates = gcp.CommonTemplates()

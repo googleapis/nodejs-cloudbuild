@@ -5,7 +5,7 @@
 # [Cloud Build: Node.js Client](https://github.com/googleapis/nodejs-cloudbuild)
 
 [![release level](https://img.shields.io/badge/release%20level-beta-yellow.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
-[![npm version](https://img.shields.io/npm/v/cloudbuild.svg)](https://www.npmjs.org/package/cloudbuild)
+[![npm version](https://img.shields.io/npm/v/@google-cloud/cloudbuild.svg)](https://www.npmjs.org/package/@google-cloud/cloudbuild)
 [![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-cloudbuild/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-cloudbuild)
 
 
@@ -48,7 +48,7 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 ### Installing the client library
 
 ```bash
-npm install cloudbuild
+npm install @google-cloud/cloudbuild
 ```
 
 

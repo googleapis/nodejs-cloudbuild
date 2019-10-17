@@ -29,8 +29,8 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 * [Quickstart](#quickstart)
   * [Before you begin](#before-you-begin)
   * [Installing the client library](#installing-the-client-library)
-
-
+  * [Using the client library](#using-the-client-library)
+* [Samples](#samples)
 * [Versioning](#versioning)
 * [Contributing](#contributing)
 * [License](#license)
@@ -52,6 +52,46 @@ npm install @google-cloud/cloudbuild
 ```
 
 
+### Using the client library
+
+```javascript
+async function quickstart(
+  projectId = 'YOUR_PROJECT_ID', // Your Google Cloud Platform project ID
+  triggerId = 'YOUR_TRIGGER_ID', // UUID for build trigger.
+  branchName = 'BRANCH_TO_BUILD' // Branch to run build against.
+) {
+  // Imports the Google Cloud client library
+  const {CloudBuildClient} = require('@google-cloud/cloudbuild');
+
+  // Creates a client
+  const cb = new CloudBuildClient();
+
+  // Starts a build against the branch provided.
+  const request = {
+    projectId,
+    triggerId,
+    source: {
+      projectId: projectId,
+      dir: './',
+      branchName,
+    },
+  };
+  await cb.runBuildTrigger(request);
+  console.info(`triggered build for ${triggerId}`);
+}
+
+```
+
+
+
+## Samples
+
+Samples are in the [`samples/`](https://github.com/googleapis/nodejs-cloudbuild/tree/master/samples) directory. The samples' `README.md`
+has instructions for running the samples.
+
+| Sample                      | Source Code                       | Try it |
+| --------------------------- | --------------------------------- | ------ |
+| Quickstart | [source code](https://github.com/googleapis/nodejs-cloudbuild/blob/master/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-cloudbuild&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
 
 
 

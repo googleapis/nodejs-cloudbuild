@@ -33,7 +33,7 @@
     "eslint-plugin-node": "^9.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "jsdoc": "^3.6.2",
-    "jsdoc-baseline": "^0.1.0",
+    "jsdoc-fresh": "^1.0.2",
     "linkinator": "^1.4.0",
     "mocha": "^6.1.4",
     "prettier": "^1.17.0"
@@ -44,7 +44,7 @@
     "lint": "eslint .",
     "test": "c8 mocha test/*.js",
     "predocs-test": "npm run docs",
-    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild'",
+    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild|googleapis.dev.*|github.com.*'",
     "samples-test": "c8 mocha --timeout=8000 samples/system-test/*.js",
     "system-test": "c8 mocha --timeout=5000 system-test/*.js"
   },

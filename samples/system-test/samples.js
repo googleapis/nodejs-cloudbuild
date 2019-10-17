@@ -44,7 +44,7 @@ describe('Sample Integration Tests', () => {
     });
     const createTime = builds[0].createTime.seconds * 1000;
     const delta = Date.now() - createTime;
-    assert.ok(delta < 3000);
+    assert.ok(delta < 5000, `delta ${delta} was > 5000`);
   });
 
   it('should run list-build-triggers.js', async () => {

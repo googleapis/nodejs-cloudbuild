@@ -12,17 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
  * @namespace google
  */
 /**
+ * @namespace google.rpc
+ */
+/**
+ * @namespace google.protobuf
+ */ 
+/**
+ * @namespace google.longrunning
+ */
+
+/**
  * @namespace google.cloud
  */
 /**
- * @namespace google.cloud.cloudbuild
+ * @namespace google.devtools.cloudbuild
  */
 /**
- * @namespace google.cloud.cloudbuild.v1
+ * @namespace google.devtools.cloudbuild.v1
  */
 
 'use strict';

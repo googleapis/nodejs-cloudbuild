@@ -26,7 +26,8 @@ const cwd = path.join(__dirname, '..');
 const PROJECT_ID = process.env.GCLOUD_PROJECT;
 // Use list-build-triggers.js to figure out the ID of the trigger
 // you would like to execute.
-const TRIGGER_ID = process.env.TRIGGER || 'c9033094-51a9-44c5-b3a0-1d882deb4464';
+const TRIGGER_ID =
+  process.env.TRIGGER || 'c9033094-51a9-44c5-b3a0-1d882deb4464';
 
 const {CloudBuildClient} = require('@google-cloud/cloudbuild');
 const cb = new CloudBuildClient();

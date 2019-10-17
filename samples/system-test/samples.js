@@ -23,10 +23,10 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 
 const cwd = path.join(__dirname, '..');
 
-// long-door-651
-const PROJECT_ID = 'google.com:cloud-storage-adventure';
-// c9033094-51a9-44c5-b3a0-1d882deb4464
-const TRIGGER_ID = 'db7e54b7-5771-4b7c-a8e7-55d4e7030581';
+const PROJECT_ID = process.env.GCLOUD_PROJECT;
+// Use list-build-triggers.js to figure out the ID of the trigger
+// you would like to execute.
+const TRIGGER_ID = process.env.TRIGGER || 'c9033094-51a9-44c5-b3a0-1d882deb4464';
 
 const {CloudBuildClient} = require('@google-cloud/cloudbuild');
 const cb = new CloudBuildClient();

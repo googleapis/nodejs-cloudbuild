@@ -15,6 +15,11 @@
 
 'use strict';
 
+// sample-metadata:
+//   title: List Triggers.
+//   description: List available build triggers.
+//   usage: node list-build-triggers.js <PROJECT_ID>
+
 // [START cloudbuild_list_build_triggers]
 async function listBuildTriggers(
   projectId = 'YOUR_PROJECT_ID' // Your Google Cloud Platform project ID

@@ -50,7 +50,7 @@ describe('Sample Integration Tests', () => {
 
   it('should run list-build-triggers.js', async () => {
     const stdout = execSync(
-      `node ./samples/list-build-triggers.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
+      `node ./samples/listBuildTriggers.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
       {cwd}
     );
     assert.include(stdout, 'Push-to-any-branch');

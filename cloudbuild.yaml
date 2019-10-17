@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm:node-10.10.0'
+- name: 'gcr.io/cloud-builders/npm:node-9.11.2'
   args: ['install']
-- name: 'gcr.io/cloud-builders/npm:node-10.10.0'
+- name: 'gcr.io/cloud-builders/npm:node-9.11.2'
   args: ['test']

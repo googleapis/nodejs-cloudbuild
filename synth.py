@@ -44,8 +44,7 @@ s.replace("src/index.js",
 r"""\/\*\*
  \* @namespace google
  \*/""",
-r"""
-/**
+r"""/**
  * @namespace google
  */
 /**
@@ -53,11 +52,10 @@ r"""
  */
 /**
  * @namespace google.protobuf
- */ 
+ */
 /**
  * @namespace google.longrunning
- */
-""")
+ */""")
 s.replace("src/index.js",
 r"namespace google.cloud.cloudbuild",
 r"namespace google.devtools.cloudbuild")

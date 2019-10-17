@@ -1,5 +1,5 @@
 /**
- * Copyright 2019, Google, Inc.
+ * Copyright 2019, Google, LLC.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,8 @@ describe('Sample Integration Tests', () => {
     });
     const createTime = builds[0].createTime.seconds * 1000;
     const delta = Date.now() - createTime;
-    assert.ok(delta < 5000, `delta ${delta} was > 5000`);
+    const maxDelta = 20000; // last build was within 20s.
+    assert.ok(delta < maxDelta, `delta ${delta} was > ${maxDelta}`);
   });
 
   it('should run list-build-triggers.js', async () => {

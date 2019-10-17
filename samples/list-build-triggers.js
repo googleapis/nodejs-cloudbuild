@@ -25,10 +25,9 @@ async function listBuildTriggers(
   // Creates a client
   const cb = new CloudBuildClient();
 
-  // What type of build should be created?
+  // What project should we list triggers for?
   const request = {
     projectId,
-    triggerId: 'cloud-build-mvp',
   };
 
   const [result] = await cb.listBuildTriggers(request);

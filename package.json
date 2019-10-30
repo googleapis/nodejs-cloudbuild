@@ -48,10 +48,10 @@
     "compile-protos": "compileProtos src",
     "prepare": "npm run compile-protos && npm run compile",
     "test": "c8 mocha build/test",
-    "predocs-test": "npm run docs",
-    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild|googleapis.dev.*|github.com.*'",
+    "system-test": "c8 mocha --timeout=15000 system-test/*.js",
     "samples-test": "c8 mocha --timeout=800000 samples/system-test/*.js",
-    "system-test": "c8 mocha --timeout=15000 system-test/*.js"
+    "predocs-test": "npm run docs",
+    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild|googleapis.dev.*|github.com.*'"
   },
   "license": "Apache-2.0",
   "engines": {

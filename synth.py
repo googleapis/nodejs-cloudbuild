@@ -36,7 +36,7 @@ s.copy(library, excludes=['README.md', 'package.json'])
 # Copy common templates
 common_templates = gcp.CommonTemplates()
 templates = common_templates.node_library()
-s.copy(templates, excludes=[])
+s.copy(templates, excludes=['.jsdoc.js'])
 
 # Node.js specific cleanup
 subprocess.run(['npm', 'install'])

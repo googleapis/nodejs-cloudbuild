@@ -76,8 +76,25 @@ async function quickstart(
       branchName,
     },
   };
-  await cb.runBuildTrigger(request);
+  const [resp] = await cb.runBuildTrigger(request);
   console.info(`triggered build for ${triggerId}`);
+  const [build] = await resp.promise();
+
+  const STATUS_LOOKUP = [
+    'UNKNOWN',
+    'Queued',
+    'Working',
+    'Success',
+    'Failure',
+    'Error',
+    'Timeout',
+    'Cancelled',
+  ];
+  for (const step of build.steps) {
+    console.info(
+      `step:\n\tname: ${step.name}\n\tstatus: ${STATUS_LOOKUP[build.status]}`
+    );
+  }
 }
 
 ```

@@ -30,23 +30,14 @@ const PROJECT_ID = process.env.GCLOUD_PROJECT;
 const TRIGGER_ID =
   process.env.TRIGGER || 'c9033094-51a9-44c5-b3a0-1d882deb4464';
 
-const {CloudBuildClient} = require('@google-cloud/cloudbuild');
-const cb = new CloudBuildClient();
-
 describe('Sample Integration Tests', () => {
   it('should run quickstart.js', async () => {
-    execSync(
+    const stdout = execSync(
       `node ./samples/quickstart.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
       {cwd}
     );
-    // confirm that a build has just been kicked off.
-    const [builds] = await cb.listBuilds({
-      projectId: PROJECT_ID,
-    });
-    const createTime = builds[0].createTime.seconds * 1000;
-    const delta = Date.now() - createTime;
-    const maxDelta = 20000; // last build was within 20s.
-    assert.ok(delta < maxDelta, `delta ${delta} was > ${maxDelta}`);
+    // build should have exited with success status.
+    assert.include(stdout, 'status: Success');
   });
 
   it('should run list-build-triggers.js', async () => {

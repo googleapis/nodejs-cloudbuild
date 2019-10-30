@@ -25,6 +25,6 @@ describe('Integration Tests', () => {
     const [result] = await cb.listBuildTriggers({
       projectId: PROJECT_ID,
     });
-    assert.ok(result.triggers.length > 0);
+    assert.ok(result.length > 0);
   });
 });

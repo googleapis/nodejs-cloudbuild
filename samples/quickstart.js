@@ -28,16 +28,15 @@ async function quickstart(
   const cb = new CloudBuildClient();
 
   // Starts a build against the branch provided.
-  const request = {
+  const [resp] = await cb.runBuildTrigger({
     projectId,
     triggerId,
     source: {
-      projectId: projectId,
+      projectId,
       dir: './',
       branchName,
     },
-  };
-  const [resp] = await cb.runBuildTrigger(request);
+  });
   console.info(`triggered build for ${triggerId}`);
   const [build] = await resp.promise();
 

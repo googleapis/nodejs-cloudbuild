@@ -898,11 +898,15 @@ const CancelBuildRequest = {
  *   expressions. Any branch or tag change that matches that regular expression
  *   will trigger a build.
  *
+ *   Mutually exclusive with `github`.
+ *
  *   This object should have the same structure as [RepoSource]{@link google.devtools.cloudbuild.v1.RepoSource}
  *
  * @property {Object} github
  *   GitHubEventsConfig describes the configuration of a trigger that creates
  *   a build whenever a GitHub event is received.
+ *
+ *   Mutually exclusive with `trigger_template`.
  *
  *   This object should have the same structure as [GitHubEventsConfig]{@link google.devtools.cloudbuild.v1.GitHubEventsConfig}
  *

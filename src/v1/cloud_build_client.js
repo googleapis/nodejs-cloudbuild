@@ -76,7 +76,9 @@ class CloudBuildClient {
     const gaxModule = !global.isBrowser && opts.fallback ? gax.fallback : gax;
 
     const servicePath =
-      opts.servicePath || opts.apiEndpoint || this.constructor.servicePath;
+      opts.servicePath ||
+      opts.apiEndpoint ||
+      this.constructor.servicePath;
 
     // Ensure that options include the service address and port.
     opts = Object.assign(
@@ -117,15 +119,11 @@ class CloudBuildClient {
     // For Node.js, pass the path to JSON proto file.
     // For browsers, pass the JSON content.
 
-    const nodejsProtoPath = path.join(
-      __dirname,
-      '..',
-      '..',
-      'protos',
-      'protos.json'
-    );
+    const nodejsProtoPath = path.join(__dirname, '..', '..', 'protos', 'protos.json');
     const protos = gaxGrpc.loadProto(
-      opts.fallback ? require('../../protos/protos.json') : nodejsProtoPath
+      opts.fallback ?
+        require("../../protos/protos.json") :
+        nodejsProtoPath
     );
 
     // Some of the methods on this service return "paged" results,
@@ -155,9 +153,9 @@ class CloudBuildClient {
     // Put together the "service stub" for
     // google.devtools.cloudbuild.v1.CloudBuild.
     const cloudBuildStub = gaxGrpc.createStub(
-      opts.fallback
-        ? protos.lookupService('google.devtools.cloudbuild.v1.CloudBuild')
-        : protos.google.devtools.cloudbuild.v1.CloudBuild,
+      opts.fallback ?
+        protos.lookupService('google.devtools.cloudbuild.v1.CloudBuild') :
+        protos.google.devtools.cloudbuild.v1.CloudBuild,
       opts
     );
 
@@ -225,7 +223,9 @@ class CloudBuildClient {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -299,11 +299,10 @@ class CloudBuildClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      project_id: request.projectId,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'project_id': request.projectId
+      });
 
     return this._innerApiCalls.createBuild(request, options, callback);
   }
@@ -463,11 +462,10 @@ class CloudBuildClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      project_id: request.projectId,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'project_id': request.projectId
+      });
 
     return this._innerApiCalls.listBuilds(request, options, callback);
   }
@@ -527,7 +525,7 @@ class CloudBuildClient {
       request,
       options
     );
-  }
+  };
 
   /**
    * Cancels a build in progress.
@@ -639,11 +637,10 @@ class CloudBuildClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      project_id: request.projectId,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'project_id': request.projectId
+      });
 
     return this._innerApiCalls.createBuildTrigger(request, options, callback);
   }
@@ -755,11 +752,10 @@ class CloudBuildClient {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      project_id: request.projectId,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'project_id': request.projectId
+      });
 
     return this._innerApiCalls.listBuildTriggers(request, options, callback);
   }
@@ -1262,5 +1258,6 @@ class CloudBuildClient {
     return this._innerApiCalls.listWorkerPools(request, options, callback);
   }
 }
+
 
 module.exports = CloudBuildClient;

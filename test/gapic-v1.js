@@ -1068,6 +1068,7 @@ describe('CloudBuildClient', () => {
       });
     });
   });
+
 });
 
 function mockSimpleGrpcMethod(expectedRequest, response, error) {

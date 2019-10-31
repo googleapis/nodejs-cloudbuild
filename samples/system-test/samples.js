@@ -33,7 +33,7 @@ const TRIGGER_ID =
 describe('Sample Integration Tests', () => {
   it('should run quickstart.js', async () => {
     const stdout = execSync(
-      `node ./samples/quickstart.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
+      `node ./quickstart.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
       {cwd}
     );
     // build should have exited with success status.
@@ -42,7 +42,7 @@ describe('Sample Integration Tests', () => {
 
   it('should run list-build-triggers.js', async () => {
     const stdout = execSync(
-      `node ./samples/listBuildTriggers.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
+      `node ./listBuildTriggers.js ${PROJECT_ID} ${TRIGGER_ID} cloud-build-mvp`,
       {cwd}
     );
     assert.include(stdout, 'Push-to-any-branch');

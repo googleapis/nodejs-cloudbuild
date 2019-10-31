@@ -51,7 +51,7 @@
     "pretest": "npm run compile",
     "test": "c8 mocha build/test",
     "system-test": "c8 mocha --timeout=15000 system-test/*.js",
-    "samples-test": "c8 mocha --timeout=800000 samples/system-test/*.js",
+    "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "predocs-test": "npm run docs",
     "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/cloudbuild|googleapis.dev.*|github.com.*'"
   },

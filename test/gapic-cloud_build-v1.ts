@@ -16,22 +16,27 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-'use strict';
+import * as assert from 'assert';
 
-const assert = require('assert');
+import * as protosTypes from '../protos/protos';
+
 const cloudbuildModule = require('../src');
 
 
 const FAKE_STATUS_CODE = 1;
 class FakeError {
+  name: string;
+  message: string;
   code: number;
   constructor(n: number) {
+    this.name = 'fakeName';
+    this.message = 'fake message';
     this.code = n;
   }
 }
 const error = new FakeError(FAKE_STATUS_CODE);
 export interface Callback {
-  (err: FakeError|null, response?: {}|null): {};
+  (err: FakeError|null, response?: {}|null): void;
 }
 
 export class Operation {
@@ -101,7 +106,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -120,7 +126,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -141,7 +148,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -160,7 +168,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -181,7 +190,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .ICreateBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -200,7 +210,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .ICreateBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -221,7 +232,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IGetBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -240,7 +252,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IGetBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -261,7 +274,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IDeleteBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -280,7 +294,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IDeleteBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -301,7 +316,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IUpdateBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -320,7 +336,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IUpdateBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -341,7 +358,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .ICreateWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -360,7 +378,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .ICreateWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -381,7 +400,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -400,7 +420,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -421,7 +442,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IDeleteWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -440,7 +462,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IDeleteWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -461,7 +484,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IUpdateWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -480,7 +504,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IUpdateWorkerPoolRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -501,7 +526,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IListWorkerPoolsRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -520,7 +546,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IListWorkerPoolsRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -541,7 +568,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -567,7 +595,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -595,7 +624,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -621,7 +651,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -649,7 +680,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IRunBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -675,7 +707,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IRunBuildTriggerRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock gRPC layer
@@ -703,7 +736,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request:
+          protosTypes.google.devtools.cloudbuild.v1.IListBuildsRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer
@@ -726,7 +760,8 @@ describe('CloudBuildClient', () => {
         projectId: 'bogus',
       });
       // Mock request
-      const request = {};
+      const request: protosTypes.google.devtools.cloudbuild.v1
+          .IListBuildTriggersRequest = {};
       // Mock response
       const expectedResponse = {};
       // Mock Grpc layer

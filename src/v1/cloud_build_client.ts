@@ -343,10 +343,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.getBuild(request, options, callback);
@@ -388,10 +390,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.cancelBuild(request, options, callback);
@@ -440,10 +444,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.createBuildTrigger(request, options, callback);
@@ -492,10 +498,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.getBuildTrigger(request, options, callback);
@@ -544,10 +552,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.deleteBuildTrigger(request, options, callback);
@@ -596,10 +606,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.updateBuildTrigger(request, options, callback);
@@ -648,10 +660,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.createWorkerPool(request, options, callback);
@@ -697,10 +711,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.getWorkerPool(request, options, callback);
@@ -749,10 +765,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.deleteWorkerPool(request, options, callback);
@@ -801,10 +819,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.updateWorkerPool(request, options, callback);
@@ -853,10 +873,12 @@ export class CloudBuildClient {
         {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.listWorkerPools(request, options, callback);
@@ -909,10 +931,12 @@ export class CloudBuildClient {
         protosTypes.google.longrunning.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.createBuild(request, options, callback);
@@ -986,10 +1010,12 @@ export class CloudBuildClient {
         protosTypes.google.longrunning.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.retryBuild(request, options, callback);
@@ -1040,10 +1066,12 @@ export class CloudBuildClient {
         protosTypes.google.longrunning.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.runBuildTrigger(request, options, callback);
@@ -1085,10 +1113,12 @@ export class CloudBuildClient {
         protosTypes.google.devtools.cloudbuild.v1.IListBuildsResponse
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.listBuilds(request, options, callback);
@@ -1139,10 +1169,12 @@ export class CloudBuildClient {
         protosTypes.google.devtools.cloudbuild.v1.IListBuildTriggersResponse
       ]>|void {
     request = request || {};
-    let options = optionsOrCallback;
-    if (typeof options === 'function' && callback === undefined) {
-      callback = options;
+    let options: gax.CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
       options = {};
+    } else {
+      options = optionsOrCallback as gax.CallOptions;
     }
     options = options || {};
     return this._innerApiCalls.listBuildTriggers(request, options, callback);

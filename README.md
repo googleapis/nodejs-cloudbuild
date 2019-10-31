@@ -99,30 +99,7 @@ async function quickstart(
 ```
 ### Using TypeScript
 
-`@google-cloud/cloudbuild` provides TypeScript type definitions, and can
-be used inside a TypeScript project:
-
-```js
-import {CloudBuildClient} from '@google-cloud/cloudbuild';
-async function quickstart(
-  projectId = 'YOUR_PROJECT_ID', // Your Google Cloud Platform project ID
-  triggerId = 'YOUR_TRIGGER_ID', // UUID for build trigger.
-  branchName = 'BRANCH_TO_BUILD' // Branch to run build against.
-) {
-  const cb = new CloudBuildClient();
-  const [resp] = await cb.runBuildTrigger({
-    projectId,
-    triggerId,
-    source: {
-      projectId,
-      branchName,
-      dir: './'
-    }
-  })
-  const [build] = await resp.promise();
-  console.info(build);
-}
-```
+`@google-cloud/cloudbuild` provides TypeScript type definitions.
 
 
 ## Samples

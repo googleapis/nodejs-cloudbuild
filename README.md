@@ -97,7 +97,7 @@ async function quickstart(
 }
 
 ```
-## TypeScript Example
+### Using TypeScript
 
 `@google-cloud/cloudbuild` provides TypeScript type definitions, and can
 be used inside a TypeScript project:

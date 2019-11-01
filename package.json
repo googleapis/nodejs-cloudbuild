@@ -35,7 +35,7 @@
     "jsdoc-fresh": "^1.0.2",
     "linkinator": "^1.4.0",
     "mocha": "^6.1.4",
-    "gts": "^0.9.0",
+    "gts": "^1.0.0",
     "prettier": "^1.17.0",
     "typescript": "~3.6.0"
   },

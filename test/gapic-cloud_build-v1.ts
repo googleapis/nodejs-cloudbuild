@@ -16,10 +16,8 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import * as assert from 'assert';
-
 import * as protosTypes from '../protos/protos';
-
+import * as assert from 'assert';
 const cloudbuildModule = require('../src');
 
 const FAKE_STATUS_CODE = 1;

@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/googleapis/nodejs-cloudbuild/compare/v1.1.0...v1.1.1) (2019-11-14)
+
+
+### Bug Fixes
+
+* **docs:** snippets are now replaced in jsdoc comments ([#21](https://www.github.com/googleapis/nodejs-cloudbuild/issues/21)) ([b6bf159](https://www.github.com/googleapis/nodejs-cloudbuild/commit/b6bf159e7d3799121b58fe8b290181c16b6aa894))
+
 ## [1.1.0](https://www.github.com/googleapis/nodejs-cloudbuild/compare/v1.0.0...v1.1.0) (2019-11-11)
 
 

@@ -17,7 +17,16 @@
 // ** All changes to this file may be overwritten. **
 
 import * as gax from 'google-gax';
-import {Callback, LROperation, Descriptors, ClientOptions} from 'google-gax';
+import {
+  APICallback,
+  Callback,
+  CallOptions,
+  Descriptors,
+  ClientOptions,
+  LROperation,
+  PaginationCallback,
+  PaginationResponse,
+} from 'google-gax';
 import * as path from 'path';
 
 import {Transform} from 'stream';
@@ -25,29 +34,6 @@ import * as protosTypes from '../../protos/protos';
 import * as gapicConfig from './cloud_build_client_config.json';
 
 const version = require('../../../package.json').version;
-
-export interface PaginationCallback<
-  RequestObject,
-  ResponseObject,
-  ResponseType
-> {
-  (
-    err: Error | null,
-    values?: ResponseType[],
-    nextPageRequest?: RequestObject,
-    rawResponse?: ResponseObject
-  ): void;
-}
-
-export interface PaginationResponse<
-  RequestObject,
-  ResponseObject,
-  ResponseType
-> {
-  values?: ResponseType[];
-  nextPageRequest?: RequestObject;
-  rawResponse?: ResponseObject;
-}
 
 /**
  *  Creates and manages builds on Google Cloud Platform.
@@ -58,10 +44,14 @@ export interface PaginationResponse<
  *
  *  A user can list previously-requested builds or get builds by their ID to
  *  determine the status of the build.
+ * @class
+ * @memberof v1
  */
 export class CloudBuildClient {
   private _descriptors: Descriptors = {page: {}, stream: {}, longrunning: {}};
+  private _cloudBuildStub: Promise<{[name: string]: Function}>;
   private _innerApiCalls: {[name: string]: Function};
+  private _terminated = false;
   auth: gax.GoogleAuth;
 
   /**
@@ -236,7 +226,7 @@ export class CloudBuildClient {
 
     // Put together the "service stub" for
     // google.devtools.cloudbuild.v1.CloudBuild.
-    const cloudBuildStub = gaxGrpc.createStub(
+    this._cloudBuildStub = gaxGrpc.createStub(
       opts.fallback
         ? (protos as protobuf.Root).lookupService(
             'google.devtools.cloudbuild.v1.CloudBuild'
@@ -268,8 +258,8 @@ export class CloudBuildClient {
     ];
 
     for (const methodName of cloudBuildStubMethods) {
-      const innerCallPromise = cloudBuildStub.then(
-        (stub: {[method: string]: Function}) => (...args: Array<{}>) => {
+      const innerCallPromise = this._cloudBuildStub.then(
+        stub => (...args: Array<{}>) => {
           return stub[methodName].apply(stub, args);
         },
         (err: Error | null | undefined) => () => {
@@ -277,13 +267,24 @@ export class CloudBuildClient {
         }
       );
 
-      this._innerApiCalls[methodName] = gaxModule.createApiCall(
+      const apiCall = gaxModule.createApiCall(
         innerCallPromise,
         defaults[methodName],
         this._descriptors.page[methodName] ||
           this._descriptors.stream[methodName] ||
           this._descriptors.longrunning[methodName]
       );
+
+      this._innerApiCalls[methodName] = (
+        argument: {},
+        callOptions?: CallOptions,
+        callback?: APICallback
+      ) => {
+        if (this._terminated) {
+          return Promise.reject('The client has already been closed.');
+        }
+        return apiCall(argument, callOptions, callback);
+      };
     }
   }
 
@@ -1678,5 +1679,20 @@ export class CloudBuildClient {
       request,
       callSettings
     );
+  }
+
+  /**
+   * Terminate the GRPC channel and close the client.
+   *
+   * The client will no longer be usable and all future behavior is undefined.
+   */
+  close(): Promise<void> {
+    if (!this._terminated) {
+      return this._cloudBuildStub.then(stub => {
+        this._terminated = true;
+        stub.close();
+      });
+    }
+    return Promise.resolve();
   }
 }

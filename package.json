@@ -56,7 +56,7 @@
     "samples-test": "cd samples/ && npm link ../ && npm test && cd ../",
     "predocs-test": "npm run docs",
     "docs-test": "linkinator docs",
-    "prelint": "cd samples; npm link ../"
+    "prelint": "cd samples; npm link ../; npm i"
   },
   "license": "Apache-2.0",
   "engines": {

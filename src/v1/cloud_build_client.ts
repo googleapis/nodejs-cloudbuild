@@ -483,7 +483,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest
         | undefined,
       {} | undefined
@@ -536,7 +535,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest
         | undefined,
       {} | undefined
@@ -559,7 +557,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest
         | undefined,
@@ -613,7 +610,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest
         | undefined,
       {} | undefined
@@ -636,7 +632,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.protobuf.IEmpty,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest
         | undefined,
@@ -690,7 +685,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.protobuf.IEmpty,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest
         | undefined,
       {} | undefined
@@ -713,7 +707,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest
         | undefined,
@@ -769,7 +762,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IBuildTrigger,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest
         | undefined,
       {} | undefined
@@ -792,7 +784,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
         | undefined,
@@ -846,7 +837,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
         | undefined,
       {} | undefined
@@ -869,7 +859,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
         | undefined,
@@ -922,7 +911,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
         | undefined,
       {} | undefined
@@ -945,7 +933,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.protobuf.IEmpty,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
         | undefined,
@@ -998,7 +985,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.protobuf.IEmpty,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
         | undefined,
       {} | undefined
@@ -1021,7 +1007,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
         | undefined,
@@ -1076,7 +1061,6 @@ export class CloudBuildClient {
     [
       protosTypes.google.devtools.cloudbuild.v1.IWorkerPool,
 
-
         | protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
         | undefined,
       {} | undefined
@@ -1099,7 +1083,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
         | undefined,
@@ -1150,7 +1133,6 @@ export class CloudBuildClient {
   ): Promise<
     [
       protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-
 
         | protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
         | undefined,

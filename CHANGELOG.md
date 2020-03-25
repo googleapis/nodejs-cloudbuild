@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://www.github.com/googleapis/nodejs-cloudbuild/compare/v1.5.0...v1.6.0) (2020-03-25)
+
+
+### Features
+
+* add time-to-live in a queue for builds ([04e3387](https://www.github.com/googleapis/nodejs-cloudbuild/commit/04e3387af33a7ab39eb0c4df47ce08026507b499))
+
 ## [1.5.0](https://www.github.com/googleapis/nodejs-cloudbuild/compare/v1.4.0...v1.5.0) (2020-03-09)
 
 

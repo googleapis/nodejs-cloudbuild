@@ -18,971 +18,892 @@
 
 import * as protosTypes from '../protos/protos';
 import * as assert from 'assert';
-import {describe, it} from 'mocha';
+import { describe, it } from 'mocha';
+/* eslint-disable @typescript-eslint/no-var-requires */
 const cloudbuildModule = require('../src');
 
+
 const FAKE_STATUS_CODE = 1;
-class FakeError {
-  name: string;
-  message: string;
-  code: number;
-  constructor(n: number) {
-    this.name = 'fakeName';
-    this.message = 'fake message';
-    this.code = n;
-  }
+class FakeError{
+    name: string;
+    message: string;
+    code: number;
+    constructor(n: number){
+        this.name = 'fakeName';
+        this.message = 'fake message';
+        this.code = n;
+    }
 }
 const error = new FakeError(FAKE_STATUS_CODE);
 export interface Callback {
-  (err: FakeError | null, response?: {} | null): void;
+  (err: FakeError|null, response?: {} | null): void;
 }
 
-export class Operation {
-  constructor() {}
-  promise() {}
+export class Operation{
+    constructor(){};
+    promise() {};
 }
-function mockSimpleGrpcMethod(
-  expectedRequest: {},
-  response: {} | null,
-  error: FakeError | null
-) {
-  return (actualRequest: {}, options: {}, callback: Callback) => {
-    assert.deepStrictEqual(actualRequest, expectedRequest);
-    if (error) {
-      callback(error);
-    } else if (response) {
-      callback(null, response);
-    } else {
-      callback(null);
-    }
-  };
-}
-function mockLongRunningGrpcMethod(
-  expectedRequest: {},
-  response: {} | null,
-  error?: {} | null
-) {
-  return (request: {}) => {
-    assert.deepStrictEqual(request, expectedRequest);
-    const mockOperation = {
-      promise() {
-        return new Promise((resolve, reject) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve([response]);
-          }
-        });
-      },
+function mockSimpleGrpcMethod(expectedRequest: {}, response: {} | null, error: FakeError | null) {
+    return (actualRequest: {}, options: {}, callback: Callback) => {
+        assert.deepStrictEqual(actualRequest, expectedRequest);
+        if (error) {
+            callback(error);
+        } else if (response) {
+            callback(null, response);
+        } else {
+            callback(null);
+        }
     };
-    return Promise.resolve([mockOperation]);
-  };
+}
+function mockLongRunningGrpcMethod(expectedRequest: {}, response: {} | null, error?: {} | null) {
+    return (request: {}) => {
+        assert.deepStrictEqual(request, expectedRequest);
+        const mockOperation = {
+          promise: function() {
+            return new Promise((resolve, reject) => {
+              if (error) {
+                reject(error);
+              }
+              else {
+                resolve([response]);
+              }
+            });
+          }
+        };
+        return Promise.resolve([mockOperation]);
+    };
 }
 describe('v1.CloudBuildClient', () => {
-  it('has servicePath', () => {
-    const servicePath = cloudbuildModule.v1.CloudBuildClient.servicePath;
-    assert(servicePath);
-  });
-  it('has apiEndpoint', () => {
-    const apiEndpoint = cloudbuildModule.v1.CloudBuildClient.apiEndpoint;
-    assert(apiEndpoint);
-  });
-  it('has port', () => {
-    const port = cloudbuildModule.v1.CloudBuildClient.port;
-    assert(port);
-    assert(typeof port === 'number');
-  });
-  it('should create a client with no option', () => {
-    const client = new cloudbuildModule.v1.CloudBuildClient();
-    assert(client);
-  });
-  it('should create a client with gRPC fallback', () => {
-    const client = new cloudbuildModule.v1.CloudBuildClient({
-      fallback: true,
+    it('has servicePath', () => {
+        const servicePath = cloudbuildModule.v1.CloudBuildClient.servicePath;
+        assert(servicePath);
     });
-    assert(client);
-  });
-  it('has initialize method and supports deferred initialization', async () => {
-    const client = new cloudbuildModule.v1.CloudBuildClient({
-      credentials: {client_email: 'bogus', private_key: 'bogus'},
-      projectId: 'bogus',
+    it('has apiEndpoint', () => {
+        const apiEndpoint = cloudbuildModule.v1.CloudBuildClient.apiEndpoint;
+        assert(apiEndpoint);
     });
-    assert.strictEqual(client.cloudBuildStub, undefined);
-    await client.initialize();
-    assert(client.cloudBuildStub);
-  });
-  it('has close method', () => {
-    const client = new cloudbuildModule.v1.CloudBuildClient({
-      credentials: {client_email: 'bogus', private_key: 'bogus'},
-      projectId: 'bogus',
+    it('has port', () => {
+        const port = cloudbuildModule.v1.CloudBuildClient.port;
+        assert(port);
+        assert(typeof port === 'number');
     });
-    client.close();
-  });
-  describe('getBuild', () => {
-    it('invokes getBuild without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getBuild = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.getBuild(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
+    it('should create a client with no option', () => {
+        const client = new cloudbuildModule.v1.CloudBuildClient();
+        assert(client);
     });
+    it('should create a client with gRPC fallback', () => {
+        const client = new cloudbuildModule.v1.CloudBuildClient({
+            fallback: true,
+        });
+        assert(client);
+    });
+    it('has initialize method and supports deferred initialization', async () => {
+        const client = new cloudbuildModule.v1.CloudBuildClient({
+            credentials: { client_email: 'bogus', private_key: 'bogus' },
+            projectId: 'bogus',
+        });
+        assert.strictEqual(client.cloudBuildStub, undefined);
+        await client.initialize();
+        assert(client.cloudBuildStub);
+    });
+    it('has close method', () => {
+        const client = new cloudbuildModule.v1.CloudBuildClient({
+            credentials: { client_email: 'bogus', private_key: 'bogus' },
+            projectId: 'bogus',
+        });
+        client.close();
+    });
+    describe('getBuild', () => {
+        it('invokes getBuild without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getBuild = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.getBuild(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
 
-    it('invokes getBuild with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getBuild = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.getBuild(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('cancelBuild', () => {
-    it('invokes cancelBuild without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.cancelBuild = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.cancelBuild(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes cancelBuild with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.cancelBuild = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.cancelBuild(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('createBuildTrigger', () => {
-    it('invokes createBuildTrigger without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.createBuildTrigger(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createBuildTrigger with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.createBuildTrigger(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('getBuildTrigger', () => {
-    it('invokes getBuildTrigger without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.getBuildTrigger(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getBuildTrigger with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.getBuildTrigger(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('deleteBuildTrigger', () => {
-    it('invokes deleteBuildTrigger without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.deleteBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.deleteBuildTrigger(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes deleteBuildTrigger with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.deleteBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.deleteBuildTrigger(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('updateBuildTrigger', () => {
-    it('invokes updateBuildTrigger without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.updateBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.updateBuildTrigger(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes updateBuildTrigger with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.updateBuildTrigger = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.updateBuildTrigger(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('createWorkerPool', () => {
-    it('invokes createWorkerPool without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createWorkerPool = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.createWorkerPool(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createWorkerPool with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createWorkerPool = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.createWorkerPool(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('getWorkerPool', () => {
-    it('invokes getWorkerPool without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getWorkerPool = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.getWorkerPool(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getWorkerPool with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.getWorkerPool = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.getWorkerPool(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('deleteWorkerPool', () => {
-    it('invokes deleteWorkerPool without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.deleteWorkerPool = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.deleteWorkerPool(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes deleteWorkerPool with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.deleteWorkerPool = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.deleteWorkerPool(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('updateWorkerPool', () => {
-    it('invokes updateWorkerPool without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.updateWorkerPool = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.updateWorkerPool(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes updateWorkerPool with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.updateWorkerPool = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.updateWorkerPool(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('listWorkerPools', () => {
-    it('invokes listWorkerPools without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.listWorkerPools = mockSimpleGrpcMethod(
-        request,
-        expectedResponse,
-        null
-      );
-      client.listWorkerPools(request, (err: {}, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes listWorkerPools with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.listWorkerPools = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client.listWorkerPools(request, (err: FakeError, response: {}) => {
-        assert(err instanceof FakeError);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-  describe('createBuild', () => {
-    it('invokes createBuild without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createBuild = mockLongRunningGrpcMethod(
-        request,
-        expectedResponse
-      );
-      client
-        .createBuild(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then((responses: [Operation]) => {
-          assert.deepStrictEqual(responses[0], expectedResponse);
-          done();
-        })
-        .catch((err: {}) => {
-          done(err);
+        it('invokes getBuild with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getBuild = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.getBuild(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
         });
     });
+    describe('cancelBuild', () => {
+        it('invokes cancelBuild without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.cancelBuild = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.cancelBuild(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
 
-    it('invokes createBuild with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.createBuild = mockLongRunningGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client
-        .createBuild(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then(() => {
-          assert.fail();
-        })
-        .catch((err: FakeError) => {
-          assert(err instanceof FakeError);
-          assert.strictEqual(err.code, FAKE_STATUS_CODE);
-          done();
+        it('invokes cancelBuild with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICancelBuildRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.cancelBuild = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.cancelBuild(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
         });
     });
-  });
-  describe('retryBuild', () => {
-    it('invokes retryBuild without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.retryBuild = mockLongRunningGrpcMethod(
-        request,
-        expectedResponse
-      );
-      client
-        .retryBuild(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then((responses: [Operation]) => {
-          assert.deepStrictEqual(responses[0], expectedResponse);
-          done();
-        })
-        .catch((err: {}) => {
-          done(err);
+    describe('createBuildTrigger', () => {
+        it('invokes createBuildTrigger without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.createBuildTrigger(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
         });
-    });
 
-    it('invokes retryBuild with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.retryBuild = mockLongRunningGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client
-        .retryBuild(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then(() => {
-          assert.fail();
-        })
-        .catch((err: FakeError) => {
-          assert(err instanceof FakeError);
-          assert.strictEqual(err.code, FAKE_STATUS_CODE);
-          done();
+        it('invokes createBuildTrigger with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildTriggerRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.createBuildTrigger(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
         });
     });
-  });
-  describe('runBuildTrigger', () => {
-    it('invokes runBuildTrigger without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IRunBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.runBuildTrigger = mockLongRunningGrpcMethod(
-        request,
-        expectedResponse
-      );
-      client
-        .runBuildTrigger(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then((responses: [Operation]) => {
-          assert.deepStrictEqual(responses[0], expectedResponse);
-          done();
-        })
-        .catch((err: {}) => {
-          done(err);
+    describe('getBuildTrigger', () => {
+        it('invokes getBuildTrigger without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.getBuildTrigger(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
         });
-    });
 
-    it('invokes runBuildTrigger with error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IRunBuildTriggerRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock gRPC layer
-      client._innerApiCalls.runBuildTrigger = mockLongRunningGrpcMethod(
-        request,
-        null,
-        error
-      );
-      client
-        .runBuildTrigger(request)
-        .then((responses: [Operation]) => {
-          const operation = responses[0];
-          return operation ? operation.promise() : {};
-        })
-        .then(() => {
-          assert.fail();
-        })
-        .catch((err: FakeError) => {
-          assert(err instanceof FakeError);
-          assert.strictEqual(err.code, FAKE_STATUS_CODE);
-          done();
+        it('invokes getBuildTrigger with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetBuildTriggerRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.getBuildTrigger(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
         });
     });
-  });
-  describe('listBuilds', () => {
-    it('invokes listBuilds without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildsRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock Grpc layer
-      client._innerApiCalls.listBuilds = (
-        actualRequest: {},
-        options: {},
-        callback: Callback
-      ) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse);
-      };
-      client.listBuilds(request, (err: FakeError, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-  });
-  describe('listBuildsStream', () => {
-    it('invokes listBuildsStream without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildsRequest = {};
-      // Mock response
-      const expectedResponse = {response: 'data'};
-      // Mock Grpc layer
-      client._innerApiCalls.listBuilds = (
-        actualRequest: {},
-        options: {},
-        callback: Callback
-      ) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse);
-      };
-      const stream = client
-        .listBuildsStream(request, {})
-        .on('data', (response: {}) => {
-          assert.deepStrictEqual(response, expectedResponse);
-          done();
-        })
-        .on('error', (err: FakeError) => {
-          done(err);
+    describe('deleteBuildTrigger', () => {
+        it('invokes deleteBuildTrigger without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.deleteBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.deleteBuildTrigger(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
         });
-      stream.write(expectedResponse);
-    });
-  });
-  describe('listBuildTriggers', () => {
-    it('invokes listBuildTriggers without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildTriggersRequest = {};
-      // Mock response
-      const expectedResponse = {};
-      // Mock Grpc layer
-      client._innerApiCalls.listBuildTriggers = (
-        actualRequest: {},
-        options: {},
-        callback: Callback
-      ) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse);
-      };
-      client.listBuildTriggers(request, (err: FakeError, response: {}) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-  });
-  describe('listBuildTriggersStream', () => {
-    it('invokes listBuildTriggersStream without error', done => {
-      const client = new cloudbuildModule.v1.CloudBuildClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      // Initialize client before mocking
-      client.initialize();
-      // Mock request
-      const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildTriggersRequest = {};
-      // Mock response
-      const expectedResponse = {response: 'data'};
-      // Mock Grpc layer
-      client._innerApiCalls.listBuildTriggers = (
-        actualRequest: {},
-        options: {},
-        callback: Callback
-      ) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse);
-      };
-      const stream = client
-        .listBuildTriggersStream(request, {})
-        .on('data', (response: {}) => {
-          assert.deepStrictEqual(response, expectedResponse);
-          done();
-        })
-        .on('error', (err: FakeError) => {
-          done(err);
+
+        it('invokes deleteBuildTrigger with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteBuildTriggerRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.deleteBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.deleteBuildTrigger(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
         });
-      stream.write(expectedResponse);
     });
-  });
+    describe('updateBuildTrigger', () => {
+        it('invokes updateBuildTrigger without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.updateBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.updateBuildTrigger(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes updateBuildTrigger with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateBuildTriggerRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.updateBuildTrigger = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.updateBuildTrigger(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('createWorkerPool', () => {
+        it('invokes createWorkerPool without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createWorkerPool = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.createWorkerPool(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes createWorkerPool with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createWorkerPool = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.createWorkerPool(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('getWorkerPool', () => {
+        it('invokes getWorkerPool without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getWorkerPool = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.getWorkerPool(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes getWorkerPool with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.getWorkerPool = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.getWorkerPool(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('deleteWorkerPool', () => {
+        it('invokes deleteWorkerPool without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.deleteWorkerPool = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.deleteWorkerPool(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes deleteWorkerPool with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.deleteWorkerPool = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.deleteWorkerPool(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('updateWorkerPool', () => {
+        it('invokes updateWorkerPool without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.updateWorkerPool = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.updateWorkerPool(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes updateWorkerPool with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.updateWorkerPool = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.updateWorkerPool(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('listWorkerPools', () => {
+        it('invokes listWorkerPools without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.listWorkerPools = mockSimpleGrpcMethod(
+                request,
+                expectedResponse,
+                null
+            );
+            client.listWorkerPools(request, (err: {}, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            })
+        });
+
+        it('invokes listWorkerPools with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.listWorkerPools = mockSimpleGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.listWorkerPools(request, (err: FakeError, response: {}) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                assert(typeof response === 'undefined');
+                done();
+            })
+        });
+    });
+    describe('createBuild', () => {
+        it('invokes createBuild without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createBuild = mockLongRunningGrpcMethod(
+                request,
+                expectedResponse
+            );
+            client.createBuild(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then((responses: [Operation]) => {
+                assert.deepStrictEqual(responses[0], expectedResponse);
+                done();
+            }).catch((err: {}) => {
+                done(err);
+            });
+        });
+
+        it('invokes createBuild with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.ICreateBuildRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.createBuild = mockLongRunningGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.createBuild(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then(() => {
+                assert.fail();
+            }).catch((err: FakeError) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                done();
+            });
+        });
+    });
+    describe('retryBuild', () => {
+        it('invokes retryBuild without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.retryBuild = mockLongRunningGrpcMethod(
+                request,
+                expectedResponse
+            );
+            client.retryBuild(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then((responses: [Operation]) => {
+                assert.deepStrictEqual(responses[0], expectedResponse);
+                done();
+            }).catch((err: {}) => {
+                done(err);
+            });
+        });
+
+        it('invokes retryBuild with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IRetryBuildRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.retryBuild = mockLongRunningGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.retryBuild(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then(() => {
+                assert.fail();
+            }).catch((err: FakeError) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                done();
+            });
+        });
+    });
+    describe('runBuildTrigger', () => {
+        it('invokes runBuildTrigger without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IRunBuildTriggerRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock gRPC layer
+            client._innerApiCalls.runBuildTrigger = mockLongRunningGrpcMethod(
+                request,
+                expectedResponse
+            );
+            client.runBuildTrigger(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then((responses: [Operation]) => {
+                assert.deepStrictEqual(responses[0], expectedResponse);
+                done();
+            }).catch((err: {}) => {
+                done(err);
+            });
+        });
+
+        it('invokes runBuildTrigger with error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IRunBuildTriggerRequest = {};
+            // Mock gRPC layer
+            client._innerApiCalls.runBuildTrigger = mockLongRunningGrpcMethod(
+                request,
+                null,
+                error
+            );
+            client.runBuildTrigger(request).then((responses: [Operation]) => {
+                const operation = responses[0];
+                return operation? operation.promise() : {};
+            }).then(() => {
+                assert.fail();
+            }).catch((err: FakeError) => {
+                assert(err instanceof FakeError);
+                assert.strictEqual(err.code, FAKE_STATUS_CODE);
+                done();
+            });
+        });
+    });
+    describe('listBuilds', () => {
+        it('invokes listBuilds without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildsRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock Grpc layer
+            client._innerApiCalls.listBuilds = (actualRequest: {}, options: {}, callback: Callback) => {
+                assert.deepStrictEqual(actualRequest, request);
+                callback(null, expectedResponse);
+            };
+            client.listBuilds(request, (err: FakeError, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            });
+        });
+    });
+    describe('listBuildsStream', () => {
+        it('invokes listBuildsStream without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildsRequest = {};
+            // Mock response
+            const expectedResponse = {response: 'data'};
+            // Mock Grpc layer
+            client._innerApiCalls.listBuilds = (actualRequest: {}, options: {}, callback: Callback) => {
+                assert.deepStrictEqual(actualRequest, request);
+                callback(null, expectedResponse);
+            };
+            const stream = client.listBuildsStream(request, {}).on('data', (response: {}) =>{
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            }).on('error', (err: FakeError) => {
+                done(err);
+            });
+            stream.write(expectedResponse);
+        });
+    });
+    describe('listBuildTriggers', () => {
+        it('invokes listBuildTriggers without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildTriggersRequest = {};
+            // Mock response
+            const expectedResponse = {};
+            // Mock Grpc layer
+            client._innerApiCalls.listBuildTriggers = (actualRequest: {}, options: {}, callback: Callback) => {
+                assert.deepStrictEqual(actualRequest, request);
+                callback(null, expectedResponse);
+            };
+            client.listBuildTriggers(request, (err: FakeError, response: {}) => {
+                assert.ifError(err);
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            });
+        });
+    });
+    describe('listBuildTriggersStream', () => {
+        it('invokes listBuildTriggersStream without error', done => {
+            const client = new cloudbuildModule.v1.CloudBuildClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            // Initialize client before mocking
+            client.initialize();
+            // Mock request
+            const request: protosTypes.google.devtools.cloudbuild.v1.IListBuildTriggersRequest = {};
+            // Mock response
+            const expectedResponse = {response: 'data'};
+            // Mock Grpc layer
+            client._innerApiCalls.listBuildTriggers = (actualRequest: {}, options: {}, callback: Callback) => {
+                assert.deepStrictEqual(actualRequest, request);
+                callback(null, expectedResponse);
+            };
+            const stream = client.listBuildTriggersStream(request, {}).on('data', (response: {}) =>{
+                assert.deepStrictEqual(response, expectedResponse);
+                done();
+            }).on('error', (err: FakeError) => {
+                done(err);
+            });
+            stream.write(expectedResponse);
+        });
+    });
 });

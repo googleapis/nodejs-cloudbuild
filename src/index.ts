@@ -23,4 +23,4 @@ export {v1, CloudBuildClient};
 // tslint:disable-next-line no-default-export
 export default {v1, CloudBuildClient};
 import * as protos from '../protos/protos';
-export {protos};
+export {protos}

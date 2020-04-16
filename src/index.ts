@@ -21,4 +21,4 @@ const CloudBuildClient = v1.CloudBuildClient;
 export {v1, CloudBuildClient};
 export default {v1, CloudBuildClient};
 import * as protos from '../protos/protos';
-export {protos};
+export {protos}

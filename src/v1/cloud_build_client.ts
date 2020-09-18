@@ -62,6 +62,7 @@ export class CloudBuildClient {
     batching: {},
   };
   innerApiCalls: {[name: string]: Function};
+  pathTemplates: {[name: string]: gax.PathTemplate};
   operationsClient: gax.OperationsClient;
   cloudBuildStub?: Promise<{[name: string]: Function}>;
 
@@ -163,6 +164,21 @@ export class CloudBuildClient {
           require('../../protos/protos.json')
         : nodejsProtoPath
     );
+
+    // This API contains "path templates"; forward-slash-separated
+    // identifiers to uniquely identify resources within the API.
+    // Create useful helper objects for these.
+    this.pathTemplates = {
+      buildTriggerPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/triggers/{trigger}'
+      ),
+      projectBuildPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/builds/{build}'
+      ),
+      projectLocationBuildPathTemplate: new this._gaxModule.PathTemplate(
+        'projects/{project}/locations/{location}/builds/{build}'
+      ),
+    };
 
     // Some of the methods on this service return "paged" results,
     // (e.g. 50 results at a time, with tokens to get subsequent
@@ -290,11 +306,6 @@ export class CloudBuildClient {
       'deleteBuildTrigger',
       'updateBuildTrigger',
       'runBuildTrigger',
-      'createWorkerPool',
-      'getWorkerPool',
-      'deleteWorkerPool',
-      'updateWorkerPool',
-      'listWorkerPools',
     ];
     for (const methodName of cloudBuildStubMethods) {
       const callPromise = this.cloudBuildStub.then(
@@ -940,428 +951,6 @@ export class CloudBuildClient {
     });
     this.initialize();
     return this.innerApiCalls.updateBuildTrigger(request, options, callback);
-  }
-  createWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest,
-    options?: gax.CallOptions
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  >;
-  createWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest,
-    options: gax.CallOptions,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  createWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  /**
-   * Creates a `WorkerPool` to run the builds, and returns the new worker pool.
-   *
-   * This API is experimental.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   ID of the parent project.
-   * @param {google.devtools.cloudbuild.v1.WorkerPool} request.workerPool
-   *   `WorkerPool` resource to create.
-   * @param {object} [options]
-   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [WorkerPool]{@link google.devtools.cloudbuild.v1.WorkerPool}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   */
-  createWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest,
-    optionsOrCallback?:
-      | gax.CallOptions
-      | Callback<
-          protos.google.devtools.cloudbuild.v1.IWorkerPool,
-          | protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
-          | null
-          | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  > | void {
-    request = request || {};
-    let options: gax.CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    } else {
-      options = optionsOrCallback as gax.CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.createWorkerPool(request, options, callback);
-  }
-  getWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest,
-    options?: gax.CallOptions
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  >;
-  getWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest,
-    options: gax.CallOptions,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  getWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  /**
-   * Returns information about a `WorkerPool`.
-   *
-   * This API is experimental.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   The field will contain name of the resource requested, for example:
-   *   "projects/project-1/workerPools/workerpool-name"
-   * @param {object} [options]
-   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [WorkerPool]{@link google.devtools.cloudbuild.v1.WorkerPool}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   */
-  getWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest,
-    optionsOrCallback?:
-      | gax.CallOptions
-      | Callback<
-          protos.google.devtools.cloudbuild.v1.IWorkerPool,
-          | protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
-          | null
-          | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.IGetWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  > | void {
-    request = request || {};
-    let options: gax.CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    } else {
-      options = optionsOrCallback as gax.CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.getWorkerPool(request, options, callback);
-  }
-  deleteWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest,
-    options?: gax.CallOptions
-  ): Promise<
-    [
-      protos.google.protobuf.IEmpty,
-      protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  >;
-  deleteWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest,
-    options: gax.CallOptions,
-    callback: Callback<
-      protos.google.protobuf.IEmpty,
-      | protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  deleteWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest,
-    callback: Callback<
-      protos.google.protobuf.IEmpty,
-      | protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  /**
-   * Deletes a `WorkerPool` by its project ID and WorkerPool name.
-   *
-   * This API is experimental.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   The field will contain name of the resource requested, for example:
-   *   "projects/project-1/workerPools/workerpool-name"
-   * @param {object} [options]
-   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   */
-  deleteWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest,
-    optionsOrCallback?:
-      | gax.CallOptions
-      | Callback<
-          protos.google.protobuf.IEmpty,
-          | protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
-          | null
-          | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      protos.google.protobuf.IEmpty,
-      | protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): Promise<
-    [
-      protos.google.protobuf.IEmpty,
-      protos.google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  > | void {
-    request = request || {};
-    let options: gax.CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    } else {
-      options = optionsOrCallback as gax.CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.deleteWorkerPool(request, options, callback);
-  }
-  updateWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest,
-    options?: gax.CallOptions
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  >;
-  updateWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest,
-    options: gax.CallOptions,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  updateWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  /**
-   * Update a `WorkerPool`.
-   *
-   * This API is experimental.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   The field will contain name of the resource requested, for example:
-   *   "projects/project-1/workerPools/workerpool-name"
-   * @param {google.devtools.cloudbuild.v1.WorkerPool} request.workerPool
-   *   `WorkerPool` resource to update.
-   * @param {object} [options]
-   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [WorkerPool]{@link google.devtools.cloudbuild.v1.WorkerPool}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   */
-  updateWorkerPool(
-    request: protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest,
-    optionsOrCallback?:
-      | gax.CallOptions
-      | Callback<
-          protos.google.devtools.cloudbuild.v1.IWorkerPool,
-          | protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
-          | null
-          | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      | protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IWorkerPool,
-      protos.google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest | undefined,
-      {} | undefined
-    ]
-  > | void {
-    request = request || {};
-    let options: gax.CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    } else {
-      options = optionsOrCallback as gax.CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.updateWorkerPool(request, options, callback);
-  }
-  listWorkerPools(
-    request: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
-    options?: gax.CallOptions
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest | undefined,
-      {} | undefined
-    ]
-  >;
-  listWorkerPools(
-    request: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
-    options: gax.CallOptions,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-      | protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  listWorkerPools(
-    request: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
-    callback: Callback<
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-      | protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): void;
-  /**
-   * List project's `WorkerPools`.
-   *
-   * This API is experimental.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   ID of the parent project.
-   * @param {object} [options]
-   *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [ListWorkerPoolsResponse]{@link google.devtools.cloudbuild.v1.ListWorkerPoolsResponse}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   */
-  listWorkerPools(
-    request: protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest,
-    optionsOrCallback?:
-      | gax.CallOptions
-      | Callback<
-          protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-          | protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
-          | null
-          | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-      | protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest
-      | null
-      | undefined,
-      {} | null | undefined
-    >
-  ): Promise<
-    [
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsResponse,
-      protos.google.devtools.cloudbuild.v1.IListWorkerPoolsRequest | undefined,
-      {} | undefined
-    ]
-  > | void {
-    request = request || {};
-    let options: gax.CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    } else {
-      options = optionsOrCallback as gax.CallOptions;
-    }
-    options = options || {};
-    this.initialize();
-    return this.innerApiCalls.listWorkerPools(request, options, callback);
   }
 
   createBuild(
@@ -2200,6 +1789,140 @@ export class CloudBuildClient {
       (request as unknown) as RequestType,
       callSettings
     ) as AsyncIterable<protos.google.devtools.cloudbuild.v1.IBuildTrigger>;
+  }
+  // --------------------
+  // -- Path templates --
+  // --------------------
+
+  /**
+   * Return a fully-qualified buildTrigger resource name string.
+   *
+   * @param {string} project
+   * @param {string} trigger
+   * @returns {string} Resource name string.
+   */
+  buildTriggerPath(project: string, trigger: string) {
+    return this.pathTemplates.buildTriggerPathTemplate.render({
+      project: project,
+      trigger: trigger,
+    });
+  }
+
+  /**
+   * Parse the project from BuildTrigger resource.
+   *
+   * @param {string} buildTriggerName
+   *   A fully-qualified path representing BuildTrigger resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromBuildTriggerName(buildTriggerName: string) {
+    return this.pathTemplates.buildTriggerPathTemplate.match(buildTriggerName)
+      .project;
+  }
+
+  /**
+   * Parse the trigger from BuildTrigger resource.
+   *
+   * @param {string} buildTriggerName
+   *   A fully-qualified path representing BuildTrigger resource.
+   * @returns {string} A string representing the trigger.
+   */
+  matchTriggerFromBuildTriggerName(buildTriggerName: string) {
+    return this.pathTemplates.buildTriggerPathTemplate.match(buildTriggerName)
+      .trigger;
+  }
+
+  /**
+   * Return a fully-qualified projectBuild resource name string.
+   *
+   * @param {string} project
+   * @param {string} build
+   * @returns {string} Resource name string.
+   */
+  projectBuildPath(project: string, build: string) {
+    return this.pathTemplates.projectBuildPathTemplate.render({
+      project: project,
+      build: build,
+    });
+  }
+
+  /**
+   * Parse the project from ProjectBuild resource.
+   *
+   * @param {string} projectBuildName
+   *   A fully-qualified path representing project_build resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectBuildName(projectBuildName: string) {
+    return this.pathTemplates.projectBuildPathTemplate.match(projectBuildName)
+      .project;
+  }
+
+  /**
+   * Parse the build from ProjectBuild resource.
+   *
+   * @param {string} projectBuildName
+   *   A fully-qualified path representing project_build resource.
+   * @returns {string} A string representing the build.
+   */
+  matchBuildFromProjectBuildName(projectBuildName: string) {
+    return this.pathTemplates.projectBuildPathTemplate.match(projectBuildName)
+      .build;
+  }
+
+  /**
+   * Return a fully-qualified projectLocationBuild resource name string.
+   *
+   * @param {string} project
+   * @param {string} location
+   * @param {string} build
+   * @returns {string} Resource name string.
+   */
+  projectLocationBuildPath(project: string, location: string, build: string) {
+    return this.pathTemplates.projectLocationBuildPathTemplate.render({
+      project: project,
+      location: location,
+      build: build,
+    });
+  }
+
+  /**
+   * Parse the project from ProjectLocationBuild resource.
+   *
+   * @param {string} projectLocationBuildName
+   *   A fully-qualified path representing project_location_build resource.
+   * @returns {string} A string representing the project.
+   */
+  matchProjectFromProjectLocationBuildName(projectLocationBuildName: string) {
+    return this.pathTemplates.projectLocationBuildPathTemplate.match(
+      projectLocationBuildName
+    ).project;
+  }
+
+  /**
+   * Parse the location from ProjectLocationBuild resource.
+   *
+   * @param {string} projectLocationBuildName
+   *   A fully-qualified path representing project_location_build resource.
+   * @returns {string} A string representing the location.
+   */
+  matchLocationFromProjectLocationBuildName(projectLocationBuildName: string) {
+    return this.pathTemplates.projectLocationBuildPathTemplate.match(
+      projectLocationBuildName
+    ).location;
+  }
+
+  /**
+   * Parse the build from ProjectLocationBuild resource.
+   *
+   * @param {string} projectLocationBuildName
+   *   A fully-qualified path representing project_location_build resource.
+   * @returns {string} A string representing the build.
+   */
+  matchBuildFromProjectLocationBuildName(projectLocationBuildName: string) {
+    return this.pathTemplates.projectLocationBuildPathTemplate.match(
+      projectLocationBuildName
+    ).build;
   }
 
   /**

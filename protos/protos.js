@@ -461,6 +461,171 @@
                          * @variation 2
                          */
     
+                        /**
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createWorkerPool}.
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @typedef CreateWorkerPoolCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.devtools.cloudbuild.v1.WorkerPool} [response] WorkerPool
+                         */
+    
+                        /**
+                         * Calls CreateWorkerPool.
+                         * @function createWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest} request CreateWorkerPoolRequest message or plain object
+                         * @param {google.devtools.cloudbuild.v1.CloudBuild.CreateWorkerPoolCallback} callback Node-style callback called with the error, if any, and WorkerPool
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(CloudBuild.prototype.createWorkerPool = function createWorkerPool(request, callback) {
+                            return this.rpcCall(createWorkerPool, $root.google.devtools.cloudbuild.v1.CreateWorkerPoolRequest, $root.google.devtools.cloudbuild.v1.WorkerPool, request, callback);
+                        }, "name", { value: "CreateWorkerPool" });
+    
+                        /**
+                         * Calls CreateWorkerPool.
+                         * @function createWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest} request CreateWorkerPoolRequest message or plain object
+                         * @returns {Promise<google.devtools.cloudbuild.v1.WorkerPool>} Promise
+                         * @variation 2
+                         */
+    
+                        /**
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getWorkerPool}.
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @typedef GetWorkerPoolCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.devtools.cloudbuild.v1.WorkerPool} [response] WorkerPool
+                         */
+    
+                        /**
+                         * Calls GetWorkerPool.
+                         * @function getWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest} request GetWorkerPoolRequest message or plain object
+                         * @param {google.devtools.cloudbuild.v1.CloudBuild.GetWorkerPoolCallback} callback Node-style callback called with the error, if any, and WorkerPool
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(CloudBuild.prototype.getWorkerPool = function getWorkerPool(request, callback) {
+                            return this.rpcCall(getWorkerPool, $root.google.devtools.cloudbuild.v1.GetWorkerPoolRequest, $root.google.devtools.cloudbuild.v1.WorkerPool, request, callback);
+                        }, "name", { value: "GetWorkerPool" });
+    
+                        /**
+                         * Calls GetWorkerPool.
+                         * @function getWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest} request GetWorkerPoolRequest message or plain object
+                         * @returns {Promise<google.devtools.cloudbuild.v1.WorkerPool>} Promise
+                         * @variation 2
+                         */
+    
+                        /**
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteWorkerPool}.
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @typedef DeleteWorkerPoolCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.protobuf.Empty} [response] Empty
+                         */
+    
+                        /**
+                         * Calls DeleteWorkerPool.
+                         * @function deleteWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest} request DeleteWorkerPoolRequest message or plain object
+                         * @param {google.devtools.cloudbuild.v1.CloudBuild.DeleteWorkerPoolCallback} callback Node-style callback called with the error, if any, and Empty
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(CloudBuild.prototype.deleteWorkerPool = function deleteWorkerPool(request, callback) {
+                            return this.rpcCall(deleteWorkerPool, $root.google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest, $root.google.protobuf.Empty, request, callback);
+                        }, "name", { value: "DeleteWorkerPool" });
+    
+                        /**
+                         * Calls DeleteWorkerPool.
+                         * @function deleteWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest} request DeleteWorkerPoolRequest message or plain object
+                         * @returns {Promise<google.protobuf.Empty>} Promise
+                         * @variation 2
+                         */
+    
+                        /**
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateWorkerPool}.
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @typedef UpdateWorkerPoolCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.devtools.cloudbuild.v1.WorkerPool} [response] WorkerPool
+                         */
+    
+                        /**
+                         * Calls UpdateWorkerPool.
+                         * @function updateWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest} request UpdateWorkerPoolRequest message or plain object
+                         * @param {google.devtools.cloudbuild.v1.CloudBuild.UpdateWorkerPoolCallback} callback Node-style callback called with the error, if any, and WorkerPool
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(CloudBuild.prototype.updateWorkerPool = function updateWorkerPool(request, callback) {
+                            return this.rpcCall(updateWorkerPool, $root.google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest, $root.google.devtools.cloudbuild.v1.WorkerPool, request, callback);
+                        }, "name", { value: "UpdateWorkerPool" });
+    
+                        /**
+                         * Calls UpdateWorkerPool.
+                         * @function updateWorkerPool
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest} request UpdateWorkerPoolRequest message or plain object
+                         * @returns {Promise<google.devtools.cloudbuild.v1.WorkerPool>} Promise
+                         * @variation 2
+                         */
+    
+                        /**
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listWorkerPools}.
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @typedef ListWorkerPoolsCallback
+                         * @type {function}
+                         * @param {Error|null} error Error, if any
+                         * @param {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} [response] ListWorkerPoolsResponse
+                         */
+    
+                        /**
+                         * Calls ListWorkerPools.
+                         * @function listWorkerPools
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest} request ListWorkerPoolsRequest message or plain object
+                         * @param {google.devtools.cloudbuild.v1.CloudBuild.ListWorkerPoolsCallback} callback Node-style callback called with the error, if any, and ListWorkerPoolsResponse
+                         * @returns {undefined}
+                         * @variation 1
+                         */
+                        Object.defineProperty(CloudBuild.prototype.listWorkerPools = function listWorkerPools(request, callback) {
+                            return this.rpcCall(listWorkerPools, $root.google.devtools.cloudbuild.v1.ListWorkerPoolsRequest, $root.google.devtools.cloudbuild.v1.ListWorkerPoolsResponse, request, callback);
+                        }, "name", { value: "ListWorkerPools" });
+    
+                        /**
+                         * Calls ListWorkerPools.
+                         * @function listWorkerPools
+                         * @memberof google.devtools.cloudbuild.v1.CloudBuild
+                         * @instance
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest} request ListWorkerPoolsRequest message or plain object
+                         * @returns {Promise<google.devtools.cloudbuild.v1.ListWorkerPoolsResponse>} Promise
+                         * @variation 2
+                         */
+    
                         return CloudBuild;
                     })();
     
@@ -3495,7 +3660,6 @@
                          * @property {Array.<string>|null} [tags] Build tags
                          * @property {Array.<google.devtools.cloudbuild.v1.ISecret>|null} [secrets] Build secrets
                          * @property {Object.<string,google.devtools.cloudbuild.v1.ITimeSpan>|null} [timing] Build timing
-                         * @property {string|null} [serviceAccount] Build serviceAccount
                          */
     
                         /**
@@ -3704,14 +3868,6 @@
                         Build.prototype.timing = $util.emptyObject;
     
                         /**
-                         * Build serviceAccount.
-                         * @member {string} serviceAccount
-                         * @memberof google.devtools.cloudbuild.v1.Build
-                         * @instance
-                         */
-                        Build.prototype.serviceAccount = "";
-    
-                        /**
                          * Creates a new Build instance using the specified properties.
                          * @function create
                          * @memberof google.devtools.cloudbuild.v1.Build
@@ -3789,8 +3945,6 @@
                                 $root.google.devtools.cloudbuild.v1.Artifacts.encode(message.artifacts, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
                             if (message.queueTtl != null && Object.hasOwnProperty.call(message, "queueTtl"))
                                 $root.google.protobuf.Duration.encode(message.queueTtl, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
-                            if (message.serviceAccount != null && Object.hasOwnProperty.call(message, "serviceAccount"))
-                                writer.uint32(/* id 42, wireType 2 =*/338).string(message.serviceAccount);
                             return writer;
                         };
     
@@ -3939,9 +4093,6 @@
                                         }
                                     }
                                     message.timing[key] = value;
-                                    break;
-                                case 42:
-                                    message.serviceAccount = reader.string();
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -4111,9 +4262,6 @@
                                         return "timing." + error;
                                 }
                             }
-                            if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
-                                if (!$util.isString(message.serviceAccount))
-                                    return "serviceAccount: string expected";
                             return null;
                         };
     
@@ -4280,8 +4428,6 @@
                                     message.timing[keys[i]] = $root.google.devtools.cloudbuild.v1.TimeSpan.fromObject(object.timing[keys[i]]);
                                 }
                             }
-                            if (object.serviceAccount != null)
-                                message.serviceAccount = String(object.serviceAccount);
                             return message;
                         };
     
@@ -4326,7 +4472,6 @@
                                 object.logUrl = "";
                                 object.artifacts = null;
                                 object.queueTtl = null;
-                                object.serviceAccount = "";
                             }
                             if (message.id != null && message.hasOwnProperty("id"))
                                 object.id = message.id;
@@ -4393,8 +4538,6 @@
                                 object.artifacts = $root.google.devtools.cloudbuild.v1.Artifacts.toObject(message.artifacts, options);
                             if (message.queueTtl != null && message.hasOwnProperty("queueTtl"))
                                 object.queueTtl = $root.google.protobuf.Duration.toObject(message.queueTtl, options);
-                            if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
-                                object.serviceAccount = message.serviceAccount;
                             return object;
                         };
     
@@ -10242,7 +10385,6 @@
                          * @property {google.devtools.cloudbuild.v1.BuildOptions.MachineType|null} [machineType] BuildOptions machineType
                          * @property {number|Long|null} [diskSizeGb] BuildOptions diskSizeGb
                          * @property {google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption|null} [substitutionOption] BuildOptions substitutionOption
-                         * @property {boolean|null} [dynamicSubstitutions] BuildOptions dynamicSubstitutions
                          * @property {google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption|null} [logStreamingOption] BuildOptions logStreamingOption
                          * @property {string|null} [workerPool] BuildOptions workerPool
                          * @property {google.devtools.cloudbuild.v1.BuildOptions.LoggingMode|null} [logging] BuildOptions logging
@@ -10309,14 +10451,6 @@
                          * @instance
                          */
                         BuildOptions.prototype.substitutionOption = 0;
-    
-                        /**
-                         * BuildOptions dynamicSubstitutions.
-                         * @member {boolean} dynamicSubstitutions
-                         * @memberof google.devtools.cloudbuild.v1.BuildOptions
-                         * @instance
-                         */
-                        BuildOptions.prototype.dynamicSubstitutions = false;
     
                         /**
                          * BuildOptions logStreamingOption.
@@ -10419,8 +10553,6 @@
                             if (message.volumes != null && message.volumes.length)
                                 for (var i = 0; i < message.volumes.length; ++i)
                                     $root.google.devtools.cloudbuild.v1.Volume.encode(message.volumes[i], writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                            if (message.dynamicSubstitutions != null && Object.hasOwnProperty.call(message, "dynamicSubstitutions"))
-                                writer.uint32(/* id 17, wireType 0 =*/136).bool(message.dynamicSubstitutions);
                             return writer;
                         };
     
@@ -10476,9 +10608,6 @@
                                     break;
                                 case 4:
                                     message.substitutionOption = reader.int32();
-                                    break;
-                                case 17:
-                                    message.dynamicSubstitutions = reader.bool();
                                     break;
                                 case 5:
                                     message.logStreamingOption = reader.int32();
@@ -10580,9 +10709,6 @@
                                 case 1:
                                     break;
                                 }
-                            if (message.dynamicSubstitutions != null && message.hasOwnProperty("dynamicSubstitutions"))
-                                if (typeof message.dynamicSubstitutions !== "boolean")
-                                    return "dynamicSubstitutions: boolean expected";
                             if (message.logStreamingOption != null && message.hasOwnProperty("logStreamingOption"))
                                 switch (message.logStreamingOption) {
                                 default:
@@ -10602,9 +10728,6 @@
                                 case 0:
                                 case 1:
                                 case 2:
-                                case 3:
-                                case 5:
-                                case 4:
                                     break;
                                 }
                             if (message.env != null && message.hasOwnProperty("env")) {
@@ -10709,8 +10832,6 @@
                                 message.substitutionOption = 1;
                                 break;
                             }
-                            if (object.dynamicSubstitutions != null)
-                                message.dynamicSubstitutions = Boolean(object.dynamicSubstitutions);
                             switch (object.logStreamingOption) {
                             case "STREAM_DEFAULT":
                             case 0:
@@ -10739,18 +10860,6 @@
                             case "GCS_ONLY":
                             case 2:
                                 message.logging = 2;
-                                break;
-                            case "STACKDRIVER_ONLY":
-                            case 3:
-                                message.logging = 3;
-                                break;
-                            case "CLOUD_LOGGING_ONLY":
-                            case 5:
-                                message.logging = 5;
-                                break;
-                            case "NONE":
-                            case 4:
-                                message.logging = 4;
                                 break;
                             }
                             if (object.env) {
@@ -10811,7 +10920,6 @@
                                     object.diskSizeGb = options.longs === String ? "0" : 0;
                                 object.workerPool = "";
                                 object.logging = options.enums === String ? "LOGGING_UNSPECIFIED" : 0;
-                                object.dynamicSubstitutions = false;
                             }
                             if (message.sourceProvenanceHash && message.sourceProvenanceHash.length) {
                                 object.sourceProvenanceHash = [];
@@ -10850,8 +10958,6 @@
                                 for (var j = 0; j < message.volumes.length; ++j)
                                     object.volumes[j] = $root.google.devtools.cloudbuild.v1.Volume.toObject(message.volumes[j], options);
                             }
-                            if (message.dynamicSubstitutions != null && message.hasOwnProperty("dynamicSubstitutions"))
-                                object.dynamicSubstitutions = message.dynamicSubstitutions;
                             return object;
                         };
     
@@ -10933,22 +11039,2263 @@
                          * @property {number} LOGGING_UNSPECIFIED=0 LOGGING_UNSPECIFIED value
                          * @property {number} LEGACY=1 LEGACY value
                          * @property {number} GCS_ONLY=2 GCS_ONLY value
-                         * @property {number} STACKDRIVER_ONLY=3 STACKDRIVER_ONLY value
-                         * @property {number} CLOUD_LOGGING_ONLY=5 CLOUD_LOGGING_ONLY value
-                         * @property {number} NONE=4 NONE value
                          */
                         BuildOptions.LoggingMode = (function() {
                             var valuesById = {}, values = Object.create(valuesById);
                             values[valuesById[0] = "LOGGING_UNSPECIFIED"] = 0;
                             values[valuesById[1] = "LEGACY"] = 1;
                             values[valuesById[2] = "GCS_ONLY"] = 2;
-                            values[valuesById[3] = "STACKDRIVER_ONLY"] = 3;
-                            values[valuesById[5] = "CLOUD_LOGGING_ONLY"] = 5;
-                            values[valuesById[4] = "NONE"] = 4;
                             return values;
                         })();
     
                         return BuildOptions;
+                    })();
+    
+                    v1.WorkerPool = (function() {
+    
+                        /**
+                         * Properties of a WorkerPool.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IWorkerPool
+                         * @property {string|null} [name] WorkerPool name
+                         * @property {string|null} [projectId] WorkerPool projectId
+                         * @property {string|null} [serviceAccountEmail] WorkerPool serviceAccountEmail
+                         * @property {number|Long|null} [workerCount] WorkerPool workerCount
+                         * @property {google.devtools.cloudbuild.v1.IWorkerConfig|null} [workerConfig] WorkerPool workerConfig
+                         * @property {Array.<google.devtools.cloudbuild.v1.WorkerPool.Region>|null} [regions] WorkerPool regions
+                         * @property {google.protobuf.ITimestamp|null} [createTime] WorkerPool createTime
+                         * @property {google.protobuf.ITimestamp|null} [updateTime] WorkerPool updateTime
+                         * @property {google.protobuf.ITimestamp|null} [deleteTime] WorkerPool deleteTime
+                         * @property {google.devtools.cloudbuild.v1.WorkerPool.Status|null} [status] WorkerPool status
+                         */
+    
+                        /**
+                         * Constructs a new WorkerPool.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a WorkerPool.
+                         * @implements IWorkerPool
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IWorkerPool=} [properties] Properties to set
+                         */
+                        function WorkerPool(properties) {
+                            this.regions = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * WorkerPool name.
+                         * @member {string} name
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.name = "";
+    
+                        /**
+                         * WorkerPool projectId.
+                         * @member {string} projectId
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.projectId = "";
+    
+                        /**
+                         * WorkerPool serviceAccountEmail.
+                         * @member {string} serviceAccountEmail
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.serviceAccountEmail = "";
+    
+                        /**
+                         * WorkerPool workerCount.
+                         * @member {number|Long} workerCount
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.workerCount = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                        /**
+                         * WorkerPool workerConfig.
+                         * @member {google.devtools.cloudbuild.v1.IWorkerConfig|null|undefined} workerConfig
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.workerConfig = null;
+    
+                        /**
+                         * WorkerPool regions.
+                         * @member {Array.<google.devtools.cloudbuild.v1.WorkerPool.Region>} regions
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.regions = $util.emptyArray;
+    
+                        /**
+                         * WorkerPool createTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} createTime
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.createTime = null;
+    
+                        /**
+                         * WorkerPool updateTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} updateTime
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.updateTime = null;
+    
+                        /**
+                         * WorkerPool deleteTime.
+                         * @member {google.protobuf.ITimestamp|null|undefined} deleteTime
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.deleteTime = null;
+    
+                        /**
+                         * WorkerPool status.
+                         * @member {google.devtools.cloudbuild.v1.WorkerPool.Status} status
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         */
+                        WorkerPool.prototype.status = 0;
+    
+                        /**
+                         * Creates a new WorkerPool instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerPool=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.WorkerPool} WorkerPool instance
+                         */
+                        WorkerPool.create = function create(properties) {
+                            return new WorkerPool(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified WorkerPool message. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerPool.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerPool} message WorkerPool message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        WorkerPool.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.projectId != null && Object.hasOwnProperty.call(message, "projectId"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.projectId);
+                            if (message.serviceAccountEmail != null && Object.hasOwnProperty.call(message, "serviceAccountEmail"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.serviceAccountEmail);
+                            if (message.workerCount != null && Object.hasOwnProperty.call(message, "workerCount"))
+                                writer.uint32(/* id 4, wireType 0 =*/32).int64(message.workerCount);
+                            if (message.regions != null && message.regions.length) {
+                                writer.uint32(/* id 9, wireType 2 =*/74).fork();
+                                for (var i = 0; i < message.regions.length; ++i)
+                                    writer.int32(message.regions[i]);
+                                writer.ldelim();
+                            }
+                            if (message.createTime != null && Object.hasOwnProperty.call(message, "createTime"))
+                                $root.google.protobuf.Timestamp.encode(message.createTime, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                            if (message.deleteTime != null && Object.hasOwnProperty.call(message, "deleteTime"))
+                                $root.google.protobuf.Timestamp.encode(message.deleteTime, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                            if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                                writer.uint32(/* id 13, wireType 0 =*/104).int32(message.status);
+                            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                                writer.uint32(/* id 14, wireType 2 =*/114).string(message.name);
+                            if (message.workerConfig != null && Object.hasOwnProperty.call(message, "workerConfig"))
+                                $root.google.devtools.cloudbuild.v1.WorkerConfig.encode(message.workerConfig, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                            if (message.updateTime != null && Object.hasOwnProperty.call(message, "updateTime"))
+                                $root.google.protobuf.Timestamp.encode(message.updateTime, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified WorkerPool message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerPool.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerPool} message WorkerPool message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        WorkerPool.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a WorkerPool message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.WorkerPool} WorkerPool
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        WorkerPool.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.WorkerPool();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 14:
+                                    message.name = reader.string();
+                                    break;
+                                case 2:
+                                    message.projectId = reader.string();
+                                    break;
+                                case 3:
+                                    message.serviceAccountEmail = reader.string();
+                                    break;
+                                case 4:
+                                    message.workerCount = reader.int64();
+                                    break;
+                                case 16:
+                                    message.workerConfig = $root.google.devtools.cloudbuild.v1.WorkerConfig.decode(reader, reader.uint32());
+                                    break;
+                                case 9:
+                                    if (!(message.regions && message.regions.length))
+                                        message.regions = [];
+                                    if ((tag & 7) === 2) {
+                                        var end2 = reader.uint32() + reader.pos;
+                                        while (reader.pos < end2)
+                                            message.regions.push(reader.int32());
+                                    } else
+                                        message.regions.push(reader.int32());
+                                    break;
+                                case 11:
+                                    message.createTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 17:
+                                    message.updateTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 12:
+                                    message.deleteTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                                    break;
+                                case 13:
+                                    message.status = reader.int32();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a WorkerPool message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.WorkerPool} WorkerPool
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        WorkerPool.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a WorkerPool message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        WorkerPool.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                if (!$util.isString(message.name))
+                                    return "name: string expected";
+                            if (message.projectId != null && message.hasOwnProperty("projectId"))
+                                if (!$util.isString(message.projectId))
+                                    return "projectId: string expected";
+                            if (message.serviceAccountEmail != null && message.hasOwnProperty("serviceAccountEmail"))
+                                if (!$util.isString(message.serviceAccountEmail))
+                                    return "serviceAccountEmail: string expected";
+                            if (message.workerCount != null && message.hasOwnProperty("workerCount"))
+                                if (!$util.isInteger(message.workerCount) && !(message.workerCount && $util.isInteger(message.workerCount.low) && $util.isInteger(message.workerCount.high)))
+                                    return "workerCount: integer|Long expected";
+                            if (message.workerConfig != null && message.hasOwnProperty("workerConfig")) {
+                                var error = $root.google.devtools.cloudbuild.v1.WorkerConfig.verify(message.workerConfig);
+                                if (error)
+                                    return "workerConfig." + error;
+                            }
+                            if (message.regions != null && message.hasOwnProperty("regions")) {
+                                if (!Array.isArray(message.regions))
+                                    return "regions: array expected";
+                                for (var i = 0; i < message.regions.length; ++i)
+                                    switch (message.regions[i]) {
+                                    default:
+                                        return "regions: enum value[] expected";
+                                    case 0:
+                                    case 1:
+                                    case 2:
+                                    case 3:
+                                    case 4:
+                                        break;
+                                    }
+                            }
+                            if (message.createTime != null && message.hasOwnProperty("createTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.createTime);
+                                if (error)
+                                    return "createTime." + error;
+                            }
+                            if (message.updateTime != null && message.hasOwnProperty("updateTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.updateTime);
+                                if (error)
+                                    return "updateTime." + error;
+                            }
+                            if (message.deleteTime != null && message.hasOwnProperty("deleteTime")) {
+                                var error = $root.google.protobuf.Timestamp.verify(message.deleteTime);
+                                if (error)
+                                    return "deleteTime." + error;
+                            }
+                            if (message.status != null && message.hasOwnProperty("status"))
+                                switch (message.status) {
+                                default:
+                                    return "status: enum value expected";
+                                case 0:
+                                case 1:
+                                case 2:
+                                case 3:
+                                case 4:
+                                    break;
+                                }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a WorkerPool message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.WorkerPool} WorkerPool
+                         */
+                        WorkerPool.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.WorkerPool)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.WorkerPool();
+                            if (object.name != null)
+                                message.name = String(object.name);
+                            if (object.projectId != null)
+                                message.projectId = String(object.projectId);
+                            if (object.serviceAccountEmail != null)
+                                message.serviceAccountEmail = String(object.serviceAccountEmail);
+                            if (object.workerCount != null)
+                                if ($util.Long)
+                                    (message.workerCount = $util.Long.fromValue(object.workerCount)).unsigned = false;
+                                else if (typeof object.workerCount === "string")
+                                    message.workerCount = parseInt(object.workerCount, 10);
+                                else if (typeof object.workerCount === "number")
+                                    message.workerCount = object.workerCount;
+                                else if (typeof object.workerCount === "object")
+                                    message.workerCount = new $util.LongBits(object.workerCount.low >>> 0, object.workerCount.high >>> 0).toNumber();
+                            if (object.workerConfig != null) {
+                                if (typeof object.workerConfig !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerPool.workerConfig: object expected");
+                                message.workerConfig = $root.google.devtools.cloudbuild.v1.WorkerConfig.fromObject(object.workerConfig);
+                            }
+                            if (object.regions) {
+                                if (!Array.isArray(object.regions))
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerPool.regions: array expected");
+                                message.regions = [];
+                                for (var i = 0; i < object.regions.length; ++i)
+                                    switch (object.regions[i]) {
+                                    default:
+                                    case "REGION_UNSPECIFIED":
+                                    case 0:
+                                        message.regions[i] = 0;
+                                        break;
+                                    case "US_CENTRAL1":
+                                    case 1:
+                                        message.regions[i] = 1;
+                                        break;
+                                    case "US_WEST1":
+                                    case 2:
+                                        message.regions[i] = 2;
+                                        break;
+                                    case "US_EAST1":
+                                    case 3:
+                                        message.regions[i] = 3;
+                                        break;
+                                    case "US_EAST4":
+                                    case 4:
+                                        message.regions[i] = 4;
+                                        break;
+                                    }
+                            }
+                            if (object.createTime != null) {
+                                if (typeof object.createTime !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerPool.createTime: object expected");
+                                message.createTime = $root.google.protobuf.Timestamp.fromObject(object.createTime);
+                            }
+                            if (object.updateTime != null) {
+                                if (typeof object.updateTime !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerPool.updateTime: object expected");
+                                message.updateTime = $root.google.protobuf.Timestamp.fromObject(object.updateTime);
+                            }
+                            if (object.deleteTime != null) {
+                                if (typeof object.deleteTime !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerPool.deleteTime: object expected");
+                                message.deleteTime = $root.google.protobuf.Timestamp.fromObject(object.deleteTime);
+                            }
+                            switch (object.status) {
+                            case "STATUS_UNSPECIFIED":
+                            case 0:
+                                message.status = 0;
+                                break;
+                            case "CREATING":
+                            case 1:
+                                message.status = 1;
+                                break;
+                            case "RUNNING":
+                            case 2:
+                                message.status = 2;
+                                break;
+                            case "DELETING":
+                            case 3:
+                                message.status = 3;
+                                break;
+                            case "DELETED":
+                            case 4:
+                                message.status = 4;
+                                break;
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a WorkerPool message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.WorkerPool} message WorkerPool
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        WorkerPool.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.regions = [];
+                            if (options.defaults) {
+                                object.projectId = "";
+                                object.serviceAccountEmail = "";
+                                if ($util.Long) {
+                                    var long = new $util.Long(0, 0, false);
+                                    object.workerCount = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                } else
+                                    object.workerCount = options.longs === String ? "0" : 0;
+                                object.createTime = null;
+                                object.deleteTime = null;
+                                object.status = options.enums === String ? "STATUS_UNSPECIFIED" : 0;
+                                object.name = "";
+                                object.workerConfig = null;
+                                object.updateTime = null;
+                            }
+                            if (message.projectId != null && message.hasOwnProperty("projectId"))
+                                object.projectId = message.projectId;
+                            if (message.serviceAccountEmail != null && message.hasOwnProperty("serviceAccountEmail"))
+                                object.serviceAccountEmail = message.serviceAccountEmail;
+                            if (message.workerCount != null && message.hasOwnProperty("workerCount"))
+                                if (typeof message.workerCount === "number")
+                                    object.workerCount = options.longs === String ? String(message.workerCount) : message.workerCount;
+                                else
+                                    object.workerCount = options.longs === String ? $util.Long.prototype.toString.call(message.workerCount) : options.longs === Number ? new $util.LongBits(message.workerCount.low >>> 0, message.workerCount.high >>> 0).toNumber() : message.workerCount;
+                            if (message.regions && message.regions.length) {
+                                object.regions = [];
+                                for (var j = 0; j < message.regions.length; ++j)
+                                    object.regions[j] = options.enums === String ? $root.google.devtools.cloudbuild.v1.WorkerPool.Region[message.regions[j]] : message.regions[j];
+                            }
+                            if (message.createTime != null && message.hasOwnProperty("createTime"))
+                                object.createTime = $root.google.protobuf.Timestamp.toObject(message.createTime, options);
+                            if (message.deleteTime != null && message.hasOwnProperty("deleteTime"))
+                                object.deleteTime = $root.google.protobuf.Timestamp.toObject(message.deleteTime, options);
+                            if (message.status != null && message.hasOwnProperty("status"))
+                                object.status = options.enums === String ? $root.google.devtools.cloudbuild.v1.WorkerPool.Status[message.status] : message.status;
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                object.name = message.name;
+                            if (message.workerConfig != null && message.hasOwnProperty("workerConfig"))
+                                object.workerConfig = $root.google.devtools.cloudbuild.v1.WorkerConfig.toObject(message.workerConfig, options);
+                            if (message.updateTime != null && message.hasOwnProperty("updateTime"))
+                                object.updateTime = $root.google.protobuf.Timestamp.toObject(message.updateTime, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this WorkerPool to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.WorkerPool
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        WorkerPool.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        /**
+                         * Region enum.
+                         * @name google.devtools.cloudbuild.v1.WorkerPool.Region
+                         * @enum {number}
+                         * @property {number} REGION_UNSPECIFIED=0 REGION_UNSPECIFIED value
+                         * @property {number} US_CENTRAL1=1 US_CENTRAL1 value
+                         * @property {number} US_WEST1=2 US_WEST1 value
+                         * @property {number} US_EAST1=3 US_EAST1 value
+                         * @property {number} US_EAST4=4 US_EAST4 value
+                         */
+                        WorkerPool.Region = (function() {
+                            var valuesById = {}, values = Object.create(valuesById);
+                            values[valuesById[0] = "REGION_UNSPECIFIED"] = 0;
+                            values[valuesById[1] = "US_CENTRAL1"] = 1;
+                            values[valuesById[2] = "US_WEST1"] = 2;
+                            values[valuesById[3] = "US_EAST1"] = 3;
+                            values[valuesById[4] = "US_EAST4"] = 4;
+                            return values;
+                        })();
+    
+                        /**
+                         * Status enum.
+                         * @name google.devtools.cloudbuild.v1.WorkerPool.Status
+                         * @enum {number}
+                         * @property {number} STATUS_UNSPECIFIED=0 STATUS_UNSPECIFIED value
+                         * @property {number} CREATING=1 CREATING value
+                         * @property {number} RUNNING=2 RUNNING value
+                         * @property {number} DELETING=3 DELETING value
+                         * @property {number} DELETED=4 DELETED value
+                         */
+                        WorkerPool.Status = (function() {
+                            var valuesById = {}, values = Object.create(valuesById);
+                            values[valuesById[0] = "STATUS_UNSPECIFIED"] = 0;
+                            values[valuesById[1] = "CREATING"] = 1;
+                            values[valuesById[2] = "RUNNING"] = 2;
+                            values[valuesById[3] = "DELETING"] = 3;
+                            values[valuesById[4] = "DELETED"] = 4;
+                            return values;
+                        })();
+    
+                        return WorkerPool;
+                    })();
+    
+                    v1.WorkerConfig = (function() {
+    
+                        /**
+                         * Properties of a WorkerConfig.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IWorkerConfig
+                         * @property {string|null} [machineType] WorkerConfig machineType
+                         * @property {number|Long|null} [diskSizeGb] WorkerConfig diskSizeGb
+                         * @property {google.devtools.cloudbuild.v1.INetwork|null} [network] WorkerConfig network
+                         * @property {string|null} [tag] WorkerConfig tag
+                         */
+    
+                        /**
+                         * Constructs a new WorkerConfig.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a WorkerConfig.
+                         * @implements IWorkerConfig
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IWorkerConfig=} [properties] Properties to set
+                         */
+                        function WorkerConfig(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * WorkerConfig machineType.
+                         * @member {string} machineType
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @instance
+                         */
+                        WorkerConfig.prototype.machineType = "";
+    
+                        /**
+                         * WorkerConfig diskSizeGb.
+                         * @member {number|Long} diskSizeGb
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @instance
+                         */
+                        WorkerConfig.prototype.diskSizeGb = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                        /**
+                         * WorkerConfig network.
+                         * @member {google.devtools.cloudbuild.v1.INetwork|null|undefined} network
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @instance
+                         */
+                        WorkerConfig.prototype.network = null;
+    
+                        /**
+                         * WorkerConfig tag.
+                         * @member {string} tag
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @instance
+                         */
+                        WorkerConfig.prototype.tag = "";
+    
+                        /**
+                         * Creates a new WorkerConfig instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerConfig=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.WorkerConfig} WorkerConfig instance
+                         */
+                        WorkerConfig.create = function create(properties) {
+                            return new WorkerConfig(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified WorkerConfig message. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerConfig.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerConfig} message WorkerConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        WorkerConfig.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.machineType != null && Object.hasOwnProperty.call(message, "machineType"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.machineType);
+                            if (message.diskSizeGb != null && Object.hasOwnProperty.call(message, "diskSizeGb"))
+                                writer.uint32(/* id 2, wireType 0 =*/16).int64(message.diskSizeGb);
+                            if (message.network != null && Object.hasOwnProperty.call(message, "network"))
+                                $root.google.devtools.cloudbuild.v1.Network.encode(message.network, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            if (message.tag != null && Object.hasOwnProperty.call(message, "tag"))
+                                writer.uint32(/* id 4, wireType 2 =*/34).string(message.tag);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified WorkerConfig message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerConfig.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IWorkerConfig} message WorkerConfig message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        WorkerConfig.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a WorkerConfig message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.WorkerConfig} WorkerConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        WorkerConfig.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.WorkerConfig();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.machineType = reader.string();
+                                    break;
+                                case 2:
+                                    message.diskSizeGb = reader.int64();
+                                    break;
+                                case 3:
+                                    message.network = $root.google.devtools.cloudbuild.v1.Network.decode(reader, reader.uint32());
+                                    break;
+                                case 4:
+                                    message.tag = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a WorkerConfig message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.WorkerConfig} WorkerConfig
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        WorkerConfig.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a WorkerConfig message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        WorkerConfig.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.machineType != null && message.hasOwnProperty("machineType"))
+                                if (!$util.isString(message.machineType))
+                                    return "machineType: string expected";
+                            if (message.diskSizeGb != null && message.hasOwnProperty("diskSizeGb"))
+                                if (!$util.isInteger(message.diskSizeGb) && !(message.diskSizeGb && $util.isInteger(message.diskSizeGb.low) && $util.isInteger(message.diskSizeGb.high)))
+                                    return "diskSizeGb: integer|Long expected";
+                            if (message.network != null && message.hasOwnProperty("network")) {
+                                var error = $root.google.devtools.cloudbuild.v1.Network.verify(message.network);
+                                if (error)
+                                    return "network." + error;
+                            }
+                            if (message.tag != null && message.hasOwnProperty("tag"))
+                                if (!$util.isString(message.tag))
+                                    return "tag: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a WorkerConfig message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.WorkerConfig} WorkerConfig
+                         */
+                        WorkerConfig.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.WorkerConfig)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.WorkerConfig();
+                            if (object.machineType != null)
+                                message.machineType = String(object.machineType);
+                            if (object.diskSizeGb != null)
+                                if ($util.Long)
+                                    (message.diskSizeGb = $util.Long.fromValue(object.diskSizeGb)).unsigned = false;
+                                else if (typeof object.diskSizeGb === "string")
+                                    message.diskSizeGb = parseInt(object.diskSizeGb, 10);
+                                else if (typeof object.diskSizeGb === "number")
+                                    message.diskSizeGb = object.diskSizeGb;
+                                else if (typeof object.diskSizeGb === "object")
+                                    message.diskSizeGb = new $util.LongBits(object.diskSizeGb.low >>> 0, object.diskSizeGb.high >>> 0).toNumber();
+                            if (object.network != null) {
+                                if (typeof object.network !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.WorkerConfig.network: object expected");
+                                message.network = $root.google.devtools.cloudbuild.v1.Network.fromObject(object.network);
+                            }
+                            if (object.tag != null)
+                                message.tag = String(object.tag);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a WorkerConfig message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.WorkerConfig} message WorkerConfig
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        WorkerConfig.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.machineType = "";
+                                if ($util.Long) {
+                                    var long = new $util.Long(0, 0, false);
+                                    object.diskSizeGb = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                                } else
+                                    object.diskSizeGb = options.longs === String ? "0" : 0;
+                                object.network = null;
+                                object.tag = "";
+                            }
+                            if (message.machineType != null && message.hasOwnProperty("machineType"))
+                                object.machineType = message.machineType;
+                            if (message.diskSizeGb != null && message.hasOwnProperty("diskSizeGb"))
+                                if (typeof message.diskSizeGb === "number")
+                                    object.diskSizeGb = options.longs === String ? String(message.diskSizeGb) : message.diskSizeGb;
+                                else
+                                    object.diskSizeGb = options.longs === String ? $util.Long.prototype.toString.call(message.diskSizeGb) : options.longs === Number ? new $util.LongBits(message.diskSizeGb.low >>> 0, message.diskSizeGb.high >>> 0).toNumber() : message.diskSizeGb;
+                            if (message.network != null && message.hasOwnProperty("network"))
+                                object.network = $root.google.devtools.cloudbuild.v1.Network.toObject(message.network, options);
+                            if (message.tag != null && message.hasOwnProperty("tag"))
+                                object.tag = message.tag;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this WorkerConfig to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.WorkerConfig
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        WorkerConfig.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return WorkerConfig;
+                    })();
+    
+                    v1.Network = (function() {
+    
+                        /**
+                         * Properties of a Network.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface INetwork
+                         * @property {string|null} [projectId] Network projectId
+                         * @property {string|null} [network] Network network
+                         * @property {string|null} [subnetwork] Network subnetwork
+                         */
+    
+                        /**
+                         * Constructs a new Network.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a Network.
+                         * @implements INetwork
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.INetwork=} [properties] Properties to set
+                         */
+                        function Network(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * Network projectId.
+                         * @member {string} projectId
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @instance
+                         */
+                        Network.prototype.projectId = "";
+    
+                        /**
+                         * Network network.
+                         * @member {string} network
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @instance
+                         */
+                        Network.prototype.network = "";
+    
+                        /**
+                         * Network subnetwork.
+                         * @member {string} subnetwork
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @instance
+                         */
+                        Network.prototype.subnetwork = "";
+    
+                        /**
+                         * Creates a new Network instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.INetwork=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.Network} Network instance
+                         */
+                        Network.create = function create(properties) {
+                            return new Network(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified Network message. Does not implicitly {@link google.devtools.cloudbuild.v1.Network.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.INetwork} message Network message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Network.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.projectId != null && Object.hasOwnProperty.call(message, "projectId"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.projectId);
+                            if (message.network != null && Object.hasOwnProperty.call(message, "network"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.network);
+                            if (message.subnetwork != null && Object.hasOwnProperty.call(message, "subnetwork"))
+                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.subnetwork);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified Network message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.Network.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.INetwork} message Network message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        Network.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a Network message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.Network} Network
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Network.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.Network();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.projectId = reader.string();
+                                    break;
+                                case 2:
+                                    message.network = reader.string();
+                                    break;
+                                case 3:
+                                    message.subnetwork = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a Network message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.Network} Network
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        Network.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a Network message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        Network.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.projectId != null && message.hasOwnProperty("projectId"))
+                                if (!$util.isString(message.projectId))
+                                    return "projectId: string expected";
+                            if (message.network != null && message.hasOwnProperty("network"))
+                                if (!$util.isString(message.network))
+                                    return "network: string expected";
+                            if (message.subnetwork != null && message.hasOwnProperty("subnetwork"))
+                                if (!$util.isString(message.subnetwork))
+                                    return "subnetwork: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a Network message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.Network} Network
+                         */
+                        Network.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.Network)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.Network();
+                            if (object.projectId != null)
+                                message.projectId = String(object.projectId);
+                            if (object.network != null)
+                                message.network = String(object.network);
+                            if (object.subnetwork != null)
+                                message.subnetwork = String(object.subnetwork);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a Network message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.Network} message Network
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        Network.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.projectId = "";
+                                object.network = "";
+                                object.subnetwork = "";
+                            }
+                            if (message.projectId != null && message.hasOwnProperty("projectId"))
+                                object.projectId = message.projectId;
+                            if (message.network != null && message.hasOwnProperty("network"))
+                                object.network = message.network;
+                            if (message.subnetwork != null && message.hasOwnProperty("subnetwork"))
+                                object.subnetwork = message.subnetwork;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this Network to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.Network
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        Network.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return Network;
+                    })();
+    
+                    v1.CreateWorkerPoolRequest = (function() {
+    
+                        /**
+                         * Properties of a CreateWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface ICreateWorkerPoolRequest
+                         * @property {string|null} [parent] CreateWorkerPoolRequest parent
+                         * @property {google.devtools.cloudbuild.v1.IWorkerPool|null} [workerPool] CreateWorkerPoolRequest workerPool
+                         */
+    
+                        /**
+                         * Constructs a new CreateWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a CreateWorkerPoolRequest.
+                         * @implements ICreateWorkerPoolRequest
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest=} [properties] Properties to set
+                         */
+                        function CreateWorkerPoolRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * CreateWorkerPoolRequest parent.
+                         * @member {string} parent
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @instance
+                         */
+                        CreateWorkerPoolRequest.prototype.parent = "";
+    
+                        /**
+                         * CreateWorkerPoolRequest workerPool.
+                         * @member {google.devtools.cloudbuild.v1.IWorkerPool|null|undefined} workerPool
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @instance
+                         */
+                        CreateWorkerPoolRequest.prototype.workerPool = null;
+    
+                        /**
+                         * Creates a new CreateWorkerPoolRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.CreateWorkerPoolRequest} CreateWorkerPoolRequest instance
+                         */
+                        CreateWorkerPoolRequest.create = function create(properties) {
+                            return new CreateWorkerPoolRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified CreateWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.CreateWorkerPoolRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest} message CreateWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        CreateWorkerPoolRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.parent);
+                            if (message.workerPool != null && Object.hasOwnProperty.call(message, "workerPool"))
+                                $root.google.devtools.cloudbuild.v1.WorkerPool.encode(message.workerPool, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified CreateWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.CreateWorkerPoolRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest} message CreateWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        CreateWorkerPoolRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a CreateWorkerPoolRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.CreateWorkerPoolRequest} CreateWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        CreateWorkerPoolRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.CreateWorkerPoolRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.parent = reader.string();
+                                    break;
+                                case 2:
+                                    message.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a CreateWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.CreateWorkerPoolRequest} CreateWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        CreateWorkerPoolRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a CreateWorkerPoolRequest message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        CreateWorkerPoolRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                if (!$util.isString(message.parent))
+                                    return "parent: string expected";
+                            if (message.workerPool != null && message.hasOwnProperty("workerPool")) {
+                                var error = $root.google.devtools.cloudbuild.v1.WorkerPool.verify(message.workerPool);
+                                if (error)
+                                    return "workerPool." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a CreateWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.CreateWorkerPoolRequest} CreateWorkerPoolRequest
+                         */
+                        CreateWorkerPoolRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.CreateWorkerPoolRequest)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.CreateWorkerPoolRequest();
+                            if (object.parent != null)
+                                message.parent = String(object.parent);
+                            if (object.workerPool != null) {
+                                if (typeof object.workerPool !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.CreateWorkerPoolRequest.workerPool: object expected");
+                                message.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.fromObject(object.workerPool);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a CreateWorkerPoolRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.CreateWorkerPoolRequest} message CreateWorkerPoolRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        CreateWorkerPoolRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.parent = "";
+                                object.workerPool = null;
+                            }
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                object.parent = message.parent;
+                            if (message.workerPool != null && message.hasOwnProperty("workerPool"))
+                                object.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.toObject(message.workerPool, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this CreateWorkerPoolRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.CreateWorkerPoolRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        CreateWorkerPoolRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return CreateWorkerPoolRequest;
+                    })();
+    
+                    v1.GetWorkerPoolRequest = (function() {
+    
+                        /**
+                         * Properties of a GetWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IGetWorkerPoolRequest
+                         * @property {string|null} [name] GetWorkerPoolRequest name
+                         */
+    
+                        /**
+                         * Constructs a new GetWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a GetWorkerPoolRequest.
+                         * @implements IGetWorkerPoolRequest
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest=} [properties] Properties to set
+                         */
+                        function GetWorkerPoolRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * GetWorkerPoolRequest name.
+                         * @member {string} name
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @instance
+                         */
+                        GetWorkerPoolRequest.prototype.name = "";
+    
+                        /**
+                         * Creates a new GetWorkerPoolRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.GetWorkerPoolRequest} GetWorkerPoolRequest instance
+                         */
+                        GetWorkerPoolRequest.create = function create(properties) {
+                            return new GetWorkerPoolRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified GetWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.GetWorkerPoolRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest} message GetWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GetWorkerPoolRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified GetWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.GetWorkerPoolRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IGetWorkerPoolRequest} message GetWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        GetWorkerPoolRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a GetWorkerPoolRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.GetWorkerPoolRequest} GetWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GetWorkerPoolRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.GetWorkerPoolRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.name = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a GetWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.GetWorkerPoolRequest} GetWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        GetWorkerPoolRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a GetWorkerPoolRequest message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        GetWorkerPoolRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                if (!$util.isString(message.name))
+                                    return "name: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a GetWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.GetWorkerPoolRequest} GetWorkerPoolRequest
+                         */
+                        GetWorkerPoolRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.GetWorkerPoolRequest)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.GetWorkerPoolRequest();
+                            if (object.name != null)
+                                message.name = String(object.name);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a GetWorkerPoolRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.GetWorkerPoolRequest} message GetWorkerPoolRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        GetWorkerPoolRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.name = "";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                object.name = message.name;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this GetWorkerPoolRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.GetWorkerPoolRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        GetWorkerPoolRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return GetWorkerPoolRequest;
+                    })();
+    
+                    v1.DeleteWorkerPoolRequest = (function() {
+    
+                        /**
+                         * Properties of a DeleteWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IDeleteWorkerPoolRequest
+                         * @property {string|null} [name] DeleteWorkerPoolRequest name
+                         */
+    
+                        /**
+                         * Constructs a new DeleteWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a DeleteWorkerPoolRequest.
+                         * @implements IDeleteWorkerPoolRequest
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest=} [properties] Properties to set
+                         */
+                        function DeleteWorkerPoolRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * DeleteWorkerPoolRequest name.
+                         * @member {string} name
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @instance
+                         */
+                        DeleteWorkerPoolRequest.prototype.name = "";
+    
+                        /**
+                         * Creates a new DeleteWorkerPoolRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest} DeleteWorkerPoolRequest instance
+                         */
+                        DeleteWorkerPoolRequest.create = function create(properties) {
+                            return new DeleteWorkerPoolRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified DeleteWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest} message DeleteWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        DeleteWorkerPoolRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified DeleteWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest} message DeleteWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        DeleteWorkerPoolRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a DeleteWorkerPoolRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest} DeleteWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        DeleteWorkerPoolRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.name = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a DeleteWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest} DeleteWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        DeleteWorkerPoolRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a DeleteWorkerPoolRequest message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        DeleteWorkerPoolRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                if (!$util.isString(message.name))
+                                    return "name: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a DeleteWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest} DeleteWorkerPoolRequest
+                         */
+                        DeleteWorkerPoolRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest();
+                            if (object.name != null)
+                                message.name = String(object.name);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a DeleteWorkerPoolRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest} message DeleteWorkerPoolRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        DeleteWorkerPoolRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.name = "";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                object.name = message.name;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this DeleteWorkerPoolRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        DeleteWorkerPoolRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return DeleteWorkerPoolRequest;
+                    })();
+    
+                    v1.UpdateWorkerPoolRequest = (function() {
+    
+                        /**
+                         * Properties of an UpdateWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IUpdateWorkerPoolRequest
+                         * @property {string|null} [name] UpdateWorkerPoolRequest name
+                         * @property {google.devtools.cloudbuild.v1.IWorkerPool|null} [workerPool] UpdateWorkerPoolRequest workerPool
+                         */
+    
+                        /**
+                         * Constructs a new UpdateWorkerPoolRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents an UpdateWorkerPoolRequest.
+                         * @implements IUpdateWorkerPoolRequest
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest=} [properties] Properties to set
+                         */
+                        function UpdateWorkerPoolRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * UpdateWorkerPoolRequest name.
+                         * @member {string} name
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @instance
+                         */
+                        UpdateWorkerPoolRequest.prototype.name = "";
+    
+                        /**
+                         * UpdateWorkerPoolRequest workerPool.
+                         * @member {google.devtools.cloudbuild.v1.IWorkerPool|null|undefined} workerPool
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @instance
+                         */
+                        UpdateWorkerPoolRequest.prototype.workerPool = null;
+    
+                        /**
+                         * Creates a new UpdateWorkerPoolRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest} UpdateWorkerPoolRequest instance
+                         */
+                        UpdateWorkerPoolRequest.create = function create(properties) {
+                            return new UpdateWorkerPoolRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified UpdateWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest} message UpdateWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        UpdateWorkerPoolRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                            if (message.workerPool != null && Object.hasOwnProperty.call(message, "workerPool"))
+                                $root.google.devtools.cloudbuild.v1.WorkerPool.encode(message.workerPool, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified UpdateWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest} message UpdateWorkerPoolRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        UpdateWorkerPoolRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes an UpdateWorkerPoolRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest} UpdateWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        UpdateWorkerPoolRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 2:
+                                    message.name = reader.string();
+                                    break;
+                                case 3:
+                                    message.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.decode(reader, reader.uint32());
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes an UpdateWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest} UpdateWorkerPoolRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        UpdateWorkerPoolRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies an UpdateWorkerPoolRequest message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        UpdateWorkerPoolRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                if (!$util.isString(message.name))
+                                    return "name: string expected";
+                            if (message.workerPool != null && message.hasOwnProperty("workerPool")) {
+                                var error = $root.google.devtools.cloudbuild.v1.WorkerPool.verify(message.workerPool);
+                                if (error)
+                                    return "workerPool." + error;
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates an UpdateWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest} UpdateWorkerPoolRequest
+                         */
+                        UpdateWorkerPoolRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest();
+                            if (object.name != null)
+                                message.name = String(object.name);
+                            if (object.workerPool != null) {
+                                if (typeof object.workerPool !== "object")
+                                    throw TypeError(".google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest.workerPool: object expected");
+                                message.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.fromObject(object.workerPool);
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from an UpdateWorkerPoolRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest} message UpdateWorkerPoolRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        UpdateWorkerPoolRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults) {
+                                object.name = "";
+                                object.workerPool = null;
+                            }
+                            if (message.name != null && message.hasOwnProperty("name"))
+                                object.name = message.name;
+                            if (message.workerPool != null && message.hasOwnProperty("workerPool"))
+                                object.workerPool = $root.google.devtools.cloudbuild.v1.WorkerPool.toObject(message.workerPool, options);
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this UpdateWorkerPoolRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        UpdateWorkerPoolRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return UpdateWorkerPoolRequest;
+                    })();
+    
+                    v1.ListWorkerPoolsRequest = (function() {
+    
+                        /**
+                         * Properties of a ListWorkerPoolsRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IListWorkerPoolsRequest
+                         * @property {string|null} [parent] ListWorkerPoolsRequest parent
+                         */
+    
+                        /**
+                         * Constructs a new ListWorkerPoolsRequest.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a ListWorkerPoolsRequest.
+                         * @implements IListWorkerPoolsRequest
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest=} [properties] Properties to set
+                         */
+                        function ListWorkerPoolsRequest(properties) {
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * ListWorkerPoolsRequest parent.
+                         * @member {string} parent
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @instance
+                         */
+                        ListWorkerPoolsRequest.prototype.parent = "";
+    
+                        /**
+                         * Creates a new ListWorkerPoolsRequest instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsRequest} ListWorkerPoolsRequest instance
+                         */
+                        ListWorkerPoolsRequest.create = function create(properties) {
+                            return new ListWorkerPoolsRequest(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified ListWorkerPoolsRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsRequest.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest} message ListWorkerPoolsRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ListWorkerPoolsRequest.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.parent != null && Object.hasOwnProperty.call(message, "parent"))
+                                writer.uint32(/* id 1, wireType 2 =*/10).string(message.parent);
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified ListWorkerPoolsRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsRequest.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsRequest} message ListWorkerPoolsRequest message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ListWorkerPoolsRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a ListWorkerPoolsRequest message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsRequest} ListWorkerPoolsRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ListWorkerPoolsRequest.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.ListWorkerPoolsRequest();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    message.parent = reader.string();
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a ListWorkerPoolsRequest message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsRequest} ListWorkerPoolsRequest
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ListWorkerPoolsRequest.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a ListWorkerPoolsRequest message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        ListWorkerPoolsRequest.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                if (!$util.isString(message.parent))
+                                    return "parent: string expected";
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a ListWorkerPoolsRequest message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsRequest} ListWorkerPoolsRequest
+                         */
+                        ListWorkerPoolsRequest.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.ListWorkerPoolsRequest)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.ListWorkerPoolsRequest();
+                            if (object.parent != null)
+                                message.parent = String(object.parent);
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a ListWorkerPoolsRequest message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.ListWorkerPoolsRequest} message ListWorkerPoolsRequest
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        ListWorkerPoolsRequest.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.defaults)
+                                object.parent = "";
+                            if (message.parent != null && message.hasOwnProperty("parent"))
+                                object.parent = message.parent;
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this ListWorkerPoolsRequest to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsRequest
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        ListWorkerPoolsRequest.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return ListWorkerPoolsRequest;
+                    })();
+    
+                    v1.ListWorkerPoolsResponse = (function() {
+    
+                        /**
+                         * Properties of a ListWorkerPoolsResponse.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @interface IListWorkerPoolsResponse
+                         * @property {Array.<google.devtools.cloudbuild.v1.IWorkerPool>|null} [workerPools] ListWorkerPoolsResponse workerPools
+                         */
+    
+                        /**
+                         * Constructs a new ListWorkerPoolsResponse.
+                         * @memberof google.devtools.cloudbuild.v1
+                         * @classdesc Represents a ListWorkerPoolsResponse.
+                         * @implements IListWorkerPoolsResponse
+                         * @constructor
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsResponse=} [properties] Properties to set
+                         */
+                        function ListWorkerPoolsResponse(properties) {
+                            this.workerPools = [];
+                            if (properties)
+                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                                    if (properties[keys[i]] != null)
+                                        this[keys[i]] = properties[keys[i]];
+                        }
+    
+                        /**
+                         * ListWorkerPoolsResponse workerPools.
+                         * @member {Array.<google.devtools.cloudbuild.v1.IWorkerPool>} workerPools
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @instance
+                         */
+                        ListWorkerPoolsResponse.prototype.workerPools = $util.emptyArray;
+    
+                        /**
+                         * Creates a new ListWorkerPoolsResponse instance using the specified properties.
+                         * @function create
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsResponse=} [properties] Properties to set
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} ListWorkerPoolsResponse instance
+                         */
+                        ListWorkerPoolsResponse.create = function create(properties) {
+                            return new ListWorkerPoolsResponse(properties);
+                        };
+    
+                        /**
+                         * Encodes the specified ListWorkerPoolsResponse message. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.verify|verify} messages.
+                         * @function encode
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsResponse} message ListWorkerPoolsResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ListWorkerPoolsResponse.encode = function encode(message, writer) {
+                            if (!writer)
+                                writer = $Writer.create();
+                            if (message.workerPools != null && message.workerPools.length)
+                                for (var i = 0; i < message.workerPools.length; ++i)
+                                    $root.google.devtools.cloudbuild.v1.WorkerPool.encode(message.workerPools[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                            return writer;
+                        };
+    
+                        /**
+                         * Encodes the specified ListWorkerPoolsResponse message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.verify|verify} messages.
+                         * @function encodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.IListWorkerPoolsResponse} message ListWorkerPoolsResponse message or plain object to encode
+                         * @param {$protobuf.Writer} [writer] Writer to encode to
+                         * @returns {$protobuf.Writer} Writer
+                         */
+                        ListWorkerPoolsResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                            return this.encode(message, writer).ldelim();
+                        };
+    
+                        /**
+                         * Decodes a ListWorkerPoolsResponse message from the specified reader or buffer.
+                         * @function decode
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @param {number} [length] Message length if known beforehand
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} ListWorkerPoolsResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ListWorkerPoolsResponse.decode = function decode(reader, length) {
+                            if (!(reader instanceof $Reader))
+                                reader = $Reader.create(reader);
+                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.devtools.cloudbuild.v1.ListWorkerPoolsResponse();
+                            while (reader.pos < end) {
+                                var tag = reader.uint32();
+                                switch (tag >>> 3) {
+                                case 1:
+                                    if (!(message.workerPools && message.workerPools.length))
+                                        message.workerPools = [];
+                                    message.workerPools.push($root.google.devtools.cloudbuild.v1.WorkerPool.decode(reader, reader.uint32()));
+                                    break;
+                                default:
+                                    reader.skipType(tag & 7);
+                                    break;
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Decodes a ListWorkerPoolsResponse message from the specified reader or buffer, length delimited.
+                         * @function decodeDelimited
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} ListWorkerPoolsResponse
+                         * @throws {Error} If the payload is not a reader or valid buffer
+                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                         */
+                        ListWorkerPoolsResponse.decodeDelimited = function decodeDelimited(reader) {
+                            if (!(reader instanceof $Reader))
+                                reader = new $Reader(reader);
+                            return this.decode(reader, reader.uint32());
+                        };
+    
+                        /**
+                         * Verifies a ListWorkerPoolsResponse message.
+                         * @function verify
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {Object.<string,*>} message Plain object to verify
+                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                         */
+                        ListWorkerPoolsResponse.verify = function verify(message) {
+                            if (typeof message !== "object" || message === null)
+                                return "object expected";
+                            if (message.workerPools != null && message.hasOwnProperty("workerPools")) {
+                                if (!Array.isArray(message.workerPools))
+                                    return "workerPools: array expected";
+                                for (var i = 0; i < message.workerPools.length; ++i) {
+                                    var error = $root.google.devtools.cloudbuild.v1.WorkerPool.verify(message.workerPools[i]);
+                                    if (error)
+                                        return "workerPools." + error;
+                                }
+                            }
+                            return null;
+                        };
+    
+                        /**
+                         * Creates a ListWorkerPoolsResponse message from a plain object. Also converts values to their respective internal types.
+                         * @function fromObject
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {Object.<string,*>} object Plain object
+                         * @returns {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} ListWorkerPoolsResponse
+                         */
+                        ListWorkerPoolsResponse.fromObject = function fromObject(object) {
+                            if (object instanceof $root.google.devtools.cloudbuild.v1.ListWorkerPoolsResponse)
+                                return object;
+                            var message = new $root.google.devtools.cloudbuild.v1.ListWorkerPoolsResponse();
+                            if (object.workerPools) {
+                                if (!Array.isArray(object.workerPools))
+                                    throw TypeError(".google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.workerPools: array expected");
+                                message.workerPools = [];
+                                for (var i = 0; i < object.workerPools.length; ++i) {
+                                    if (typeof object.workerPools[i] !== "object")
+                                        throw TypeError(".google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.workerPools: object expected");
+                                    message.workerPools[i] = $root.google.devtools.cloudbuild.v1.WorkerPool.fromObject(object.workerPools[i]);
+                                }
+                            }
+                            return message;
+                        };
+    
+                        /**
+                         * Creates a plain object from a ListWorkerPoolsResponse message. Also converts values to other types if specified.
+                         * @function toObject
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @static
+                         * @param {google.devtools.cloudbuild.v1.ListWorkerPoolsResponse} message ListWorkerPoolsResponse
+                         * @param {$protobuf.IConversionOptions} [options] Conversion options
+                         * @returns {Object.<string,*>} Plain object
+                         */
+                        ListWorkerPoolsResponse.toObject = function toObject(message, options) {
+                            if (!options)
+                                options = {};
+                            var object = {};
+                            if (options.arrays || options.defaults)
+                                object.workerPools = [];
+                            if (message.workerPools && message.workerPools.length) {
+                                object.workerPools = [];
+                                for (var j = 0; j < message.workerPools.length; ++j)
+                                    object.workerPools[j] = $root.google.devtools.cloudbuild.v1.WorkerPool.toObject(message.workerPools[j], options);
+                            }
+                            return object;
+                        };
+    
+                        /**
+                         * Converts this ListWorkerPoolsResponse to JSON.
+                         * @function toJSON
+                         * @memberof google.devtools.cloudbuild.v1.ListWorkerPoolsResponse
+                         * @instance
+                         * @returns {Object.<string,*>} JSON object
+                         */
+                        ListWorkerPoolsResponse.prototype.toJSON = function toJSON() {
+                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                        };
+    
+                        return ListWorkerPoolsResponse;
                     })();
     
                     return v1;
@@ -11893,565 +14240,6 @@
                 values[valuesById[4] = "INPUT_ONLY"] = 4;
                 values[valuesById[5] = "IMMUTABLE"] = 5;
                 return values;
-            })();
-    
-            api.ResourceDescriptor = (function() {
-    
-                /**
-                 * Properties of a ResourceDescriptor.
-                 * @memberof google.api
-                 * @interface IResourceDescriptor
-                 * @property {string|null} [type] ResourceDescriptor type
-                 * @property {Array.<string>|null} [pattern] ResourceDescriptor pattern
-                 * @property {string|null} [nameField] ResourceDescriptor nameField
-                 * @property {google.api.ResourceDescriptor.History|null} [history] ResourceDescriptor history
-                 * @property {string|null} [plural] ResourceDescriptor plural
-                 * @property {string|null} [singular] ResourceDescriptor singular
-                 */
-    
-                /**
-                 * Constructs a new ResourceDescriptor.
-                 * @memberof google.api
-                 * @classdesc Represents a ResourceDescriptor.
-                 * @implements IResourceDescriptor
-                 * @constructor
-                 * @param {google.api.IResourceDescriptor=} [properties] Properties to set
-                 */
-                function ResourceDescriptor(properties) {
-                    this.pattern = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * ResourceDescriptor type.
-                 * @member {string} type
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.type = "";
-    
-                /**
-                 * ResourceDescriptor pattern.
-                 * @member {Array.<string>} pattern
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.pattern = $util.emptyArray;
-    
-                /**
-                 * ResourceDescriptor nameField.
-                 * @member {string} nameField
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.nameField = "";
-    
-                /**
-                 * ResourceDescriptor history.
-                 * @member {google.api.ResourceDescriptor.History} history
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.history = 0;
-    
-                /**
-                 * ResourceDescriptor plural.
-                 * @member {string} plural
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.plural = "";
-    
-                /**
-                 * ResourceDescriptor singular.
-                 * @member {string} singular
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 */
-                ResourceDescriptor.prototype.singular = "";
-    
-                /**
-                 * Creates a new ResourceDescriptor instance using the specified properties.
-                 * @function create
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {google.api.IResourceDescriptor=} [properties] Properties to set
-                 * @returns {google.api.ResourceDescriptor} ResourceDescriptor instance
-                 */
-                ResourceDescriptor.create = function create(properties) {
-                    return new ResourceDescriptor(properties);
-                };
-    
-                /**
-                 * Encodes the specified ResourceDescriptor message. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
-                 * @function encode
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {google.api.IResourceDescriptor} message ResourceDescriptor message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                ResourceDescriptor.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.type != null && Object.hasOwnProperty.call(message, "type"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
-                    if (message.pattern != null && message.pattern.length)
-                        for (var i = 0; i < message.pattern.length; ++i)
-                            writer.uint32(/* id 2, wireType 2 =*/18).string(message.pattern[i]);
-                    if (message.nameField != null && Object.hasOwnProperty.call(message, "nameField"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.nameField);
-                    if (message.history != null && Object.hasOwnProperty.call(message, "history"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).int32(message.history);
-                    if (message.plural != null && Object.hasOwnProperty.call(message, "plural"))
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.plural);
-                    if (message.singular != null && Object.hasOwnProperty.call(message, "singular"))
-                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.singular);
-                    return writer;
-                };
-    
-                /**
-                 * Encodes the specified ResourceDescriptor message, length delimited. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {google.api.IResourceDescriptor} message ResourceDescriptor message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                ResourceDescriptor.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-    
-                /**
-                 * Decodes a ResourceDescriptor message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {google.api.ResourceDescriptor} ResourceDescriptor
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                ResourceDescriptor.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.api.ResourceDescriptor();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.type = reader.string();
-                            break;
-                        case 2:
-                            if (!(message.pattern && message.pattern.length))
-                                message.pattern = [];
-                            message.pattern.push(reader.string());
-                            break;
-                        case 3:
-                            message.nameField = reader.string();
-                            break;
-                        case 4:
-                            message.history = reader.int32();
-                            break;
-                        case 5:
-                            message.plural = reader.string();
-                            break;
-                        case 6:
-                            message.singular = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Decodes a ResourceDescriptor message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {google.api.ResourceDescriptor} ResourceDescriptor
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                ResourceDescriptor.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-    
-                /**
-                 * Verifies a ResourceDescriptor message.
-                 * @function verify
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                ResourceDescriptor.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.type != null && message.hasOwnProperty("type"))
-                        if (!$util.isString(message.type))
-                            return "type: string expected";
-                    if (message.pattern != null && message.hasOwnProperty("pattern")) {
-                        if (!Array.isArray(message.pattern))
-                            return "pattern: array expected";
-                        for (var i = 0; i < message.pattern.length; ++i)
-                            if (!$util.isString(message.pattern[i]))
-                                return "pattern: string[] expected";
-                    }
-                    if (message.nameField != null && message.hasOwnProperty("nameField"))
-                        if (!$util.isString(message.nameField))
-                            return "nameField: string expected";
-                    if (message.history != null && message.hasOwnProperty("history"))
-                        switch (message.history) {
-                        default:
-                            return "history: enum value expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                            break;
-                        }
-                    if (message.plural != null && message.hasOwnProperty("plural"))
-                        if (!$util.isString(message.plural))
-                            return "plural: string expected";
-                    if (message.singular != null && message.hasOwnProperty("singular"))
-                        if (!$util.isString(message.singular))
-                            return "singular: string expected";
-                    return null;
-                };
-    
-                /**
-                 * Creates a ResourceDescriptor message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {google.api.ResourceDescriptor} ResourceDescriptor
-                 */
-                ResourceDescriptor.fromObject = function fromObject(object) {
-                    if (object instanceof $root.google.api.ResourceDescriptor)
-                        return object;
-                    var message = new $root.google.api.ResourceDescriptor();
-                    if (object.type != null)
-                        message.type = String(object.type);
-                    if (object.pattern) {
-                        if (!Array.isArray(object.pattern))
-                            throw TypeError(".google.api.ResourceDescriptor.pattern: array expected");
-                        message.pattern = [];
-                        for (var i = 0; i < object.pattern.length; ++i)
-                            message.pattern[i] = String(object.pattern[i]);
-                    }
-                    if (object.nameField != null)
-                        message.nameField = String(object.nameField);
-                    switch (object.history) {
-                    case "HISTORY_UNSPECIFIED":
-                    case 0:
-                        message.history = 0;
-                        break;
-                    case "ORIGINALLY_SINGLE_PATTERN":
-                    case 1:
-                        message.history = 1;
-                        break;
-                    case "FUTURE_MULTI_PATTERN":
-                    case 2:
-                        message.history = 2;
-                        break;
-                    }
-                    if (object.plural != null)
-                        message.plural = String(object.plural);
-                    if (object.singular != null)
-                        message.singular = String(object.singular);
-                    return message;
-                };
-    
-                /**
-                 * Creates a plain object from a ResourceDescriptor message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof google.api.ResourceDescriptor
-                 * @static
-                 * @param {google.api.ResourceDescriptor} message ResourceDescriptor
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                ResourceDescriptor.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.arrays || options.defaults)
-                        object.pattern = [];
-                    if (options.defaults) {
-                        object.type = "";
-                        object.nameField = "";
-                        object.history = options.enums === String ? "HISTORY_UNSPECIFIED" : 0;
-                        object.plural = "";
-                        object.singular = "";
-                    }
-                    if (message.type != null && message.hasOwnProperty("type"))
-                        object.type = message.type;
-                    if (message.pattern && message.pattern.length) {
-                        object.pattern = [];
-                        for (var j = 0; j < message.pattern.length; ++j)
-                            object.pattern[j] = message.pattern[j];
-                    }
-                    if (message.nameField != null && message.hasOwnProperty("nameField"))
-                        object.nameField = message.nameField;
-                    if (message.history != null && message.hasOwnProperty("history"))
-                        object.history = options.enums === String ? $root.google.api.ResourceDescriptor.History[message.history] : message.history;
-                    if (message.plural != null && message.hasOwnProperty("plural"))
-                        object.plural = message.plural;
-                    if (message.singular != null && message.hasOwnProperty("singular"))
-                        object.singular = message.singular;
-                    return object;
-                };
-    
-                /**
-                 * Converts this ResourceDescriptor to JSON.
-                 * @function toJSON
-                 * @memberof google.api.ResourceDescriptor
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                ResourceDescriptor.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-    
-                /**
-                 * History enum.
-                 * @name google.api.ResourceDescriptor.History
-                 * @enum {number}
-                 * @property {number} HISTORY_UNSPECIFIED=0 HISTORY_UNSPECIFIED value
-                 * @property {number} ORIGINALLY_SINGLE_PATTERN=1 ORIGINALLY_SINGLE_PATTERN value
-                 * @property {number} FUTURE_MULTI_PATTERN=2 FUTURE_MULTI_PATTERN value
-                 */
-                ResourceDescriptor.History = (function() {
-                    var valuesById = {}, values = Object.create(valuesById);
-                    values[valuesById[0] = "HISTORY_UNSPECIFIED"] = 0;
-                    values[valuesById[1] = "ORIGINALLY_SINGLE_PATTERN"] = 1;
-                    values[valuesById[2] = "FUTURE_MULTI_PATTERN"] = 2;
-                    return values;
-                })();
-    
-                return ResourceDescriptor;
-            })();
-    
-            api.ResourceReference = (function() {
-    
-                /**
-                 * Properties of a ResourceReference.
-                 * @memberof google.api
-                 * @interface IResourceReference
-                 * @property {string|null} [type] ResourceReference type
-                 * @property {string|null} [childType] ResourceReference childType
-                 */
-    
-                /**
-                 * Constructs a new ResourceReference.
-                 * @memberof google.api
-                 * @classdesc Represents a ResourceReference.
-                 * @implements IResourceReference
-                 * @constructor
-                 * @param {google.api.IResourceReference=} [properties] Properties to set
-                 */
-                function ResourceReference(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * ResourceReference type.
-                 * @member {string} type
-                 * @memberof google.api.ResourceReference
-                 * @instance
-                 */
-                ResourceReference.prototype.type = "";
-    
-                /**
-                 * ResourceReference childType.
-                 * @member {string} childType
-                 * @memberof google.api.ResourceReference
-                 * @instance
-                 */
-                ResourceReference.prototype.childType = "";
-    
-                /**
-                 * Creates a new ResourceReference instance using the specified properties.
-                 * @function create
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {google.api.IResourceReference=} [properties] Properties to set
-                 * @returns {google.api.ResourceReference} ResourceReference instance
-                 */
-                ResourceReference.create = function create(properties) {
-                    return new ResourceReference(properties);
-                };
-    
-                /**
-                 * Encodes the specified ResourceReference message. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
-                 * @function encode
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {google.api.IResourceReference} message ResourceReference message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                ResourceReference.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.type != null && Object.hasOwnProperty.call(message, "type"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
-                    if (message.childType != null && Object.hasOwnProperty.call(message, "childType"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.childType);
-                    return writer;
-                };
-    
-                /**
-                 * Encodes the specified ResourceReference message, length delimited. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {google.api.IResourceReference} message ResourceReference message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                ResourceReference.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-    
-                /**
-                 * Decodes a ResourceReference message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {google.api.ResourceReference} ResourceReference
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                ResourceReference.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.api.ResourceReference();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.type = reader.string();
-                            break;
-                        case 2:
-                            message.childType = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Decodes a ResourceReference message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {google.api.ResourceReference} ResourceReference
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                ResourceReference.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-    
-                /**
-                 * Verifies a ResourceReference message.
-                 * @function verify
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                ResourceReference.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.type != null && message.hasOwnProperty("type"))
-                        if (!$util.isString(message.type))
-                            return "type: string expected";
-                    if (message.childType != null && message.hasOwnProperty("childType"))
-                        if (!$util.isString(message.childType))
-                            return "childType: string expected";
-                    return null;
-                };
-    
-                /**
-                 * Creates a ResourceReference message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {google.api.ResourceReference} ResourceReference
-                 */
-                ResourceReference.fromObject = function fromObject(object) {
-                    if (object instanceof $root.google.api.ResourceReference)
-                        return object;
-                    var message = new $root.google.api.ResourceReference();
-                    if (object.type != null)
-                        message.type = String(object.type);
-                    if (object.childType != null)
-                        message.childType = String(object.childType);
-                    return message;
-                };
-    
-                /**
-                 * Creates a plain object from a ResourceReference message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof google.api.ResourceReference
-                 * @static
-                 * @param {google.api.ResourceReference} message ResourceReference
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                ResourceReference.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.defaults) {
-                        object.type = "";
-                        object.childType = "";
-                    }
-                    if (message.type != null && message.hasOwnProperty("type"))
-                        object.type = message.type;
-                    if (message.childType != null && message.hasOwnProperty("childType"))
-                        object.childType = message.childType;
-                    return object;
-                };
-    
-                /**
-                 * Converts this ResourceReference to JSON.
-                 * @function toJSON
-                 * @memberof google.api.ResourceReference
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                ResourceReference.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-    
-                return ResourceReference;
             })();
     
             return api;
@@ -16647,7 +18435,6 @@
                  * @property {string|null} [phpMetadataNamespace] FileOptions phpMetadataNamespace
                  * @property {string|null} [rubyPackage] FileOptions rubyPackage
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FileOptions uninterpretedOption
-                 * @property {Array.<google.api.IResourceDescriptor>|null} [".google.api.resourceDefinition"] FileOptions .google.api.resourceDefinition
                  */
     
                 /**
@@ -16660,7 +18447,6 @@
                  */
                 function FileOptions(properties) {
                     this.uninterpretedOption = [];
-                    this[".google.api.resourceDefinition"] = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -16836,14 +18622,6 @@
                 FileOptions.prototype.uninterpretedOption = $util.emptyArray;
     
                 /**
-                 * FileOptions .google.api.resourceDefinition.
-                 * @member {Array.<google.api.IResourceDescriptor>} .google.api.resourceDefinition
-                 * @memberof google.protobuf.FileOptions
-                 * @instance
-                 */
-                FileOptions.prototype[".google.api.resourceDefinition"] = $util.emptyArray;
-    
-                /**
                  * Creates a new FileOptions instance using the specified properties.
                  * @function create
                  * @memberof google.protobuf.FileOptions
@@ -16910,9 +18688,6 @@
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                    if (message[".google.api.resourceDefinition"] != null && message[".google.api.resourceDefinition"].length)
-                        for (var i = 0; i < message[".google.api.resourceDefinition"].length; ++i)
-                            $root.google.api.ResourceDescriptor.encode(message[".google.api.resourceDefinition"][i], writer.uint32(/* id 1053, wireType 2 =*/8426).fork()).ldelim();
                     return writer;
                 };
     
@@ -17011,11 +18786,6 @@
                             if (!(message.uninterpretedOption && message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
-                            break;
-                        case 1053:
-                            if (!(message[".google.api.resourceDefinition"] && message[".google.api.resourceDefinition"].length))
-                                message[".google.api.resourceDefinition"] = [];
-                            message[".google.api.resourceDefinition"].push($root.google.api.ResourceDescriptor.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17127,15 +18897,6 @@
                                 return "uninterpretedOption." + error;
                         }
                     }
-                    if (message[".google.api.resourceDefinition"] != null && message.hasOwnProperty(".google.api.resourceDefinition")) {
-                        if (!Array.isArray(message[".google.api.resourceDefinition"]))
-                            return ".google.api.resourceDefinition: array expected";
-                        for (var i = 0; i < message[".google.api.resourceDefinition"].length; ++i) {
-                            var error = $root.google.api.ResourceDescriptor.verify(message[".google.api.resourceDefinition"][i]);
-                            if (error)
-                                return ".google.api.resourceDefinition." + error;
-                        }
-                    }
                     return null;
                 };
     
@@ -17213,16 +18974,6 @@
                             message.uninterpretedOption[i] = $root.google.protobuf.UninterpretedOption.fromObject(object.uninterpretedOption[i]);
                         }
                     }
-                    if (object[".google.api.resourceDefinition"]) {
-                        if (!Array.isArray(object[".google.api.resourceDefinition"]))
-                            throw TypeError(".google.protobuf.FileOptions..google.api.resourceDefinition: array expected");
-                        message[".google.api.resourceDefinition"] = [];
-                        for (var i = 0; i < object[".google.api.resourceDefinition"].length; ++i) {
-                            if (typeof object[".google.api.resourceDefinition"][i] !== "object")
-                                throw TypeError(".google.protobuf.FileOptions..google.api.resourceDefinition: object expected");
-                            message[".google.api.resourceDefinition"][i] = $root.google.api.ResourceDescriptor.fromObject(object[".google.api.resourceDefinition"][i]);
-                        }
-                    }
                     return message;
                 };
     
@@ -17239,10 +18990,8 @@
                     if (!options)
                         options = {};
                     var object = {};
-                    if (options.arrays || options.defaults) {
+                    if (options.arrays || options.defaults)
                         object.uninterpretedOption = [];
-                        object[".google.api.resourceDefinition"] = [];
-                    }
                     if (options.defaults) {
                         object.javaPackage = "";
                         object.javaOuterClassname = "";
@@ -17310,11 +19059,6 @@
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
                             object.uninterpretedOption[j] = $root.google.protobuf.UninterpretedOption.toObject(message.uninterpretedOption[j], options);
                     }
-                    if (message[".google.api.resourceDefinition"] && message[".google.api.resourceDefinition"].length) {
-                        object[".google.api.resourceDefinition"] = [];
-                        for (var j = 0; j < message[".google.api.resourceDefinition"].length; ++j)
-                            object[".google.api.resourceDefinition"][j] = $root.google.api.ResourceDescriptor.toObject(message[".google.api.resourceDefinition"][j], options);
-                    }
                     return object;
                 };
     
@@ -17359,7 +19103,6 @@
                  * @property {boolean|null} [deprecated] MessageOptions deprecated
                  * @property {boolean|null} [mapEntry] MessageOptions mapEntry
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] MessageOptions uninterpretedOption
-                 * @property {google.api.IResourceDescriptor|null} [".google.api.resource"] MessageOptions .google.api.resource
                  */
     
                 /**
@@ -17419,14 +19162,6 @@
                 MessageOptions.prototype.uninterpretedOption = $util.emptyArray;
     
                 /**
-                 * MessageOptions .google.api.resource.
-                 * @member {google.api.IResourceDescriptor|null|undefined} .google.api.resource
-                 * @memberof google.protobuf.MessageOptions
-                 * @instance
-                 */
-                MessageOptions.prototype[".google.api.resource"] = null;
-    
-                /**
                  * Creates a new MessageOptions instance using the specified properties.
                  * @function create
                  * @memberof google.protobuf.MessageOptions
@@ -17461,8 +19196,6 @@
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                    if (message[".google.api.resource"] != null && Object.hasOwnProperty.call(message, ".google.api.resource"))
-                        $root.google.api.ResourceDescriptor.encode(message[".google.api.resource"], writer.uint32(/* id 1053, wireType 2 =*/8426).fork()).ldelim();
                     return writer;
                 };
     
@@ -17513,9 +19246,6 @@
                             if (!(message.uninterpretedOption && message.uninterpretedOption.length))
                                 message.uninterpretedOption = [];
                             message.uninterpretedOption.push($root.google.protobuf.UninterpretedOption.decode(reader, reader.uint32()));
-                            break;
-                        case 1053:
-                            message[".google.api.resource"] = $root.google.api.ResourceDescriptor.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17573,11 +19303,6 @@
                                 return "uninterpretedOption." + error;
                         }
                     }
-                    if (message[".google.api.resource"] != null && message.hasOwnProperty(".google.api.resource")) {
-                        var error = $root.google.api.ResourceDescriptor.verify(message[".google.api.resource"]);
-                        if (error)
-                            return ".google.api.resource." + error;
-                    }
                     return null;
                 };
     
@@ -17611,11 +19336,6 @@
                             message.uninterpretedOption[i] = $root.google.protobuf.UninterpretedOption.fromObject(object.uninterpretedOption[i]);
                         }
                     }
-                    if (object[".google.api.resource"] != null) {
-                        if (typeof object[".google.api.resource"] !== "object")
-                            throw TypeError(".google.protobuf.MessageOptions..google.api.resource: object expected");
-                        message[".google.api.resource"] = $root.google.api.ResourceDescriptor.fromObject(object[".google.api.resource"]);
-                    }
                     return message;
                 };
     
@@ -17639,7 +19359,6 @@
                         object.noStandardDescriptorAccessor = false;
                         object.deprecated = false;
                         object.mapEntry = false;
-                        object[".google.api.resource"] = null;
                     }
                     if (message.messageSetWireFormat != null && message.hasOwnProperty("messageSetWireFormat"))
                         object.messageSetWireFormat = message.messageSetWireFormat;
@@ -17654,8 +19373,6 @@
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
                             object.uninterpretedOption[j] = $root.google.protobuf.UninterpretedOption.toObject(message.uninterpretedOption[j], options);
                     }
-                    if (message[".google.api.resource"] != null && message.hasOwnProperty(".google.api.resource"))
-                        object[".google.api.resource"] = $root.google.api.ResourceDescriptor.toObject(message[".google.api.resource"], options);
                     return object;
                 };
     
@@ -17687,7 +19404,6 @@
                  * @property {boolean|null} [weak] FieldOptions weak
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FieldOptions uninterpretedOption
                  * @property {Array.<google.api.FieldBehavior>|null} [".google.api.fieldBehavior"] FieldOptions .google.api.fieldBehavior
-                 * @property {google.api.IResourceReference|null} [".google.api.resourceReference"] FieldOptions .google.api.resourceReference
                  */
     
                 /**
@@ -17772,14 +19488,6 @@
                 FieldOptions.prototype[".google.api.fieldBehavior"] = $util.emptyArray;
     
                 /**
-                 * FieldOptions .google.api.resourceReference.
-                 * @member {google.api.IResourceReference|null|undefined} .google.api.resourceReference
-                 * @memberof google.protobuf.FieldOptions
-                 * @instance
-                 */
-                FieldOptions.prototype[".google.api.resourceReference"] = null;
-    
-                /**
                  * Creates a new FieldOptions instance using the specified properties.
                  * @function create
                  * @memberof google.protobuf.FieldOptions
@@ -17824,8 +19532,6 @@
                             writer.int32(message[".google.api.fieldBehavior"][i]);
                         writer.ldelim();
                     }
-                    if (message[".google.api.resourceReference"] != null && Object.hasOwnProperty.call(message, ".google.api.resourceReference"))
-                        $root.google.api.ResourceReference.encode(message[".google.api.resourceReference"], writer.uint32(/* id 1055, wireType 2 =*/8442).fork()).ldelim();
                     return writer;
                 };
     
@@ -17892,9 +19598,6 @@
                                     message[".google.api.fieldBehavior"].push(reader.int32());
                             } else
                                 message[".google.api.fieldBehavior"].push(reader.int32());
-                            break;
-                        case 1055:
-                            message[".google.api.resourceReference"] = $root.google.api.ResourceReference.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17985,11 +19688,6 @@
                             case 5:
                                 break;
                             }
-                    }
-                    if (message[".google.api.resourceReference"] != null && message.hasOwnProperty(".google.api.resourceReference")) {
-                        var error = $root.google.api.ResourceReference.verify(message[".google.api.resourceReference"]);
-                        if (error)
-                            return ".google.api.resourceReference." + error;
                     }
                     return null;
                 };
@@ -18085,11 +19783,6 @@
                                 break;
                             }
                     }
-                    if (object[".google.api.resourceReference"] != null) {
-                        if (typeof object[".google.api.resourceReference"] !== "object")
-                            throw TypeError(".google.protobuf.FieldOptions..google.api.resourceReference: object expected");
-                        message[".google.api.resourceReference"] = $root.google.api.ResourceReference.fromObject(object[".google.api.resourceReference"]);
-                    }
                     return message;
                 };
     
@@ -18117,7 +19810,6 @@
                         object.lazy = false;
                         object.jstype = options.enums === String ? "JS_NORMAL" : 0;
                         object.weak = false;
-                        object[".google.api.resourceReference"] = null;
                     }
                     if (message.ctype != null && message.hasOwnProperty("ctype"))
                         object.ctype = options.enums === String ? $root.google.protobuf.FieldOptions.CType[message.ctype] : message.ctype;
@@ -18141,8 +19833,6 @@
                         for (var j = 0; j < message[".google.api.fieldBehavior"].length; ++j)
                             object[".google.api.fieldBehavior"][j] = options.enums === String ? $root.google.api.FieldBehavior[message[".google.api.fieldBehavior"][j]] : message[".google.api.fieldBehavior"][j];
                     }
-                    if (message[".google.api.resourceReference"] != null && message.hasOwnProperty(".google.api.resourceReference"))
-                        object[".google.api.resourceReference"] = $root.google.api.ResourceReference.toObject(message[".google.api.resourceReference"], options);
                     return object;
                 };
     
@@ -21769,209 +23459,6 @@
                 };
     
                 return Empty;
-            })();
-    
-            protobuf.FieldMask = (function() {
-    
-                /**
-                 * Properties of a FieldMask.
-                 * @memberof google.protobuf
-                 * @interface IFieldMask
-                 * @property {Array.<string>|null} [paths] FieldMask paths
-                 */
-    
-                /**
-                 * Constructs a new FieldMask.
-                 * @memberof google.protobuf
-                 * @classdesc Represents a FieldMask.
-                 * @implements IFieldMask
-                 * @constructor
-                 * @param {google.protobuf.IFieldMask=} [properties] Properties to set
-                 */
-                function FieldMask(properties) {
-                    this.paths = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * FieldMask paths.
-                 * @member {Array.<string>} paths
-                 * @memberof google.protobuf.FieldMask
-                 * @instance
-                 */
-                FieldMask.prototype.paths = $util.emptyArray;
-    
-                /**
-                 * Creates a new FieldMask instance using the specified properties.
-                 * @function create
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {google.protobuf.IFieldMask=} [properties] Properties to set
-                 * @returns {google.protobuf.FieldMask} FieldMask instance
-                 */
-                FieldMask.create = function create(properties) {
-                    return new FieldMask(properties);
-                };
-    
-                /**
-                 * Encodes the specified FieldMask message. Does not implicitly {@link google.protobuf.FieldMask.verify|verify} messages.
-                 * @function encode
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {google.protobuf.IFieldMask} message FieldMask message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FieldMask.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.paths != null && message.paths.length)
-                        for (var i = 0; i < message.paths.length; ++i)
-                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.paths[i]);
-                    return writer;
-                };
-    
-                /**
-                 * Encodes the specified FieldMask message, length delimited. Does not implicitly {@link google.protobuf.FieldMask.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {google.protobuf.IFieldMask} message FieldMask message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FieldMask.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-    
-                /**
-                 * Decodes a FieldMask message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {google.protobuf.FieldMask} FieldMask
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FieldMask.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.FieldMask();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            if (!(message.paths && message.paths.length))
-                                message.paths = [];
-                            message.paths.push(reader.string());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Decodes a FieldMask message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {google.protobuf.FieldMask} FieldMask
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FieldMask.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-    
-                /**
-                 * Verifies a FieldMask message.
-                 * @function verify
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                FieldMask.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.paths != null && message.hasOwnProperty("paths")) {
-                        if (!Array.isArray(message.paths))
-                            return "paths: array expected";
-                        for (var i = 0; i < message.paths.length; ++i)
-                            if (!$util.isString(message.paths[i]))
-                                return "paths: string[] expected";
-                    }
-                    return null;
-                };
-    
-                /**
-                 * Creates a FieldMask message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {google.protobuf.FieldMask} FieldMask
-                 */
-                FieldMask.fromObject = function fromObject(object) {
-                    if (object instanceof $root.google.protobuf.FieldMask)
-                        return object;
-                    var message = new $root.google.protobuf.FieldMask();
-                    if (object.paths) {
-                        if (!Array.isArray(object.paths))
-                            throw TypeError(".google.protobuf.FieldMask.paths: array expected");
-                        message.paths = [];
-                        for (var i = 0; i < object.paths.length; ++i)
-                            message.paths[i] = String(object.paths[i]);
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Creates a plain object from a FieldMask message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof google.protobuf.FieldMask
-                 * @static
-                 * @param {google.protobuf.FieldMask} message FieldMask
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                FieldMask.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.arrays || options.defaults)
-                        object.paths = [];
-                    if (message.paths && message.paths.length) {
-                        object.paths = [];
-                        for (var j = 0; j < message.paths.length; ++j)
-                            object.paths[j] = message.paths[j];
-                    }
-                    return object;
-                };
-    
-                /**
-                 * Converts this FieldMask to JSON.
-                 * @function toJSON
-                 * @memberof google.protobuf.FieldMask
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                FieldMask.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-    
-                return FieldMask;
             })();
     
             protobuf.Timestamp = (function() {

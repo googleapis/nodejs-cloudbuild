@@ -199,6 +199,76 @@ export namespace google {
                      * @returns Promise
                      */
                     public runBuildTrigger(request: google.devtools.cloudbuild.v1.IRunBuildTriggerRequest): Promise<google.longrunning.Operation>;
+
+                    /**
+                     * Calls CreateWorkerPool.
+                     * @param request CreateWorkerPoolRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and WorkerPool
+                     */
+                    public createWorkerPool(request: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest, callback: google.devtools.cloudbuild.v1.CloudBuild.CreateWorkerPoolCallback): void;
+
+                    /**
+                     * Calls CreateWorkerPool.
+                     * @param request CreateWorkerPoolRequest message or plain object
+                     * @returns Promise
+                     */
+                    public createWorkerPool(request: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest): Promise<google.devtools.cloudbuild.v1.WorkerPool>;
+
+                    /**
+                     * Calls GetWorkerPool.
+                     * @param request GetWorkerPoolRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and WorkerPool
+                     */
+                    public getWorkerPool(request: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest, callback: google.devtools.cloudbuild.v1.CloudBuild.GetWorkerPoolCallback): void;
+
+                    /**
+                     * Calls GetWorkerPool.
+                     * @param request GetWorkerPoolRequest message or plain object
+                     * @returns Promise
+                     */
+                    public getWorkerPool(request: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest): Promise<google.devtools.cloudbuild.v1.WorkerPool>;
+
+                    /**
+                     * Calls DeleteWorkerPool.
+                     * @param request DeleteWorkerPoolRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and Empty
+                     */
+                    public deleteWorkerPool(request: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest, callback: google.devtools.cloudbuild.v1.CloudBuild.DeleteWorkerPoolCallback): void;
+
+                    /**
+                     * Calls DeleteWorkerPool.
+                     * @param request DeleteWorkerPoolRequest message or plain object
+                     * @returns Promise
+                     */
+                    public deleteWorkerPool(request: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest): Promise<google.protobuf.Empty>;
+
+                    /**
+                     * Calls UpdateWorkerPool.
+                     * @param request UpdateWorkerPoolRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and WorkerPool
+                     */
+                    public updateWorkerPool(request: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest, callback: google.devtools.cloudbuild.v1.CloudBuild.UpdateWorkerPoolCallback): void;
+
+                    /**
+                     * Calls UpdateWorkerPool.
+                     * @param request UpdateWorkerPoolRequest message or plain object
+                     * @returns Promise
+                     */
+                    public updateWorkerPool(request: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest): Promise<google.devtools.cloudbuild.v1.WorkerPool>;
+
+                    /**
+                     * Calls ListWorkerPools.
+                     * @param request ListWorkerPoolsRequest message or plain object
+                     * @param callback Node-style callback called with the error, if any, and ListWorkerPoolsResponse
+                     */
+                    public listWorkerPools(request: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest, callback: google.devtools.cloudbuild.v1.CloudBuild.ListWorkerPoolsCallback): void;
+
+                    /**
+                     * Calls ListWorkerPools.
+                     * @param request ListWorkerPoolsRequest message or plain object
+                     * @returns Promise
+                     */
+                    public listWorkerPools(request: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest): Promise<google.devtools.cloudbuild.v1.ListWorkerPoolsResponse>;
                 }
 
                 namespace CloudBuild {
@@ -279,6 +349,41 @@ export namespace google {
                      * @param [response] Operation
                      */
                     type RunBuildTriggerCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
+
+                    /**
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createWorkerPool}.
+                     * @param error Error, if any
+                     * @param [response] WorkerPool
+                     */
+                    type CreateWorkerPoolCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.WorkerPool) => void;
+
+                    /**
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getWorkerPool}.
+                     * @param error Error, if any
+                     * @param [response] WorkerPool
+                     */
+                    type GetWorkerPoolCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.WorkerPool) => void;
+
+                    /**
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteWorkerPool}.
+                     * @param error Error, if any
+                     * @param [response] Empty
+                     */
+                    type DeleteWorkerPoolCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
+
+                    /**
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateWorkerPool}.
+                     * @param error Error, if any
+                     * @param [response] WorkerPool
+                     */
+                    type UpdateWorkerPoolCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.WorkerPool) => void;
+
+                    /**
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listWorkerPools}.
+                     * @param error Error, if any
+                     * @param [response] ListWorkerPoolsResponse
+                     */
+                    type ListWorkerPoolsCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.ListWorkerPoolsResponse) => void;
                 }
 
                 /** Properties of a RetryBuildRequest. */
@@ -1462,9 +1567,6 @@ export namespace google {
 
                     /** Build timing */
                     timing?: ({ [k: string]: google.devtools.cloudbuild.v1.ITimeSpan }|null);
-
-                    /** Build serviceAccount */
-                    serviceAccount?: (string|null);
                 }
 
                 /** Represents a Build. */
@@ -1544,9 +1646,6 @@ export namespace google {
 
                     /** Build timing. */
                     public timing: { [k: string]: google.devtools.cloudbuild.v1.ITimeSpan };
-
-                    /** Build serviceAccount. */
-                    public serviceAccount: string;
 
                     /**
                      * Creates a new Build instance using the specified properties.
@@ -4015,9 +4114,6 @@ export namespace google {
                     /** BuildOptions substitutionOption */
                     substitutionOption?: (google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption|keyof typeof google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption|null);
 
-                    /** BuildOptions dynamicSubstitutions */
-                    dynamicSubstitutions?: (boolean|null);
-
                     /** BuildOptions logStreamingOption */
                     logStreamingOption?: (google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption|keyof typeof google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption|null);
 
@@ -4060,9 +4156,6 @@ export namespace google {
 
                     /** BuildOptions substitutionOption. */
                     public substitutionOption: (google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption|keyof typeof google.devtools.cloudbuild.v1.BuildOptions.SubstitutionOption);
-
-                    /** BuildOptions dynamicSubstitutions. */
-                    public dynamicSubstitutions: boolean;
 
                     /** BuildOptions logStreamingOption. */
                     public logStreamingOption: (google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption|keyof typeof google.devtools.cloudbuild.v1.BuildOptions.LogStreamingOption);
@@ -4185,11 +4278,935 @@ export namespace google {
                     enum LoggingMode {
                         LOGGING_UNSPECIFIED = 0,
                         LEGACY = 1,
-                        GCS_ONLY = 2,
-                        STACKDRIVER_ONLY = 3,
-                        CLOUD_LOGGING_ONLY = 5,
-                        NONE = 4
+                        GCS_ONLY = 2
                     }
+                }
+
+                /** Properties of a WorkerPool. */
+                interface IWorkerPool {
+
+                    /** WorkerPool name */
+                    name?: (string|null);
+
+                    /** WorkerPool projectId */
+                    projectId?: (string|null);
+
+                    /** WorkerPool serviceAccountEmail */
+                    serviceAccountEmail?: (string|null);
+
+                    /** WorkerPool workerCount */
+                    workerCount?: (number|Long|string|null);
+
+                    /** WorkerPool workerConfig */
+                    workerConfig?: (google.devtools.cloudbuild.v1.IWorkerConfig|null);
+
+                    /** WorkerPool regions */
+                    regions?: (google.devtools.cloudbuild.v1.WorkerPool.Region[]|null);
+
+                    /** WorkerPool createTime */
+                    createTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool updateTime */
+                    updateTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool deleteTime */
+                    deleteTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool status */
+                    status?: (google.devtools.cloudbuild.v1.WorkerPool.Status|keyof typeof google.devtools.cloudbuild.v1.WorkerPool.Status|null);
+                }
+
+                /** Represents a WorkerPool. */
+                class WorkerPool implements IWorkerPool {
+
+                    /**
+                     * Constructs a new WorkerPool.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IWorkerPool);
+
+                    /** WorkerPool name. */
+                    public name: string;
+
+                    /** WorkerPool projectId. */
+                    public projectId: string;
+
+                    /** WorkerPool serviceAccountEmail. */
+                    public serviceAccountEmail: string;
+
+                    /** WorkerPool workerCount. */
+                    public workerCount: (number|Long|string);
+
+                    /** WorkerPool workerConfig. */
+                    public workerConfig?: (google.devtools.cloudbuild.v1.IWorkerConfig|null);
+
+                    /** WorkerPool regions. */
+                    public regions: google.devtools.cloudbuild.v1.WorkerPool.Region[];
+
+                    /** WorkerPool createTime. */
+                    public createTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool updateTime. */
+                    public updateTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool deleteTime. */
+                    public deleteTime?: (google.protobuf.ITimestamp|null);
+
+                    /** WorkerPool status. */
+                    public status: (google.devtools.cloudbuild.v1.WorkerPool.Status|keyof typeof google.devtools.cloudbuild.v1.WorkerPool.Status);
+
+                    /**
+                     * Creates a new WorkerPool instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns WorkerPool instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IWorkerPool): google.devtools.cloudbuild.v1.WorkerPool;
+
+                    /**
+                     * Encodes the specified WorkerPool message. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerPool.verify|verify} messages.
+                     * @param message WorkerPool message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IWorkerPool, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified WorkerPool message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerPool.verify|verify} messages.
+                     * @param message WorkerPool message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IWorkerPool, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a WorkerPool message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns WorkerPool
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.WorkerPool;
+
+                    /**
+                     * Decodes a WorkerPool message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns WorkerPool
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.WorkerPool;
+
+                    /**
+                     * Verifies a WorkerPool message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a WorkerPool message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns WorkerPool
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.WorkerPool;
+
+                    /**
+                     * Creates a plain object from a WorkerPool message. Also converts values to other types if specified.
+                     * @param message WorkerPool
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.WorkerPool, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this WorkerPool to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                namespace WorkerPool {
+
+                    /** Region enum. */
+                    enum Region {
+                        REGION_UNSPECIFIED = 0,
+                        US_CENTRAL1 = 1,
+                        US_WEST1 = 2,
+                        US_EAST1 = 3,
+                        US_EAST4 = 4
+                    }
+
+                    /** Status enum. */
+                    enum Status {
+                        STATUS_UNSPECIFIED = 0,
+                        CREATING = 1,
+                        RUNNING = 2,
+                        DELETING = 3,
+                        DELETED = 4
+                    }
+                }
+
+                /** Properties of a WorkerConfig. */
+                interface IWorkerConfig {
+
+                    /** WorkerConfig machineType */
+                    machineType?: (string|null);
+
+                    /** WorkerConfig diskSizeGb */
+                    diskSizeGb?: (number|Long|string|null);
+
+                    /** WorkerConfig network */
+                    network?: (google.devtools.cloudbuild.v1.INetwork|null);
+
+                    /** WorkerConfig tag */
+                    tag?: (string|null);
+                }
+
+                /** Represents a WorkerConfig. */
+                class WorkerConfig implements IWorkerConfig {
+
+                    /**
+                     * Constructs a new WorkerConfig.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IWorkerConfig);
+
+                    /** WorkerConfig machineType. */
+                    public machineType: string;
+
+                    /** WorkerConfig diskSizeGb. */
+                    public diskSizeGb: (number|Long|string);
+
+                    /** WorkerConfig network. */
+                    public network?: (google.devtools.cloudbuild.v1.INetwork|null);
+
+                    /** WorkerConfig tag. */
+                    public tag: string;
+
+                    /**
+                     * Creates a new WorkerConfig instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns WorkerConfig instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IWorkerConfig): google.devtools.cloudbuild.v1.WorkerConfig;
+
+                    /**
+                     * Encodes the specified WorkerConfig message. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerConfig.verify|verify} messages.
+                     * @param message WorkerConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IWorkerConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified WorkerConfig message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.WorkerConfig.verify|verify} messages.
+                     * @param message WorkerConfig message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IWorkerConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a WorkerConfig message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns WorkerConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.WorkerConfig;
+
+                    /**
+                     * Decodes a WorkerConfig message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns WorkerConfig
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.WorkerConfig;
+
+                    /**
+                     * Verifies a WorkerConfig message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a WorkerConfig message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns WorkerConfig
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.WorkerConfig;
+
+                    /**
+                     * Creates a plain object from a WorkerConfig message. Also converts values to other types if specified.
+                     * @param message WorkerConfig
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.WorkerConfig, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this WorkerConfig to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a Network. */
+                interface INetwork {
+
+                    /** Network projectId */
+                    projectId?: (string|null);
+
+                    /** Network network */
+                    network?: (string|null);
+
+                    /** Network subnetwork */
+                    subnetwork?: (string|null);
+                }
+
+                /** Represents a Network. */
+                class Network implements INetwork {
+
+                    /**
+                     * Constructs a new Network.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.INetwork);
+
+                    /** Network projectId. */
+                    public projectId: string;
+
+                    /** Network network. */
+                    public network: string;
+
+                    /** Network subnetwork. */
+                    public subnetwork: string;
+
+                    /**
+                     * Creates a new Network instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns Network instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.INetwork): google.devtools.cloudbuild.v1.Network;
+
+                    /**
+                     * Encodes the specified Network message. Does not implicitly {@link google.devtools.cloudbuild.v1.Network.verify|verify} messages.
+                     * @param message Network message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.INetwork, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified Network message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.Network.verify|verify} messages.
+                     * @param message Network message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.INetwork, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a Network message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns Network
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.Network;
+
+                    /**
+                     * Decodes a Network message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns Network
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.Network;
+
+                    /**
+                     * Verifies a Network message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a Network message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns Network
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.Network;
+
+                    /**
+                     * Creates a plain object from a Network message. Also converts values to other types if specified.
+                     * @param message Network
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.Network, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this Network to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a CreateWorkerPoolRequest. */
+                interface ICreateWorkerPoolRequest {
+
+                    /** CreateWorkerPoolRequest parent */
+                    parent?: (string|null);
+
+                    /** CreateWorkerPoolRequest workerPool */
+                    workerPool?: (google.devtools.cloudbuild.v1.IWorkerPool|null);
+                }
+
+                /** Represents a CreateWorkerPoolRequest. */
+                class CreateWorkerPoolRequest implements ICreateWorkerPoolRequest {
+
+                    /**
+                     * Constructs a new CreateWorkerPoolRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest);
+
+                    /** CreateWorkerPoolRequest parent. */
+                    public parent: string;
+
+                    /** CreateWorkerPoolRequest workerPool. */
+                    public workerPool?: (google.devtools.cloudbuild.v1.IWorkerPool|null);
+
+                    /**
+                     * Creates a new CreateWorkerPoolRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns CreateWorkerPoolRequest instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest): google.devtools.cloudbuild.v1.CreateWorkerPoolRequest;
+
+                    /**
+                     * Encodes the specified CreateWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.CreateWorkerPoolRequest.verify|verify} messages.
+                     * @param message CreateWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified CreateWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.CreateWorkerPoolRequest.verify|verify} messages.
+                     * @param message CreateWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.ICreateWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a CreateWorkerPoolRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns CreateWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.CreateWorkerPoolRequest;
+
+                    /**
+                     * Decodes a CreateWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns CreateWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.CreateWorkerPoolRequest;
+
+                    /**
+                     * Verifies a CreateWorkerPoolRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a CreateWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns CreateWorkerPoolRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.CreateWorkerPoolRequest;
+
+                    /**
+                     * Creates a plain object from a CreateWorkerPoolRequest message. Also converts values to other types if specified.
+                     * @param message CreateWorkerPoolRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.CreateWorkerPoolRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this CreateWorkerPoolRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a GetWorkerPoolRequest. */
+                interface IGetWorkerPoolRequest {
+
+                    /** GetWorkerPoolRequest name */
+                    name?: (string|null);
+                }
+
+                /** Represents a GetWorkerPoolRequest. */
+                class GetWorkerPoolRequest implements IGetWorkerPoolRequest {
+
+                    /**
+                     * Constructs a new GetWorkerPoolRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest);
+
+                    /** GetWorkerPoolRequest name. */
+                    public name: string;
+
+                    /**
+                     * Creates a new GetWorkerPoolRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns GetWorkerPoolRequest instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest): google.devtools.cloudbuild.v1.GetWorkerPoolRequest;
+
+                    /**
+                     * Encodes the specified GetWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.GetWorkerPoolRequest.verify|verify} messages.
+                     * @param message GetWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified GetWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.GetWorkerPoolRequest.verify|verify} messages.
+                     * @param message GetWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IGetWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a GetWorkerPoolRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns GetWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.GetWorkerPoolRequest;
+
+                    /**
+                     * Decodes a GetWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns GetWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.GetWorkerPoolRequest;
+
+                    /**
+                     * Verifies a GetWorkerPoolRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a GetWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns GetWorkerPoolRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.GetWorkerPoolRequest;
+
+                    /**
+                     * Creates a plain object from a GetWorkerPoolRequest message. Also converts values to other types if specified.
+                     * @param message GetWorkerPoolRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.GetWorkerPoolRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this GetWorkerPoolRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a DeleteWorkerPoolRequest. */
+                interface IDeleteWorkerPoolRequest {
+
+                    /** DeleteWorkerPoolRequest name */
+                    name?: (string|null);
+                }
+
+                /** Represents a DeleteWorkerPoolRequest. */
+                class DeleteWorkerPoolRequest implements IDeleteWorkerPoolRequest {
+
+                    /**
+                     * Constructs a new DeleteWorkerPoolRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest);
+
+                    /** DeleteWorkerPoolRequest name. */
+                    public name: string;
+
+                    /**
+                     * Creates a new DeleteWorkerPoolRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns DeleteWorkerPoolRequest instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest): google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest;
+
+                    /**
+                     * Encodes the specified DeleteWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest.verify|verify} messages.
+                     * @param message DeleteWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified DeleteWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest.verify|verify} messages.
+                     * @param message DeleteWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IDeleteWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a DeleteWorkerPoolRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns DeleteWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest;
+
+                    /**
+                     * Decodes a DeleteWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns DeleteWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest;
+
+                    /**
+                     * Verifies a DeleteWorkerPoolRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a DeleteWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns DeleteWorkerPoolRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest;
+
+                    /**
+                     * Creates a plain object from a DeleteWorkerPoolRequest message. Also converts values to other types if specified.
+                     * @param message DeleteWorkerPoolRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.DeleteWorkerPoolRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this DeleteWorkerPoolRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of an UpdateWorkerPoolRequest. */
+                interface IUpdateWorkerPoolRequest {
+
+                    /** UpdateWorkerPoolRequest name */
+                    name?: (string|null);
+
+                    /** UpdateWorkerPoolRequest workerPool */
+                    workerPool?: (google.devtools.cloudbuild.v1.IWorkerPool|null);
+                }
+
+                /** Represents an UpdateWorkerPoolRequest. */
+                class UpdateWorkerPoolRequest implements IUpdateWorkerPoolRequest {
+
+                    /**
+                     * Constructs a new UpdateWorkerPoolRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest);
+
+                    /** UpdateWorkerPoolRequest name. */
+                    public name: string;
+
+                    /** UpdateWorkerPoolRequest workerPool. */
+                    public workerPool?: (google.devtools.cloudbuild.v1.IWorkerPool|null);
+
+                    /**
+                     * Creates a new UpdateWorkerPoolRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns UpdateWorkerPoolRequest instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest): google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest;
+
+                    /**
+                     * Encodes the specified UpdateWorkerPoolRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest.verify|verify} messages.
+                     * @param message UpdateWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified UpdateWorkerPoolRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest.verify|verify} messages.
+                     * @param message UpdateWorkerPoolRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IUpdateWorkerPoolRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes an UpdateWorkerPoolRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns UpdateWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest;
+
+                    /**
+                     * Decodes an UpdateWorkerPoolRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns UpdateWorkerPoolRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest;
+
+                    /**
+                     * Verifies an UpdateWorkerPoolRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates an UpdateWorkerPoolRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns UpdateWorkerPoolRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest;
+
+                    /**
+                     * Creates a plain object from an UpdateWorkerPoolRequest message. Also converts values to other types if specified.
+                     * @param message UpdateWorkerPoolRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.UpdateWorkerPoolRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this UpdateWorkerPoolRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a ListWorkerPoolsRequest. */
+                interface IListWorkerPoolsRequest {
+
+                    /** ListWorkerPoolsRequest parent */
+                    parent?: (string|null);
+                }
+
+                /** Represents a ListWorkerPoolsRequest. */
+                class ListWorkerPoolsRequest implements IListWorkerPoolsRequest {
+
+                    /**
+                     * Constructs a new ListWorkerPoolsRequest.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest);
+
+                    /** ListWorkerPoolsRequest parent. */
+                    public parent: string;
+
+                    /**
+                     * Creates a new ListWorkerPoolsRequest instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ListWorkerPoolsRequest instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest): google.devtools.cloudbuild.v1.ListWorkerPoolsRequest;
+
+                    /**
+                     * Encodes the specified ListWorkerPoolsRequest message. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsRequest.verify|verify} messages.
+                     * @param message ListWorkerPoolsRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ListWorkerPoolsRequest message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsRequest.verify|verify} messages.
+                     * @param message ListWorkerPoolsRequest message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IListWorkerPoolsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ListWorkerPoolsRequest message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ListWorkerPoolsRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.ListWorkerPoolsRequest;
+
+                    /**
+                     * Decodes a ListWorkerPoolsRequest message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ListWorkerPoolsRequest
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.ListWorkerPoolsRequest;
+
+                    /**
+                     * Verifies a ListWorkerPoolsRequest message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ListWorkerPoolsRequest message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ListWorkerPoolsRequest
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.ListWorkerPoolsRequest;
+
+                    /**
+                     * Creates a plain object from a ListWorkerPoolsRequest message. Also converts values to other types if specified.
+                     * @param message ListWorkerPoolsRequest
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.ListWorkerPoolsRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ListWorkerPoolsRequest to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
+                }
+
+                /** Properties of a ListWorkerPoolsResponse. */
+                interface IListWorkerPoolsResponse {
+
+                    /** ListWorkerPoolsResponse workerPools */
+                    workerPools?: (google.devtools.cloudbuild.v1.IWorkerPool[]|null);
+                }
+
+                /** Represents a ListWorkerPoolsResponse. */
+                class ListWorkerPoolsResponse implements IListWorkerPoolsResponse {
+
+                    /**
+                     * Constructs a new ListWorkerPoolsResponse.
+                     * @param [properties] Properties to set
+                     */
+                    constructor(properties?: google.devtools.cloudbuild.v1.IListWorkerPoolsResponse);
+
+                    /** ListWorkerPoolsResponse workerPools. */
+                    public workerPools: google.devtools.cloudbuild.v1.IWorkerPool[];
+
+                    /**
+                     * Creates a new ListWorkerPoolsResponse instance using the specified properties.
+                     * @param [properties] Properties to set
+                     * @returns ListWorkerPoolsResponse instance
+                     */
+                    public static create(properties?: google.devtools.cloudbuild.v1.IListWorkerPoolsResponse): google.devtools.cloudbuild.v1.ListWorkerPoolsResponse;
+
+                    /**
+                     * Encodes the specified ListWorkerPoolsResponse message. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.verify|verify} messages.
+                     * @param message ListWorkerPoolsResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encode(message: google.devtools.cloudbuild.v1.IListWorkerPoolsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Encodes the specified ListWorkerPoolsResponse message, length delimited. Does not implicitly {@link google.devtools.cloudbuild.v1.ListWorkerPoolsResponse.verify|verify} messages.
+                     * @param message ListWorkerPoolsResponse message or plain object to encode
+                     * @param [writer] Writer to encode to
+                     * @returns Writer
+                     */
+                    public static encodeDelimited(message: google.devtools.cloudbuild.v1.IListWorkerPoolsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                    /**
+                     * Decodes a ListWorkerPoolsResponse message from the specified reader or buffer.
+                     * @param reader Reader or buffer to decode from
+                     * @param [length] Message length if known beforehand
+                     * @returns ListWorkerPoolsResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.devtools.cloudbuild.v1.ListWorkerPoolsResponse;
+
+                    /**
+                     * Decodes a ListWorkerPoolsResponse message from the specified reader or buffer, length delimited.
+                     * @param reader Reader or buffer to decode from
+                     * @returns ListWorkerPoolsResponse
+                     * @throws {Error} If the payload is not a reader or valid buffer
+                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                     */
+                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.devtools.cloudbuild.v1.ListWorkerPoolsResponse;
+
+                    /**
+                     * Verifies a ListWorkerPoolsResponse message.
+                     * @param message Plain object to verify
+                     * @returns `null` if valid, otherwise the reason why it is not
+                     */
+                    public static verify(message: { [k: string]: any }): (string|null);
+
+                    /**
+                     * Creates a ListWorkerPoolsResponse message from a plain object. Also converts values to their respective internal types.
+                     * @param object Plain object
+                     * @returns ListWorkerPoolsResponse
+                     */
+                    public static fromObject(object: { [k: string]: any }): google.devtools.cloudbuild.v1.ListWorkerPoolsResponse;
+
+                    /**
+                     * Creates a plain object from a ListWorkerPoolsResponse message. Also converts values to other types if specified.
+                     * @param message ListWorkerPoolsResponse
+                     * @param [options] Conversion options
+                     * @returns Plain object
+                     */
+                    public static toObject(message: google.devtools.cloudbuild.v1.ListWorkerPoolsResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                    /**
+                     * Converts this ListWorkerPoolsResponse to JSON.
+                     * @returns JSON object
+                     */
+                    public toJSON(): { [k: string]: any };
                 }
             }
         }
@@ -4545,232 +5562,6 @@ export namespace google {
             OUTPUT_ONLY = 3,
             INPUT_ONLY = 4,
             IMMUTABLE = 5
-        }
-
-        /** Properties of a ResourceDescriptor. */
-        interface IResourceDescriptor {
-
-            /** ResourceDescriptor type */
-            type?: (string|null);
-
-            /** ResourceDescriptor pattern */
-            pattern?: (string[]|null);
-
-            /** ResourceDescriptor nameField */
-            nameField?: (string|null);
-
-            /** ResourceDescriptor history */
-            history?: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History|null);
-
-            /** ResourceDescriptor plural */
-            plural?: (string|null);
-
-            /** ResourceDescriptor singular */
-            singular?: (string|null);
-        }
-
-        /** Represents a ResourceDescriptor. */
-        class ResourceDescriptor implements IResourceDescriptor {
-
-            /**
-             * Constructs a new ResourceDescriptor.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.api.IResourceDescriptor);
-
-            /** ResourceDescriptor type. */
-            public type: string;
-
-            /** ResourceDescriptor pattern. */
-            public pattern: string[];
-
-            /** ResourceDescriptor nameField. */
-            public nameField: string;
-
-            /** ResourceDescriptor history. */
-            public history: (google.api.ResourceDescriptor.History|keyof typeof google.api.ResourceDescriptor.History);
-
-            /** ResourceDescriptor plural. */
-            public plural: string;
-
-            /** ResourceDescriptor singular. */
-            public singular: string;
-
-            /**
-             * Creates a new ResourceDescriptor instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ResourceDescriptor instance
-             */
-            public static create(properties?: google.api.IResourceDescriptor): google.api.ResourceDescriptor;
-
-            /**
-             * Encodes the specified ResourceDescriptor message. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
-             * @param message ResourceDescriptor message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified ResourceDescriptor message, length delimited. Does not implicitly {@link google.api.ResourceDescriptor.verify|verify} messages.
-             * @param message ResourceDescriptor message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.api.IResourceDescriptor, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a ResourceDescriptor message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ResourceDescriptor
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceDescriptor;
-
-            /**
-             * Decodes a ResourceDescriptor message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns ResourceDescriptor
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceDescriptor;
-
-            /**
-             * Verifies a ResourceDescriptor message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a ResourceDescriptor message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns ResourceDescriptor
-             */
-            public static fromObject(object: { [k: string]: any }): google.api.ResourceDescriptor;
-
-            /**
-             * Creates a plain object from a ResourceDescriptor message. Also converts values to other types if specified.
-             * @param message ResourceDescriptor
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.api.ResourceDescriptor, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this ResourceDescriptor to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        namespace ResourceDescriptor {
-
-            /** History enum. */
-            enum History {
-                HISTORY_UNSPECIFIED = 0,
-                ORIGINALLY_SINGLE_PATTERN = 1,
-                FUTURE_MULTI_PATTERN = 2
-            }
-        }
-
-        /** Properties of a ResourceReference. */
-        interface IResourceReference {
-
-            /** ResourceReference type */
-            type?: (string|null);
-
-            /** ResourceReference childType */
-            childType?: (string|null);
-        }
-
-        /** Represents a ResourceReference. */
-        class ResourceReference implements IResourceReference {
-
-            /**
-             * Constructs a new ResourceReference.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.api.IResourceReference);
-
-            /** ResourceReference type. */
-            public type: string;
-
-            /** ResourceReference childType. */
-            public childType: string;
-
-            /**
-             * Creates a new ResourceReference instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ResourceReference instance
-             */
-            public static create(properties?: google.api.IResourceReference): google.api.ResourceReference;
-
-            /**
-             * Encodes the specified ResourceReference message. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
-             * @param message ResourceReference message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified ResourceReference message, length delimited. Does not implicitly {@link google.api.ResourceReference.verify|verify} messages.
-             * @param message ResourceReference message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.api.IResourceReference, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a ResourceReference message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ResourceReference
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.api.ResourceReference;
-
-            /**
-             * Decodes a ResourceReference message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns ResourceReference
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.api.ResourceReference;
-
-            /**
-             * Verifies a ResourceReference message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a ResourceReference message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns ResourceReference
-             */
-            public static fromObject(object: { [k: string]: any }): google.api.ResourceReference;
-
-            /**
-             * Creates a plain object from a ResourceReference message. Also converts values to other types if specified.
-             * @param message ResourceReference
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.api.ResourceReference, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this ResourceReference to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
         }
     }
 
@@ -6338,9 +7129,6 @@ export namespace google {
 
             /** FileOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
-
-            /** FileOptions .google.api.resourceDefinition */
-            ".google.api.resourceDefinition"?: (google.api.IResourceDescriptor[]|null);
         }
 
         /** Represents a FileOptions. */
@@ -6513,9 +7301,6 @@ export namespace google {
 
             /** MessageOptions uninterpretedOption */
             uninterpretedOption?: (google.protobuf.IUninterpretedOption[]|null);
-
-            /** MessageOptions .google.api.resource */
-            ".google.api.resource"?: (google.api.IResourceDescriptor|null);
         }
 
         /** Represents a MessageOptions. */
@@ -6639,9 +7424,6 @@ export namespace google {
 
             /** FieldOptions .google.api.fieldBehavior */
             ".google.api.fieldBehavior"?: (google.api.FieldBehavior[]|null);
-
-            /** FieldOptions .google.api.resourceReference */
-            ".google.api.resourceReference"?: (google.api.IResourceReference|null);
         }
 
         /** Represents a FieldOptions. */
@@ -8177,96 +8959,6 @@ export namespace google {
 
             /**
              * Converts this Empty to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
-        /** Properties of a FieldMask. */
-        interface IFieldMask {
-
-            /** FieldMask paths */
-            paths?: (string[]|null);
-        }
-
-        /** Represents a FieldMask. */
-        class FieldMask implements IFieldMask {
-
-            /**
-             * Constructs a new FieldMask.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.protobuf.IFieldMask);
-
-            /** FieldMask paths. */
-            public paths: string[];
-
-            /**
-             * Creates a new FieldMask instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns FieldMask instance
-             */
-            public static create(properties?: google.protobuf.IFieldMask): google.protobuf.FieldMask;
-
-            /**
-             * Encodes the specified FieldMask message. Does not implicitly {@link google.protobuf.FieldMask.verify|verify} messages.
-             * @param message FieldMask message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.protobuf.IFieldMask, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified FieldMask message, length delimited. Does not implicitly {@link google.protobuf.FieldMask.verify|verify} messages.
-             * @param message FieldMask message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.protobuf.IFieldMask, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a FieldMask message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns FieldMask
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.FieldMask;
-
-            /**
-             * Decodes a FieldMask message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns FieldMask
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.FieldMask;
-
-            /**
-             * Verifies a FieldMask message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a FieldMask message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns FieldMask
-             */
-            public static fromObject(object: { [k: string]: any }): google.protobuf.FieldMask;
-
-            /**
-             * Creates a plain object from a FieldMask message. Also converts values to other types if specified.
-             * @param message FieldMask
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.protobuf.FieldMask, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this FieldMask to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };

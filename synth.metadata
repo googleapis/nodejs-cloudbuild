@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/nodejs-cloudbuild.git",
-        "sha": "d8beda997a6dda21f2c52cb3f626c188dcbd979b"
+        "sha": "13186984ab8da50bdc04ecd7894b1cc2bb4cefa3"
       }
     },
     {

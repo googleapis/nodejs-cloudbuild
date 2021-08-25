@@ -2622,6 +2622,7 @@
                          * @property {google.devtools.cloudbuild.v1.ITimeSpan|null} [pullTiming] BuildStep pullTiming
                          * @property {google.protobuf.IDuration|null} [timeout] BuildStep timeout
                          * @property {google.devtools.cloudbuild.v1.Build.Status|null} [status] BuildStep status
+                         * @property {string|null} [script] BuildStep script
                          */
     
                         /**
@@ -2749,6 +2750,14 @@
                         BuildStep.prototype.status = 0;
     
                         /**
+                         * BuildStep script.
+                         * @member {string} script
+                         * @memberof google.devtools.cloudbuild.v1.BuildStep
+                         * @instance
+                         */
+                        BuildStep.prototype.script = "";
+    
+                        /**
                          * Creates a new BuildStep instance using the specified properties.
                          * @function create
                          * @memberof google.devtools.cloudbuild.v1.BuildStep
@@ -2803,6 +2812,8 @@
                                 writer.uint32(/* id 12, wireType 0 =*/96).int32(message.status);
                             if (message.pullTiming != null && Object.hasOwnProperty.call(message, "pullTiming"))
                                 $root.google.devtools.cloudbuild.v1.TimeSpan.encode(message.pullTiming, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                            if (message.script != null && Object.hasOwnProperty.call(message, "script"))
+                                writer.uint32(/* id 19, wireType 2 =*/154).string(message.script);
                             return writer;
                         };
     
@@ -2885,6 +2896,9 @@
                                     break;
                                 case 12:
                                     message.status = reader.int32();
+                                    break;
+                                case 19:
+                                    message.script = reader.string();
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -3001,6 +3015,9 @@
                                 case 9:
                                     break;
                                 }
+                            if (message.script != null && message.hasOwnProperty("script"))
+                                if (!$util.isString(message.script))
+                                    return "script: string expected";
                             return null;
                         };
     
@@ -3119,6 +3136,8 @@
                                 message.status = 9;
                                 break;
                             }
+                            if (object.script != null)
+                                message.script = String(object.script);
                             return message;
                         };
     
@@ -3151,6 +3170,7 @@
                                 object.timeout = null;
                                 object.status = options.enums === String ? "STATUS_UNKNOWN" : 0;
                                 object.pullTiming = null;
+                                object.script = "";
                             }
                             if (message.name != null && message.hasOwnProperty("name"))
                                 object.name = message.name;
@@ -3193,6 +3213,8 @@
                                 object.status = options.enums === String ? $root.google.devtools.cloudbuild.v1.Build.Status[message.status] : message.status;
                             if (message.pullTiming != null && message.hasOwnProperty("pullTiming"))
                                 object.pullTiming = $root.google.devtools.cloudbuild.v1.TimeSpan.toObject(message.pullTiming, options);
+                            if (message.script != null && message.hasOwnProperty("script"))
+                                object.script = message.script;
                             return object;
                         };
     
@@ -10543,6 +10565,7 @@
                          * @property {Array.<string>|null} [ignoredFiles] BuildTrigger ignoredFiles
                          * @property {Array.<string>|null} [includedFiles] BuildTrigger includedFiles
                          * @property {string|null} [filter] BuildTrigger filter
+                         * @property {string|null} [serviceAccount] BuildTrigger serviceAccount
                          */
     
                         /**
@@ -10708,6 +10731,14 @@
                          */
                         BuildTrigger.prototype.filter = "";
     
+                        /**
+                         * BuildTrigger serviceAccount.
+                         * @member {string} serviceAccount
+                         * @memberof google.devtools.cloudbuild.v1.BuildTrigger
+                         * @instance
+                         */
+                        BuildTrigger.prototype.serviceAccount = "";
+    
                         // OneOf field names bound to virtual getters and setters
                         var $oneOfFields;
     
@@ -10784,6 +10815,8 @@
                                 writer.uint32(/* id 30, wireType 2 =*/242).string(message.filter);
                             if (message.webhookConfig != null && Object.hasOwnProperty.call(message, "webhookConfig"))
                                 $root.google.devtools.cloudbuild.v1.WebhookConfig.encode(message.webhookConfig, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
+                            if (message.serviceAccount != null && Object.hasOwnProperty.call(message, "serviceAccount"))
+                                writer.uint32(/* id 33, wireType 2 =*/266).string(message.serviceAccount);
                             if (message.resourceName != null && Object.hasOwnProperty.call(message, "resourceName"))
                                 writer.uint32(/* id 34, wireType 2 =*/274).string(message.resourceName);
                             return writer;
@@ -10898,6 +10931,9 @@
                                     break;
                                 case 30:
                                     message.filter = reader.string();
+                                    break;
+                                case 33:
+                                    message.serviceAccount = reader.string();
                                     break;
                                 default:
                                     reader.skipType(tag & 7);
@@ -11029,6 +11065,9 @@
                             if (message.filter != null && message.hasOwnProperty("filter"))
                                 if (!$util.isString(message.filter))
                                     return "filter: string expected";
+                            if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                                if (!$util.isString(message.serviceAccount))
+                                    return "serviceAccount: string expected";
                             return null;
                         };
     
@@ -11118,6 +11157,8 @@
                             }
                             if (object.filter != null)
                                 message.filter = String(object.filter);
+                            if (object.serviceAccount != null)
+                                message.serviceAccount = String(object.serviceAccount);
                             return message;
                         };
     
@@ -11152,6 +11193,7 @@
                                 object.pubsubConfig = null;
                                 object.filter = "";
                                 object.webhookConfig = null;
+                                object.serviceAccount = "";
                                 object.resourceName = "";
                             }
                             if (message.id != null && message.hasOwnProperty("id"))
@@ -11210,6 +11252,8 @@
                                 object.filter = message.filter;
                             if (message.webhookConfig != null && message.hasOwnProperty("webhookConfig"))
                                 object.webhookConfig = $root.google.devtools.cloudbuild.v1.WebhookConfig.toObject(message.webhookConfig, options);
+                            if (message.serviceAccount != null && message.hasOwnProperty("serviceAccount"))
+                                object.serviceAccount = message.serviceAccount;
                             if (message.resourceName != null && message.hasOwnProperty("resourceName"))
                                 object.resourceName = message.resourceName;
                             return object;

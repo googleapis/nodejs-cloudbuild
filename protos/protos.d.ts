@@ -1225,6 +1225,9 @@ export namespace google {
 
                     /** BuildStep status */
                     status?: (google.devtools.cloudbuild.v1.Build.Status|keyof typeof google.devtools.cloudbuild.v1.Build.Status|null);
+
+                    /** BuildStep script */
+                    script?: (string|null);
                 }
 
                 /** Represents a BuildStep. */
@@ -1274,6 +1277,9 @@ export namespace google {
 
                     /** BuildStep status. */
                     public status: (google.devtools.cloudbuild.v1.Build.Status|keyof typeof google.devtools.cloudbuild.v1.Build.Status);
+
+                    /** BuildStep script. */
+                    public script: string;
 
                     /**
                      * Creates a new BuildStep instance using the specified properties.
@@ -4221,6 +4227,9 @@ export namespace google {
 
                     /** BuildTrigger filter */
                     filter?: (string|null);
+
+                    /** BuildTrigger serviceAccount */
+                    serviceAccount?: (string|null);
                 }
 
                 /** Represents a BuildTrigger. */
@@ -4285,6 +4294,9 @@ export namespace google {
 
                     /** BuildTrigger filter. */
                     public filter: string;
+
+                    /** BuildTrigger serviceAccount. */
+                    public serviceAccount: string;
 
                     /** BuildTrigger buildTemplate. */
                     public buildTemplate?: ("autodetect"|"build"|"filename");

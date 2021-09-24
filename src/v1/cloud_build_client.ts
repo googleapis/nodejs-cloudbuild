@@ -2523,7 +2523,8 @@ export class CloudBuildClient {
         project_id: request.projectId || '',
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.createStream(
       this.innerApiCalls.listBuilds as gax.GaxCall,
@@ -2587,7 +2588,8 @@ export class CloudBuildClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuilds'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuilds.asyncIterate(
       this.innerApiCalls['listBuilds'] as GaxCall,
@@ -2738,7 +2740,8 @@ export class CloudBuildClient {
         project_id: request.projectId || '',
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTriggers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTriggers.createStream(
       this.innerApiCalls.listBuildTriggers as gax.GaxCall,
@@ -2792,7 +2795,8 @@ export class CloudBuildClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listBuildTriggers'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listBuildTriggers.asyncIterate(
       this.innerApiCalls['listBuildTriggers'] as GaxCall,
@@ -2939,7 +2943,8 @@ export class CloudBuildClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkerPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkerPools.createStream(
       this.innerApiCalls.listWorkerPools as gax.GaxCall,
@@ -2992,7 +2997,8 @@ export class CloudBuildClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listWorkerPools'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listWorkerPools.asyncIterate(
       this.innerApiCalls['listWorkerPools'] as GaxCall,

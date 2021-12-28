@@ -13,5 +13,5 @@
   "distribution_name": "@google-cloud/cloudbuild",
   "api_id": "cloudbuild.googleapis.com",
   "api_shortname": "cloudbuild",
-  "library_type": ""
+  "library_type": "GAPIC_AUTO"
 }

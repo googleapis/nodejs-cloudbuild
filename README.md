@@ -6,7 +6,6 @@
 
 
 [![npm version](https://img.shields.io/npm/v/@google-cloud/cloudbuild.svg)](https://www.npmjs.org/package/@google-cloud/cloudbuild)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-cloudbuild/main.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-cloudbuild)
 
 
 

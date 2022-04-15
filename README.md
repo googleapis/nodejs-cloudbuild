@@ -66,11 +66,9 @@ async function quickstart(
   const {CloudBuildClient} = require('@google-cloud/cloudbuild');
 
   // Creates a client
-  const cb = new CloudBuildClient();
-  
   // Note: for Private Pools, you'll have to specify an API endpoint value
-  // For example:
-  // const cb = new CloudBuildClient({ apiEndpoint: '<YOUR_POOL_REGION>-cloudbuild.googleapis.com' });
+  // For example, '<YOUR_POOL_REGION>-cloudbuild.googleapis.com'
+  const cb = new CloudBuildClient();
 
   // Starts a build against the branch provided.
   const [resp] = await cb.runBuildTrigger({

@@ -302,126 +302,126 @@ export namespace google {
                 namespace CloudBuild {
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createBuild}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createBuild}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type CreateBuildCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getBuild}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getBuild}.
                      * @param error Error, if any
                      * @param [response] Build
                      */
                     type GetBuildCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.Build) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listBuilds}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listBuilds}.
                      * @param error Error, if any
                      * @param [response] ListBuildsResponse
                      */
                     type ListBuildsCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.ListBuildsResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#cancelBuild}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|cancelBuild}.
                      * @param error Error, if any
                      * @param [response] Build
                      */
                     type CancelBuildCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.Build) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#retryBuild}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|retryBuild}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type RetryBuildCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#approveBuild}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|approveBuild}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type ApproveBuildCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createBuildTrigger}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createBuildTrigger}.
                      * @param error Error, if any
                      * @param [response] BuildTrigger
                      */
                     type CreateBuildTriggerCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.BuildTrigger) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getBuildTrigger}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getBuildTrigger}.
                      * @param error Error, if any
                      * @param [response] BuildTrigger
                      */
                     type GetBuildTriggerCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.BuildTrigger) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listBuildTriggers}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listBuildTriggers}.
                      * @param error Error, if any
                      * @param [response] ListBuildTriggersResponse
                      */
                     type ListBuildTriggersCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.ListBuildTriggersResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteBuildTrigger}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|deleteBuildTrigger}.
                      * @param error Error, if any
                      * @param [response] Empty
                      */
                     type DeleteBuildTriggerCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateBuildTrigger}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|updateBuildTrigger}.
                      * @param error Error, if any
                      * @param [response] BuildTrigger
                      */
                     type UpdateBuildTriggerCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.BuildTrigger) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#runBuildTrigger}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|runBuildTrigger}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type RunBuildTriggerCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#receiveTriggerWebhook}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|receiveTriggerWebhook}.
                      * @param error Error, if any
                      * @param [response] ReceiveTriggerWebhookResponse
                      */
                     type ReceiveTriggerWebhookCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.ReceiveTriggerWebhookResponse) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createWorkerPool}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createWorkerPool}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type CreateWorkerPoolCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getWorkerPool}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getWorkerPool}.
                      * @param error Error, if any
                      * @param [response] WorkerPool
                      */
                     type GetWorkerPoolCallback = (error: (Error|null), response?: google.devtools.cloudbuild.v1.WorkerPool) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteWorkerPool}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|deleteWorkerPool}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type DeleteWorkerPoolCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateWorkerPool}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|updateWorkerPool}.
                      * @param error Error, if any
                      * @param [response] Operation
                      */
                     type UpdateWorkerPoolCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
                     /**
-                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listWorkerPools}.
+                     * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listWorkerPools}.
                      * @param error Error, if any
                      * @param [response] ListWorkerPoolsResponse
                      */
@@ -9965,6 +9965,9 @@ export namespace google {
             /** FieldOptions lazy */
             lazy?: (boolean|null);
 
+            /** FieldOptions unverifiedLazy */
+            unverifiedLazy?: (boolean|null);
+
             /** FieldOptions deprecated */
             deprecated?: (boolean|null);
 
@@ -10001,6 +10004,9 @@ export namespace google {
 
             /** FieldOptions lazy. */
             public lazy: boolean;
+
+            /** FieldOptions unverifiedLazy. */
+            public unverifiedLazy: boolean;
 
             /** FieldOptions deprecated. */
             public deprecated: boolean;
@@ -11803,35 +11809,35 @@ export namespace google {
         namespace Operations {
 
             /**
-             * Callback as used by {@link google.longrunning.Operations#listOperations}.
+             * Callback as used by {@link google.longrunning.Operations|listOperations}.
              * @param error Error, if any
              * @param [response] ListOperationsResponse
              */
             type ListOperationsCallback = (error: (Error|null), response?: google.longrunning.ListOperationsResponse) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations#getOperation}.
+             * Callback as used by {@link google.longrunning.Operations|getOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */
             type GetOperationCallback = (error: (Error|null), response?: google.longrunning.Operation) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations#deleteOperation}.
+             * Callback as used by {@link google.longrunning.Operations|deleteOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type DeleteOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations#cancelOperation}.
+             * Callback as used by {@link google.longrunning.Operations|cancelOperation}.
              * @param error Error, if any
              * @param [response] Empty
              */
             type CancelOperationCallback = (error: (Error|null), response?: google.protobuf.Empty) => void;
 
             /**
-             * Callback as used by {@link google.longrunning.Operations#waitOperation}.
+             * Callback as used by {@link google.longrunning.Operations|waitOperation}.
              * @param error Error, if any
              * @param [response] Operation
              */

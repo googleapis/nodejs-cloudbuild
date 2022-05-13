@@ -99,7 +99,7 @@
                         };
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createBuild}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createBuild}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef CreateBuildCallback
                          * @type {function}
@@ -132,7 +132,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getBuild}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getBuild}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef GetBuildCallback
                          * @type {function}
@@ -165,7 +165,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listBuilds}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listBuilds}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef ListBuildsCallback
                          * @type {function}
@@ -198,7 +198,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#cancelBuild}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|cancelBuild}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef CancelBuildCallback
                          * @type {function}
@@ -231,7 +231,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#retryBuild}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|retryBuild}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef RetryBuildCallback
                          * @type {function}
@@ -264,7 +264,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#approveBuild}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|approveBuild}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef ApproveBuildCallback
                          * @type {function}
@@ -297,7 +297,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createBuildTrigger}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createBuildTrigger}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef CreateBuildTriggerCallback
                          * @type {function}
@@ -330,7 +330,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getBuildTrigger}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getBuildTrigger}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef GetBuildTriggerCallback
                          * @type {function}
@@ -363,7 +363,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listBuildTriggers}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listBuildTriggers}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef ListBuildTriggersCallback
                          * @type {function}
@@ -396,7 +396,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteBuildTrigger}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|deleteBuildTrigger}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef DeleteBuildTriggerCallback
                          * @type {function}
@@ -429,7 +429,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateBuildTrigger}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|updateBuildTrigger}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef UpdateBuildTriggerCallback
                          * @type {function}
@@ -462,7 +462,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#runBuildTrigger}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|runBuildTrigger}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef RunBuildTriggerCallback
                          * @type {function}
@@ -495,7 +495,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#receiveTriggerWebhook}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|receiveTriggerWebhook}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef ReceiveTriggerWebhookCallback
                          * @type {function}
@@ -528,7 +528,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#createWorkerPool}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|createWorkerPool}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef CreateWorkerPoolCallback
                          * @type {function}
@@ -561,7 +561,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#getWorkerPool}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|getWorkerPool}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef GetWorkerPoolCallback
                          * @type {function}
@@ -594,7 +594,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#deleteWorkerPool}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|deleteWorkerPool}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef DeleteWorkerPoolCallback
                          * @type {function}
@@ -627,7 +627,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#updateWorkerPool}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|updateWorkerPool}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef UpdateWorkerPoolCallback
                          * @type {function}
@@ -660,7 +660,7 @@
                          */
     
                         /**
-                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild#listWorkerPools}.
+                         * Callback as used by {@link google.devtools.cloudbuild.v1.CloudBuild|listWorkerPools}.
                          * @memberof google.devtools.cloudbuild.v1.CloudBuild
                          * @typedef ListWorkerPoolsCallback
                          * @type {function}
@@ -25921,6 +25921,7 @@
                  * @property {boolean|null} [packed] FieldOptions packed
                  * @property {google.protobuf.FieldOptions.JSType|null} [jstype] FieldOptions jstype
                  * @property {boolean|null} [lazy] FieldOptions lazy
+                 * @property {boolean|null} [unverifiedLazy] FieldOptions unverifiedLazy
                  * @property {boolean|null} [deprecated] FieldOptions deprecated
                  * @property {boolean|null} [weak] FieldOptions weak
                  * @property {Array.<google.protobuf.IUninterpretedOption>|null} [uninterpretedOption] FieldOptions uninterpretedOption
@@ -25976,6 +25977,14 @@
                  * @instance
                  */
                 FieldOptions.prototype.lazy = false;
+    
+                /**
+                 * FieldOptions unverifiedLazy.
+                 * @member {boolean} unverifiedLazy
+                 * @memberof google.protobuf.FieldOptions
+                 * @instance
+                 */
+                FieldOptions.prototype.unverifiedLazy = false;
     
                 /**
                  * FieldOptions deprecated.
@@ -26053,6 +26062,8 @@
                         writer.uint32(/* id 6, wireType 0 =*/48).int32(message.jstype);
                     if (message.weak != null && Object.hasOwnProperty.call(message, "weak"))
                         writer.uint32(/* id 10, wireType 0 =*/80).bool(message.weak);
+                    if (message.unverifiedLazy != null && Object.hasOwnProperty.call(message, "unverifiedLazy"))
+                        writer.uint32(/* id 15, wireType 0 =*/120).bool(message.unverifiedLazy);
                     if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                         for (var i = 0; i < message.uninterpretedOption.length; ++i)
                             $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
@@ -26109,6 +26120,9 @@
                             break;
                         case 5:
                             message.lazy = reader.bool();
+                            break;
+                        case 15:
+                            message.unverifiedLazy = reader.bool();
                             break;
                         case 3:
                             message.deprecated = reader.bool();
@@ -26193,6 +26207,9 @@
                     if (message.lazy != null && message.hasOwnProperty("lazy"))
                         if (typeof message.lazy !== "boolean")
                             return "lazy: boolean expected";
+                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
+                        if (typeof message.unverifiedLazy !== "boolean")
+                            return "unverifiedLazy: boolean expected";
                     if (message.deprecated != null && message.hasOwnProperty("deprecated"))
                         if (typeof message.deprecated !== "boolean")
                             return "deprecated: boolean expected";
@@ -26278,6 +26295,8 @@
                     }
                     if (object.lazy != null)
                         message.lazy = Boolean(object.lazy);
+                    if (object.unverifiedLazy != null)
+                        message.unverifiedLazy = Boolean(object.unverifiedLazy);
                     if (object.deprecated != null)
                         message.deprecated = Boolean(object.deprecated);
                     if (object.weak != null)
@@ -26365,6 +26384,7 @@
                         object.lazy = false;
                         object.jstype = options.enums === String ? "JS_NORMAL" : 0;
                         object.weak = false;
+                        object.unverifiedLazy = false;
                         object[".google.api.resourceReference"] = null;
                     }
                     if (message.ctype != null && message.hasOwnProperty("ctype"))
@@ -26379,6 +26399,8 @@
                         object.jstype = options.enums === String ? $root.google.protobuf.FieldOptions.JSType[message.jstype] : message.jstype;
                     if (message.weak != null && message.hasOwnProperty("weak"))
                         object.weak = message.weak;
+                    if (message.unverifiedLazy != null && message.hasOwnProperty("unverifiedLazy"))
+                        object.unverifiedLazy = message.unverifiedLazy;
                     if (message.uninterpretedOption && message.uninterpretedOption.length) {
                         object.uninterpretedOption = [];
                         for (var j = 0; j < message.uninterpretedOption.length; ++j)
@@ -30491,7 +30513,7 @@
                 };
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations#listOperations}.
+                 * Callback as used by {@link google.longrunning.Operations|listOperations}.
                  * @memberof google.longrunning.Operations
                  * @typedef ListOperationsCallback
                  * @type {function}
@@ -30524,7 +30546,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations#getOperation}.
+                 * Callback as used by {@link google.longrunning.Operations|getOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef GetOperationCallback
                  * @type {function}
@@ -30557,7 +30579,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations#deleteOperation}.
+                 * Callback as used by {@link google.longrunning.Operations|deleteOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef DeleteOperationCallback
                  * @type {function}
@@ -30590,7 +30612,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations#cancelOperation}.
+                 * Callback as used by {@link google.longrunning.Operations|cancelOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef CancelOperationCallback
                  * @type {function}
@@ -30623,7 +30645,7 @@
                  */
     
                 /**
-                 * Callback as used by {@link google.longrunning.Operations#waitOperation}.
+                 * Callback as used by {@link google.longrunning.Operations|waitOperation}.
                  * @memberof google.longrunning.Operations
                  * @typedef WaitOperationCallback
                  * @type {function}

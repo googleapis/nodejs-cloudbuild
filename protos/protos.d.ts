@@ -1275,6 +1275,15 @@ export namespace google {
                     /** BuildStep status */
                     status?: (google.devtools.cloudbuild.v1.Build.Status|keyof typeof google.devtools.cloudbuild.v1.Build.Status|null);
 
+                    /** BuildStep allowFailure */
+                    allowFailure?: (boolean|null);
+
+                    /** BuildStep exitCode */
+                    exitCode?: (number|null);
+
+                    /** BuildStep allowExitCodes */
+                    allowExitCodes?: (number[]|null);
+
                     /** BuildStep script */
                     script?: (string|null);
                 }
@@ -1326,6 +1335,15 @@ export namespace google {
 
                     /** BuildStep status. */
                     public status: (google.devtools.cloudbuild.v1.Build.Status|keyof typeof google.devtools.cloudbuild.v1.Build.Status);
+
+                    /** BuildStep allowFailure. */
+                    public allowFailure: boolean;
+
+                    /** BuildStep exitCode. */
+                    public exitCode: number;
+
+                    /** BuildStep allowExitCodes. */
+                    public allowExitCodes: number[];
 
                     /** BuildStep script. */
                     public script: string;

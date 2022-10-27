@@ -734,6 +734,22 @@
                             "(google.api.field_behavior)": "OUTPUT_ONLY"
                           }
                         },
+                        "allowFailure": {
+                          "type": "bool",
+                          "id": 14
+                        },
+                        "exitCode": {
+                          "type": "int32",
+                          "id": 16,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
+                        },
+                        "allowExitCodes": {
+                          "rule": "repeated",
+                          "type": "int32",
+                          "id": 18
+                        },
                         "script": {
                           "type": "string",
                           "id": 19

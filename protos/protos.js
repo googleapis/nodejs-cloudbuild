@@ -2754,6 +2754,9 @@
                          * @property {google.devtools.cloudbuild.v1.ITimeSpan|null} [pullTiming] BuildStep pullTiming
                          * @property {google.protobuf.IDuration|null} [timeout] BuildStep timeout
                          * @property {google.devtools.cloudbuild.v1.Build.Status|null} [status] BuildStep status
+                         * @property {boolean|null} [allowFailure] BuildStep allowFailure
+                         * @property {number|null} [exitCode] BuildStep exitCode
+                         * @property {Array.<number>|null} [allowExitCodes] BuildStep allowExitCodes
                          * @property {string|null} [script] BuildStep script
                          */
     
@@ -2771,6 +2774,7 @@
                             this.waitFor = [];
                             this.secretEnv = [];
                             this.volumes = [];
+                            this.allowExitCodes = [];
                             if (properties)
                                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                                     if (properties[keys[i]] != null)
@@ -2882,6 +2886,30 @@
                         BuildStep.prototype.status = 0;
     
                         /**
+                         * BuildStep allowFailure.
+                         * @member {boolean} allowFailure
+                         * @memberof google.devtools.cloudbuild.v1.BuildStep
+                         * @instance
+                         */
+                        BuildStep.prototype.allowFailure = false;
+    
+                        /**
+                         * BuildStep exitCode.
+                         * @member {number} exitCode
+                         * @memberof google.devtools.cloudbuild.v1.BuildStep
+                         * @instance
+                         */
+                        BuildStep.prototype.exitCode = 0;
+    
+                        /**
+                         * BuildStep allowExitCodes.
+                         * @member {Array.<number>} allowExitCodes
+                         * @memberof google.devtools.cloudbuild.v1.BuildStep
+                         * @instance
+                         */
+                        BuildStep.prototype.allowExitCodes = $util.emptyArray;
+    
+                        /**
                          * BuildStep script.
                          * @member {string} script
                          * @memberof google.devtools.cloudbuild.v1.BuildStep
@@ -2944,6 +2972,16 @@
                                 writer.uint32(/* id 12, wireType 0 =*/96).int32(message.status);
                             if (message.pullTiming != null && Object.hasOwnProperty.call(message, "pullTiming"))
                                 $root.google.devtools.cloudbuild.v1.TimeSpan.encode(message.pullTiming, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                            if (message.allowFailure != null && Object.hasOwnProperty.call(message, "allowFailure"))
+                                writer.uint32(/* id 14, wireType 0 =*/112).bool(message.allowFailure);
+                            if (message.exitCode != null && Object.hasOwnProperty.call(message, "exitCode"))
+                                writer.uint32(/* id 16, wireType 0 =*/128).int32(message.exitCode);
+                            if (message.allowExitCodes != null && message.allowExitCodes.length) {
+                                writer.uint32(/* id 18, wireType 2 =*/146).fork();
+                                for (var i = 0; i < message.allowExitCodes.length; ++i)
+                                    writer.int32(message.allowExitCodes[i]);
+                                writer.ldelim();
+                            }
                             if (message.script != null && Object.hasOwnProperty.call(message, "script"))
                                 writer.uint32(/* id 19, wireType 2 =*/154).string(message.script);
                             return writer;
@@ -3040,6 +3078,25 @@
                                     }
                                 case 12: {
                                         message.status = reader.int32();
+                                        break;
+                                    }
+                                case 14: {
+                                        message.allowFailure = reader.bool();
+                                        break;
+                                    }
+                                case 16: {
+                                        message.exitCode = reader.int32();
+                                        break;
+                                    }
+                                case 18: {
+                                        if (!(message.allowExitCodes && message.allowExitCodes.length))
+                                            message.allowExitCodes = [];
+                                        if ((tag & 7) === 2) {
+                                            var end2 = reader.uint32() + reader.pos;
+                                            while (reader.pos < end2)
+                                                message.allowExitCodes.push(reader.int32());
+                                        } else
+                                            message.allowExitCodes.push(reader.int32());
                                         break;
                                     }
                                 case 19: {
@@ -3161,6 +3218,19 @@
                                 case 9:
                                     break;
                                 }
+                            if (message.allowFailure != null && message.hasOwnProperty("allowFailure"))
+                                if (typeof message.allowFailure !== "boolean")
+                                    return "allowFailure: boolean expected";
+                            if (message.exitCode != null && message.hasOwnProperty("exitCode"))
+                                if (!$util.isInteger(message.exitCode))
+                                    return "exitCode: integer expected";
+                            if (message.allowExitCodes != null && message.hasOwnProperty("allowExitCodes")) {
+                                if (!Array.isArray(message.allowExitCodes))
+                                    return "allowExitCodes: array expected";
+                                for (var i = 0; i < message.allowExitCodes.length; ++i)
+                                    if (!$util.isInteger(message.allowExitCodes[i]))
+                                        return "allowExitCodes: integer[] expected";
+                            }
                             if (message.script != null && message.hasOwnProperty("script"))
                                 if (!$util.isString(message.script))
                                     return "script: string expected";
@@ -3282,6 +3352,17 @@
                                 message.status = 9;
                                 break;
                             }
+                            if (object.allowFailure != null)
+                                message.allowFailure = Boolean(object.allowFailure);
+                            if (object.exitCode != null)
+                                message.exitCode = object.exitCode | 0;
+                            if (object.allowExitCodes) {
+                                if (!Array.isArray(object.allowExitCodes))
+                                    throw TypeError(".google.devtools.cloudbuild.v1.BuildStep.allowExitCodes: array expected");
+                                message.allowExitCodes = [];
+                                for (var i = 0; i < object.allowExitCodes.length; ++i)
+                                    message.allowExitCodes[i] = object.allowExitCodes[i] | 0;
+                            }
                             if (object.script != null)
                                 message.script = String(object.script);
                             return message;
@@ -3306,6 +3387,7 @@
                                 object.waitFor = [];
                                 object.secretEnv = [];
                                 object.volumes = [];
+                                object.allowExitCodes = [];
                             }
                             if (options.defaults) {
                                 object.name = "";
@@ -3316,6 +3398,8 @@
                                 object.timeout = null;
                                 object.status = options.enums === String ? "STATUS_UNKNOWN" : 0;
                                 object.pullTiming = null;
+                                object.allowFailure = false;
+                                object.exitCode = 0;
                                 object.script = "";
                             }
                             if (message.name != null && message.hasOwnProperty("name"))
@@ -3359,6 +3443,15 @@
                                 object.status = options.enums === String ? $root.google.devtools.cloudbuild.v1.Build.Status[message.status] : message.status;
                             if (message.pullTiming != null && message.hasOwnProperty("pullTiming"))
                                 object.pullTiming = $root.google.devtools.cloudbuild.v1.TimeSpan.toObject(message.pullTiming, options);
+                            if (message.allowFailure != null && message.hasOwnProperty("allowFailure"))
+                                object.allowFailure = message.allowFailure;
+                            if (message.exitCode != null && message.hasOwnProperty("exitCode"))
+                                object.exitCode = message.exitCode;
+                            if (message.allowExitCodes && message.allowExitCodes.length) {
+                                object.allowExitCodes = [];
+                                for (var j = 0; j < message.allowExitCodes.length; ++j)
+                                    object.allowExitCodes[j] = message.allowExitCodes[j];
+                            }
                             if (message.script != null && message.hasOwnProperty("script"))
                                 object.script = message.script;
                             return object;

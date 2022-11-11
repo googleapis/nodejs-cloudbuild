@@ -31,8 +31,8 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 * [Quickstart](#quickstart)
   * [Before you begin](#before-you-begin)
   * [Installing the client library](#installing-the-client-library)
-  * [Using the client library](#using-the-client-library)
-* [Samples](#samples)
+
+
 * [Versioning](#versioning)
 * [Contributing](#contributing)
 * [License](#license)
@@ -53,69 +53,9 @@ Google APIs Client Libraries, in [Client Libraries Explained][explained].
 npm install @google-cloud/cloudbuild
 ```
 
-
-### Using the client library
-
-```javascript
-async function quickstart(
-  projectId = 'YOUR_PROJECT_ID', // Your Google Cloud Platform project ID
-  triggerId = 'YOUR_TRIGGER_ID', // UUID for build trigger.
-  branchName = 'BRANCH_TO_BUILD' // Branch to run build against.
-) {
-  // Imports the Google Cloud client library
-  const {CloudBuildClient} = require('@google-cloud/cloudbuild');
-
-  // Creates a client
-  const cb = new CloudBuildClient();
-
-  // Note: for Private Pools, you'll have to specify an API endpoint value
-  // For example:
-  // const cb = new CloudBuildClient({ apiEndpoint: '<YOUR_POOL_REGION>-cloudbuild.googleapis.com' });
-
-  // Starts a build against the branch provided.
-  const [resp] = await cb.runBuildTrigger({
-    projectId,
-    triggerId,
-    source: {
-      projectId,
-      dir: './',
-      branchName,
-    },
-  });
-  console.info(`triggered build for ${triggerId}`);
-  const [build] = await resp.promise();
-
-  const STATUS_LOOKUP = [
-    'UNKNOWN',
-    'Queued',
-    'Working',
-    'Success',
-    'Failure',
-    'Error',
-    'Timeout',
-    'Cancelled',
-  ];
-  for (const step of build.steps) {
-    console.info(
-      `step:\n\tname: ${step.name}\n\tstatus: ${STATUS_LOOKUP[build.status]}`
-    );
-  }
-}
-
-```
 ### Using TypeScript
 
 `@google-cloud/cloudbuild` provides TypeScript type definitions.
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/nodejs-cloudbuild/tree/main/samples) directory. Each sample's `README.md` has instructions for running its sample.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| List Triggers. | [source code](https://github.com/googleapis/nodejs-cloudbuild/blob/main/samples/listBuildTriggers.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-cloudbuild&page=editor&open_in_editor=samples/listBuildTriggers.js,samples/README.md) |
-| Quickstart | [source code](https://github.com/googleapis/nodejs-cloudbuild/blob/main/samples/quickstart.js) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/nodejs-cloudbuild&page=editor&open_in_editor=samples/quickstart.js,samples/README.md) |
 
 
 

@@ -2064,6 +2064,11 @@
                           }
                         },
                         "LoggingMode": {
+                          "valuesOptions": {
+                            "STACKDRIVER_ONLY": {
+                              "deprecated": true
+                            }
+                          },
                           "values": {
                             "LOGGING_UNSPECIFIED": 0,
                             "LEGACY": 1,
